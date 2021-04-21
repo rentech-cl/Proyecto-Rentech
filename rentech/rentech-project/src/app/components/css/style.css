@@ -27,13 +27,12 @@
 * 1.imported styles
 */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-@import url("../css/bootstrap.min.css");
-@import url("../css/animate.css");
-@import url("../css/responsive.css");
-@import url("../css/owl.carousel.css");
-@import url("../css/owl.theme.default.min.css");
-@import url("../css/font-awesome.min.css");
-@import url("../css/jquery.bxslider.min.css");
+@import url("bootstrap.min.css");
+@import url("animate.css");
+@import url("owl.carousel.css");
+@import url("owl.theme.default.min.css");
+@import url("font-awesome.min.css");
+@import url("jquery.bxslider.min.css");
 @import url("../plugins/opins-icon/style.css");
 /*
 * 2.misclenious styles

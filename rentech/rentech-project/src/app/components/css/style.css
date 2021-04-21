@@ -80,7 +80,7 @@ hr.style-one {
   height: 100%;
   z-index: 9999;
   background-color: #fff;
-  background-image: url(../images/preloader.gif);
+  background-image: url(../../../assets/imagesimages/preloader.gif);
   background-repeat: no-repeat;
   background-position: center center; }
 
@@ -368,7 +368,7 @@ hr.style-one {
   position: relative;
   padding-top: 300px;
   padding-bottom: 220px;
-  background: #fff url(../images/banner-bg-1-1.png) top right no-repeat; }
+  background: #fff url(../../../assets/imagesimages/banner-bg-1-1.png) top right no-repeat; }
   .banner-style-one:before, .banner-style-one:after {
     content: '';
     width: 318px;
@@ -521,7 +521,7 @@ hr.style-one {
           color: #fff; }
   .banner-style-one.home-page-two {
     padding-bottom: 277px;
-    background: #fff url(../images/banner-bg-1-2.png) top right no-repeat;
+    background: #fff url(../../../assets/images/banner-bg-1-2.png) top right no-repeat;
     background-size: cover;
     margin-bottom: 60px; }
     .banner-style-one.home-page-two:before {
@@ -1456,7 +1456,7 @@ hr.style-one {
 */
 .feature-style-one {
   padding-top: 170px;
-  background: #FFFFFF url(../images/bg-curve-1-2.png) center top no-repeat;
+  background: #FFFFFF url(../../../assets/images/bg-curve-1-2.png) center top no-repeat;
   background-size: cover;
   margin-top: -90px; }
   .feature-style-one .container {
@@ -1600,7 +1600,7 @@ hr.style-one {
     content: '';
     width: 100%;
     height: 251px;
-    background: #fff url(../images/bg-curve-1-1.png) center center no-repeat;
+    background: #fff url(../../../assets/images/bg-curve-1-1.png) center center no-repeat;
     background-size: cover;
     position: absolute;
     bottom: 0;
@@ -1773,7 +1773,7 @@ hr.style-one {
 * 15.inner banner styles
 */
 .inner-banner {
-  background: #fff url(../images/inner-banner-1-1.png) center center no-repeat;
+  background: #fff url(../../../assets/images/inner-banner-1-1.png) center center no-repeat;
   background-size: cover;
   position: relative;
   padding-bottom: 120px;

@@ -165,7 +165,7 @@
     .header-navigation ul.navigation-box li a .sub-nav-toggler {
         background-color: transparent;
         background-image: none;
-        border: 1px solid #E94FCA;
+        border: 1px solid #4800ff;
         border-radius: 4px;
         padding: 9px 9px;
         position: absolute;
@@ -182,7 +182,7 @@
     }
 
     .header-navigation .navigation-box .sub-nav-toggler .icon-bar {
-        background-color: #E94FCA;
+        background-color: #cebbff;
         border-radius: 1px;
         display: block;
         height: 1px;

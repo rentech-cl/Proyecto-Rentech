@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rentech": {
+    "rentech-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rentech",
+            "outputPath": "dist/rentech-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/popper.js/dist/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "node_modules/jquery/jquery.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -39,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -62,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rentech:build"
+            "browserTarget": "rentech-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rentech:build:production"
+              "browserTarget": "rentech-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rentech:build"
+            "browserTarget": "rentech-project:build"
           }
         },
         "test": {
@@ -110,15 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rentech:serve"
+            "devServerTarget": "rentech-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rentech:serve:production"
+              "devServerTarget": "rentech-project:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "rentech"
+    }
+  },
+  "defaultProject": "rentech-project"
 }

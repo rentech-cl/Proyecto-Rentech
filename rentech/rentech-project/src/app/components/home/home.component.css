@@ -523,8 +523,9 @@ hr.style-one {
           color: #fff; }
   .banner-style-one.home-page-two {
     padding-bottom: 277px;
-    background: #fff url(../../../assets/images/banner-bg-1-2.png) top right no-repeat;
-    background-size: cover;
+    background: rgb(1,1,89);
+    background: linear-gradient(90deg, rgba(1,1,89,1) 0%, rgba(72,0,255,1) 100%);
+        background-size: cover;
     margin-bottom: 60px; }
     .banner-style-one.home-page-two:before {
       border-color: rgba(255, 255, 255, 0.04); }

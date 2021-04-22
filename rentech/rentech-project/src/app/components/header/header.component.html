@@ -1,0 +1,41 @@
+<header class="site-header header-one home-page-two">
+  <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+    <div class="container clearfix">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="logo-box clearfix">
+        <a class="navbar-brand" href="index.html">
+          <img src="../../../assets/images/logo-1-2.png"width="10%"  class="d-inline-block align-top" />
+        </a>
+        <button class="menu-toggler" data-target="#main-nav-bar">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div><!-- /.logo-box -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="main-navigation" id="main-nav-bar">
+        <ul class="one-page-scroll-menu navigation-box">
+          <li class=" current scrollToLink">
+            <a href="#banner">Home</a>
+            <ul class="sub-menu">
+              <li><a href="index.html">Home One</a></li>
+              <li><a href="index2.html">Home Two</a></li>
+              <li><a href="index.html">Header Versions</a>
+                <ul class="sub-menu">
+                  <li><a href="index.html">Header One</a></li>
+                  <li><a href="index2.html">Header Two</a></li>
+                </ul><!-- /.sub-menu -->
+              </li>
+            </ul><!-- /.sub-menu -->
+          </li>
+          <li class="scrollToLink"><a href="#servicios">Servicios</a></li>
+          <li class="scrollToLink"><a href="#herramientas">Herramientas</a></li>
+          <li class="scrollToLink"><a href="#precios">Precios</a></li>
+          <li class="scrollToLink"><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+      <div class="right-side-box">
+        <a href="#" class="header-btn" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      </div><!-- /.right-side-box -->
+    </div>
+    <!-- /.container -->
+  </nav>
+</header><!-- /.site-header -->

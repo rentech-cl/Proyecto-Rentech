@@ -369,7 +369,7 @@ hr.style-one {
 .banner-style-one {
   position: relative;
   padding-top: 300px;
-  padding-bottom: 220px;
+  /* padding-bottom: 220px; */
   background: #fff url(../../../assets/images/banner-bg-1-1.png) top right no-repeat; }
   .banner-style-one:before, .banner-style-one:after {
     content: '';
@@ -526,7 +526,8 @@ hr.style-one {
     background: rgb(1,1,89);
     background: linear-gradient(90deg, rgba(1,1,89,1) 0%, rgba(72,0,255,1) 100%);
         background-size: cover;
-    margin-bottom: 60px; }
+    /* margin-bottom: 60px; */
+   }
     .banner-style-one.home-page-two:before {
       border-color: rgba(255, 255, 255, 0.04); }
     .banner-style-one.home-page-two:after {

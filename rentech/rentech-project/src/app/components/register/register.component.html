@@ -1,48 +1,52 @@
 <header class="site-header header-one home-page-two">
-  <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
-    <div class="container clearfix">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="logo-box clearfix">
-        <a class="navbar-brand">
-          <img src="../../../assets/images/logo-1-2.png" width="10%" class="d-inline-block align-top" />
-        </a>
-        <button class="menu-toggler" data-target="#main-nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box clearfix">
+                <a class="navbar-brand">
+                    <img src="../../../assets/images/logo-1-2.png" width="10%" class="d-inline-block align-top" />
+                </a>
+                <button class="menu-toggler" data-target="#main-nav-bar">
           <span class="fa fa-bars"></span>
         </button>
-      </div><!-- /.logo-box -->
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="main-navigation" id="main-nav-bar">
+            </div>
+            <!-- /.logo-box -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation" id="main-nav-bar">
 
-      </div><!-- /.navbar-collapse -->
-      <div class="right-side-box">
-        <a href="#" class="header-btn" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
-      </div><!-- /.right-side-box -->
-    </div>
-    <!-- /.container -->
-  </nav>
-</header><!-- /.site-header -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="right-side-box">
+                <a href="#" class="header-btn" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+            </div>
+            <!-- /.right-side-box -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</header>
+<!-- /.site-header -->
 
 
 
 <div class="banner-style-one home-page-two fondo" id="banner">
-  <!-- <span class="bubble-1"></span>
+    <!-- <span class="bubble-1"></span>
   <span class="bubble-2"></span>
   <span class="bubble-3"></span>
   <span class="bubble-4"></span>
   <span class="bubble-5"></span>
   <span class="bubble-6"></span> -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="container">
-    <div class='box'>
-      <div class='box-form'>
-        <div class='box-login'>
-          <div class='fieldset-body container' id='login_form'>
-            <br>
-            <br>
-            <!-- <form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class='box'>
+            <div class='box-form'>
+                <div class='box-login'>
+                    <div class='fieldset-body container' id='login_form'>
+                        <br>
+                        <br>
+                        <!-- <form>
               <div class="container">
                 <div class="row form-group">
                   <div class="col">
@@ -100,80 +104,131 @@
               <input type='submit' id='do_login' value='Registrarme' />
             </form> -->
 
-            <form [formGroup]="myForm" (ngSubmit)="register()">
-                <div class="form-group">
-                  <input type="text" [(ngModel)]="usuario.nombre" formControlName="nombre" class="form-control"
-                    placeholder="Nombre" />
-                  <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched"
-                  id='valida' class='i i-warning'>
-                    Este campo es obligatorio
-                  </div>
-                  <div *ngIf="myForm.get('nombre').hasError('maxlength') && myForm.get('nombre').touched"
-                    class="alert alert-danger">
-                    El nombre es demasiado largo
-                  </div>
-                  <div *ngIf="myForm.get('nombre').hasError('minlength') && myForm.get('nombre').touched"
-                    class="alert alert-danger">
-                    El nombre es demasiado corto
-                  </div>
-              </div>
-              <br>
-              <br>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="usuario.apellido" formControlName="apellido" class="form-control"
-                  placeholder="Apellido" />
-                <div *ngIf="myForm.get('apellido').hasError('required') && myForm.get('apellido').touched"
-                id='valida' class='i i-warning'>
-                  Este campo es obligatorio
-                </div>
-                <div *ngIf="myForm.get('apellido').hasError('maxlength') && myForm.get('apellido').touched"
-                  class="alert alert-danger">
-                  El apellido es demasiado largo
-                </div>
-                <div *ngIf="myForm.get('apellido').hasError('minlength') && myForm.get('apellido').touched"
-                  class="alert alert-danger">
-                  El apellido es demasiado corto
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena"
-                  class="form-control" placeholder="Contraseña" />
-                <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched"
-                id='valida' class='i i-warning'>
-                  Este campo es obligatorio
-                </div>
-                <div *ngIf="myForm.get('contrasena').hasError('maxlength') && myForm.get('contrasena').touched"
-                  class="alert alert-danger">
-                  La contraseña es demasiado larga
-                </div>
-                <div *ngIf="myForm.get('contrasena').hasError('minlength') && myForm.get('contrasena').touched"
-                  class="alert alert-danger">
-                  La contraseña es demasiado corta
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <input type="password" id="confirm_password" formControlName="confirm_password" class="form-control"
-                  placeholder="Confirmar contraseña" />
-                <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" id='valida' class='i i-warning'>
-                  <div *ngIf="f.confirm_password.errors.required">Repetir la contraseña es requerido.</div>
-                  <div *ngIf="f.confirm_password.errors.confirmedValidator">Las contraseñas deben ser iguales.</div>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <input [disabled]="myForm.invalid" type='submit' id='do_login' value='Registrar' />
+                        <form [formGroup]="myForm" (ngSubmit)="register()">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="usuario.nombre" formControlName="nombre" class="form-control" placeholder="Nombre" />
 
-                <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
+                                <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched" id='valida' class='i i-warning'>
+                                    Este campo es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('nombre').hasError('maxlength') && myForm.get('nombre').touched" class="alert alert-danger">
+                                    El nombre es demasiado largo
+                                </div>
+                                <div *ngIf="myForm.get('nombre').hasError('minlength') && myForm.get('nombre').touched" class="alert alert-danger">
+                                    El nombre es demasiado corto
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="usuario.apellido" formControlName="apellido" class="form-control" placeholder="Apellido" />
+                                <div *ngIf="myForm.get('apellido').hasError('required') && myForm.get('apellido').touched" id='valida' class='i i-warning'>
+                                    Este campo es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('apellido').hasError('maxlength') && myForm.get('apellido').touched" class="alert alert-danger">
+                                    El apellido es demasiado largo
+                                </div>
+                                <div *ngIf="myForm.get('apellido').hasError('minlength') && myForm.get('apellido').touched" class="alert alert-danger">
+                                    El apellido es demasiado corto
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena" class="form-control" placeholder="Contraseña" />
+                                <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched" id='valida' class='i i-warning'>
+                                    Este campo es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('contrasena').hasError('maxlength') && myForm.get('contrasena').touched" class="alert alert-danger">
+                                    La contraseña es demasiado larga
+                                </div>
+                                <div *ngIf="myForm.get('contrasena').hasError('minlength') && myForm.get('contrasena').touched" class="alert alert-danger">
+                                    La contraseña es demasiado corta
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="password" id="confirm_password" formControlName="confirm_password" class="form-control" placeholder="Confirmar contraseña" />
+                                <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" id='valida' class='i i-warning'>
+                                    <div *ngIf="f.confirm_password.errors.required">Repetir la contraseña es requerido.</div>
+                                    <div *ngIf="f.confirm_password.errors.confirmedValidator">Las contraseñas deben ser iguales.</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="correo" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control" placeholder="correo" />
+                                <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched" id='valida' class='i i-warning'>
+                                    El correo es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('correo').hasError('email') && myForm.get('correo').touched" class="alert alert-danger">
+                                    La correo debe tener un '@' y un '.'
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <input type="telefono" [(ngModel)]="usuario.telefono" formControlName="telefono" class="form-control" placeholder="telefono" />
+                                <div *ngIf="myForm.get('telefono').hasError('required') && myForm.get('telefono').touched" id='valida' class='i i-warning'>
+                                    El telefono es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('telefono').hasError('pattern') && myForm.get('telefono').touched" class="alert alert-danger">
+                                    El telefono debe tener 9 digitos
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="iban" [(ngModel)]="usuario.iban" formControlName="iban" class="form-control" placeholder="iban" />
+                                <div *ngIf="myForm.get('iban').hasError('required') && myForm.get('iban').touched" id='valida' class='i i-warning'>
+                                    El iban es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('iban').hasError('minLength') && myForm.get('iban').touched" class="alert alert-danger">
+                                    Revisa los caracteres introducidos, deben ser 24
+                                </div>
+                                <div *ngIf="myForm.get('iban').hasError('maxLength') && myForm.get('iban').touched" class="alert alert-danger">
+                                    Revisa los caracteres introducidos, deben ser 24
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <input type="dni" [(ngModel)]="usuario.dni" formControlName="dni" class="form-control" placeholder="dni" />
+                                <div *ngIf="myForm.get('dni').hasError('required') && myForm.get('dni').touched" id='valida' class='i i-warning'>
+                                    El dni es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('dni').hasError('pattern') && myForm.get('dni').touched" class="alert alert-danger">
+                                    El dni debe tener 8 numeros y una letra
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="cp" [(ngModel)]="usuario.cp" formControlName="cp" class="form-control" placeholder="cp" />
+                                <div *ngIf="myForm.get('cp').hasError('required') && myForm.get('cp').touched" id='valida' class='i i-warning'>
+                                    El cp es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('cp').hasError('pattern') && myForm.get('cp').touched" class="alert alert-danger">
+                                    El cp son 5 numeros
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="direccion" [(ngModel)]="usuario.direccio" formControlName="direccio" class="form-control" placeholder="direccion" />
+                                <div *ngIf="myForm.get('direccio').hasError('required') && myForm.get('direccio').touched" id='valida' class='i i-warning'>
+                                    La direccion es obligatorio
+                                </div>
+                                <div *ngIf="myForm.get('direccio').hasError('maxLength') && myForm.get('direccio').touched" class="alert alert-danger">
+                                    La direccion tiene un maximo de 60 caracteres
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <input type='submit' id='do_login' value='Registrar' />
+
+                                <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
                     Registrar
                 </button> -->
-                <a routerLink="/home" class="btn btn-link">Cancelar</a>
-              </div>
-            </form>
-          </div>
+                                <a routerLink="/home" class="btn btn-link">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div><!-- /.container -->
-</div><!-- /.banner-style-one -->
+    <!-- /.container -->
+</div>
+<!-- /.banner-style-one -->

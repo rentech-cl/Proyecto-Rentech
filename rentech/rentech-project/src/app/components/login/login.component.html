@@ -1,43 +1,47 @@
 <header class="site-header header-one home-page-two">
-  <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
-    <div class="container clearfix">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="logo-box clearfix">
-        <a class="navbar-brand">
-          <img src="../../../assets/images/logo-1-2.png"width="10%"  class="d-inline-block align-top" />
-        </a>
-        <button class="menu-toggler" data-target="#main-nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box clearfix">
+                <a class="navbar-brand">
+                    <img src="../../../assets/images/logo-1-2.png" width="10%" class="d-inline-block align-top" />
+                </a>
+                <button class="menu-toggler" data-target="#main-nav-bar">
           <span class="fa fa-bars"></span>
         </button>
-      </div><!-- /.logo-box -->
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="main-navigation" id="main-nav-bar">
+            </div>
+            <!-- /.logo-box -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation" id="main-nav-bar">
 
-      </div><!-- /.navbar-collapse -->
-      <div class="right-side-box">
-        <a href="#" class="header-btn" [routerLink]="['/registro']" routerLinkActive="router-link-active">Registrarme</a>
-      </div><!-- /.right-side-box -->
-    </div>
-    <!-- /.container -->
-  </nav>
-</header><!-- /.site-header -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="right-side-box">
+                <a href="#" class="header-btn" [routerLink]="['/registro']" routerLinkActive="router-link-active">Registro</a>
+            </div>
+            <!-- /.right-side-box -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</header>
+<!-- /.site-header -->
 
 
 <div class="banner-style-one home-page-two fondo" id="banner">
-  <!-- <span class="bubble-1"></span>
+    <!-- <span class="bubble-1"></span>
   <span class="bubble-2"></span>
   <span class="bubble-3"></span>
   <span class="bubble-4"></span>
   <span class="bubble-5"></span>
   <span class="bubble-6"></span> -->
-  <div class="container">
-    <div class='box'>
-      <div class='box-form'>
-        <div class='box-login'>
-          <div class='fieldset-body container' id='login_form'>
-            <br>
-            <br>
-            <!-- <form>
+    <div class="container">
+        <div class='box'>
+            <div class='box-form'>
+                <div class='box-login'>
+                    <div class='fieldset-body container' id='login_form'>
+                        <br>
+                        <br>
+                        <!-- <form>
               <div class="container">
                 <div class="row form-group">
                   <div class="col">
@@ -95,47 +99,42 @@
               <input type='submit' id='do_login' value='Registrarme' />
             </form> -->
 
-            <form [formGroup]="myForm" (ngSubmit)="register()">
-                <div class="form-group">
-                  <input type="text" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control"
-                    placeholder="Correo" />
-                </div>
+                        <form [formGroup]="myForm" (ngSubmit)="register()">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control" placeholder="Correo" />
+                            </div>
 
-                <div class="container">
-                  <br>
-                  <br>
-                  <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched"
-                  class='alert alert-danger'>
-                    Este campo es obligatorio
-                  </div>
-                </div>
-              <div class="form-group">
-                <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena"
-                  class="form-control" placeholder="Contraseña" />
-              </div>
-              <div class="container">
-                <br>
-                <br>
-              <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched"
-               class='alert alert-danger'>
-                Este campo es obligatorio
-              </div>
-            </div>
-              <div class="form-group">
-                <input [disabled]="myForm.invalid" type='submit' id='do_login' value='Iniciar sesión' />
+                            <div class="container">
+                                <br>
+                                <br>
+                                <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched" class='alert alert-danger'>
+                                    Este campo es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena" class="form-control" placeholder="Contraseña" />
+                            </div>
+                            <div class="container">
+                                <br>
+                                <br>
+                                <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched" class='alert alert-danger'>
+                                    Este campo es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input [disabled]="myForm.invalid" type='submit' id='do_login' value='Iniciar sesión' />
 
-                <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
+                                <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
                     Registrar
                 </button> -->
-                <a routerLink="/home" class="btn btn-link">Cancelar</a>
-              </div>
-            </form>
-          </div>
+                                <a routerLink="/home" class="btn btn-link">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div><!-- /.container -->
-</div><!-- /.banner-style-one -->
-
-
-
+    <!-- /.container -->
+</div>
+<!-- /.banner-style-one -->

@@ -42,6 +42,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     console.log('registro')
+    console.log(this.usuario)
+
   }
 
   get f(){

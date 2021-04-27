@@ -26,44 +26,44 @@
     };
 
 
-    if ($('.contact-form-vaidated').length) {
-        $('.contact-form-vaidated').validate({ // initialize the plugin
-            rules: {
-                name: {
-                    required: true
-                },
-                fname: {
-                    required: true
-                },
-                lname: {
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                message: {
-                    required: true
-                },
-                subject: {
-                    required: true
-                },
-                booking_date: {
-                    required: true
-                }
-            },
-            submitHandler: function(form) {
-                // sending value with ajax request
-                $.post($(form).attr('action'), $(form).serialize(), function(response) {
-                    $(form).parent().find('.result').append(response);
-                    $(form).find('input[type="text"]').val('');
-                    $(form).find('input[type="email"]').val('');
-                    $(form).find('textarea').val('');
-                });
-                return false;
-            }
-        });
-    }
+    // if ($('.contact-form-vaidated').length) {
+    //     $('.contact-form-vaidated').validate({ // initialize the plugin
+    //         rules: {
+    //             name: {
+    //                 required: true
+    //             },
+    //             fname: {
+    //                 required: true
+    //             },
+    //             lname: {
+    //                 required: true
+    //             },
+    //             email: {
+    //                 required: true,
+    //                 email: true
+    //             },
+    //             message: {
+    //                 required: true
+    //             },
+    //             subject: {
+    //                 required: true
+    //             },
+    //             booking_date: {
+    //                 required: true
+    //             }
+    //         },
+    //         submitHandler: function(form) {
+    //             // sending value with ajax request
+    //             $.post($(form).attr('action'), $(form).serialize(), function(response) {
+    //                 $(form).parent().find('.result').append(response);
+    //                 $(form).find('input[type="text"]').val('');
+    //                 $(form).find('input[type="email"]').val('');
+    //                 $(form).find('textarea').val('');
+    //             });
+    //             return false;
+    //         }
+    //     });
+    // }
 
     if ($('.brand-carousel-one').length) {
         $('.brand-carousel-one').owlCarousel({

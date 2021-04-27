@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClienteService {
 
 
-  url = 'http://localhost:5050/www/'; // disponer de el url de su servidor que tiene los archivos PHP
+  url = 'http://localhost:5050/'; // disponer de el url de su servidor que tiene los archivos PHP
 
   constructor(private http: HttpClient) { }
 

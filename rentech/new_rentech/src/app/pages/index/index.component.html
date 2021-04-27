@@ -29,11 +29,10 @@
       </ul>
       <ul class="navbar-nav navbar-center">
         <li class="nav-item">
-          <a class="nav-link" (click)="loginModal(content)">Log
-            in</a>
+          <a class="nav-link" (click)="loginModal(content)">Iniciar sesión</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="registerModal(registercontent)">Register</a>
+          <a class="nav-link" (click)="registerModal(registercontent)">Darme de alta</a>
         </li>
       </ul>
     </div>
@@ -116,54 +115,90 @@
 <ng-template #registercontent let-c="close" let-d="dismiss">
   <div class="modal-body">
     <div class="text-center">
-      <h3 class="title mb-4">Welcome To Lezir</h3>
-      <h4 class="text-uppercase text-primary"><b>Register</b></h4>
+      <h3 class="title mb-4">Bienvenido a Rentech</h3>
+      <h4 class="text-uppercase text-primary"><b>Darme de alta</b></h4>
     </div>
     <div class="login-form mt-4">
-      <form>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
         <div class="form-group">
-          <label for="exampleInputUsername">User Name</label>
-          <input type="text" class="form-control" id="exampleInputUsername" placeholder="Enter Name">
+            <input type="text" formControlName="nombre" maxlength="60" class="form-control" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+            <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+                <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+                <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+            </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail2">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Youremail@gmail.com">
+            <input type="text" formControlName="apellido" maxlength="60" class="form-control" placeholder="Apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+            <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                <div *ngIf="f.apellido.errors.required">El campo de Apellido es obligatorio</div>
+                <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
+                <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
+            </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword2">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            <input type="password" formControlName="contrasena" maxlength="60" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }" />
+            <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
+                <div *ngIf="f.contrasena.errors.required">El campo de Contraseña es obligatorio</div>
+                <div *ngIf="f.contrasena.errors.maxlength"> La contraseña es demasiado larga</div>
+                <div *ngIf="f.contrasena.errors.minlength"> La contraseña es demasiado corta</div>
+            </div>
         </div>
-        <a href="javascript: void(0);" class="float-right text-muted font-size-15">Forgot Password.?</a>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck2">
-          <label class="custom-control-label font-size-15" for="customCheck2">Remember Me</label>
+        <div class="form-group">
+            <input type="password" formControlName="confirm_password" maxlength="60" class="form-control" placeholder="Confirmar contraseña" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" />
+            <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+                <div *ngIf="f.confirm_password.errors.required">El campo de Confirmar Contraseña es obligatorio</div>
+                <div *ngIf="f.confirm_password.errors.ConfirmedValidator">La Contraseña no es la misma</div>
+            </div>
         </div>
-        <div class="text-center mt-4">
-          <button type="submit" class="btn btn-primary">Register <i-feather class="icon-size-15 icon ml-1"
-              name="arrow-right-circle"></i-feather></button>
+        <div class="form-group">
+            <input type="text" formControlName="correo" maxlength="60" class="form-control" placeholder="Correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
+            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                <div *ngIf="f.correo.errors.required">El campo de Correo es obligatorio</div>
+                <div *ngIf="f.correo.errors.email">Debe de ser un correo</div>
+            </div>
         </div>
-      </form>
-      <div class="position-relative text-center mt-4">
-        <span class="login-border"></span>
-        <p class="social-login text-muted font-size-17">Social Login</p>
-      </div>
-      <div class="text-center">
-        <ul class="list-inline mt-2 mb-3">
-          <li class="list-inline-item mr-3"><a href="javascript: void(0);" class="login-social-icon icon-primary">
-              <i-feather class="icon-xs" name="facebook"></i-feather>
-            </a></li>
-          <li class="list-inline-item mr-3"><a href="javascript: void(0);" class="login-social-icon icon-info">
-              <i-feather class="icon-xs" name="twitter"></i-feather>
-            </a></li>
-          <li class="list-inline-item mr-3"><a href="javascript: void(0);" class="login-social-icon icon-danger">
-              <i-feather class="icon-xs" name="instagram"></i-feather>
-            </a></li>
-          <li class="list-inline-item"><a href="javascript: void(0);" class="login-social-icon icon-success">
-              <i-feather class="icon-xs" name="linkedin"></i-feather>
-            </a>
-          </li>
-        </ul>
-      </div>
+        <div class="form-group">
+            <input type="text" formControlName="telefono" maxlength="60" class="form-control" placeholder="Telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+            <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+                <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="iban" maxlength="60" class="form-control" placeholder="Numero Iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" />
+            <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
+                <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
+                <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="dni" maxlength="60" class="form-control" placeholder="DNI" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" />
+            <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+                <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
+                <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="cp" maxlength="60" class="form-control" placeholder="Codigo Postal" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }" />
+            <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
+                <div *ngIf="f.cp.errors.required">El campo de Codigo Postal es obligatorio</div>
+                <div *ngIf="f.cp.errors.pattern">El codigo postal son 5 numeros</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="direccio" maxlength="60" class="form-control"  placeholder="Direccion" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }" />
+            <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
+                <div *ngIf="f.direccio.errors.required">El campo de Direecion es obligatorio</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <input   type="submit" class="btn btn-primary" value='Registrar' />
+        </div>
+    </form>
+
     </div>
   </div>
 </ng-template>

@@ -104,126 +104,98 @@
               <input type='submit' id='do_login' value='Registrarme' />
             </form> -->
 
-                        <form [formGroup]="myForm" (ngSubmit)="register()">
+                        <form [formGroup]="registerForm" (ngSubmit)="register()">
+                            <br>
                             <div class="form-group">
-                                <input type="text" [(ngModel)]="usuario.nombre" formControlName="nombre" class="form-control" placeholder="Nombre" />
-
-                                <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched" id='valida' class='i i-warning'>
-                                    Este campo es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('nombre').hasError('maxlength') && myForm.get('nombre').touched" class="alert alert-danger">
-                                    El nombre es demasiado largo
-                                </div>
-                                <div *ngIf="myForm.get('nombre').hasError('minlength') && myForm.get('nombre').touched" class="alert alert-danger">
-                                    El nombre es demasiado corto
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-group">
-                                <input type="text" [(ngModel)]="usuario.apellido" formControlName="apellido" class="form-control" placeholder="Apellido" />
-                                <div *ngIf="myForm.get('apellido').hasError('required') && myForm.get('apellido').touched" id='valida' class='i i-warning'>
-                                    Este campo es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('apellido').hasError('maxlength') && myForm.get('apellido').touched" class="alert alert-danger">
-                                    El apellido es demasiado largo
-                                </div>
-                                <div *ngIf="myForm.get('apellido').hasError('minlength') && myForm.get('apellido').touched" class="alert alert-danger">
-                                    El apellido es demasiado corto
+                                <input type="text" formControlName="nombre" maxlength="60" class="form-control" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                                <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                                    <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+                                    <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+                                    <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
                                 </div>
                             </div>
                             <br>
                             <div class="form-group">
-                                <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena" class="form-control" placeholder="Contraseña" />
-                                <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched" id='valida' class='i i-warning'>
-                                    Este campo es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('contrasena').hasError('maxlength') && myForm.get('contrasena').touched" class="alert alert-danger">
-                                    La contraseña es demasiado larga
-                                </div>
-                                <div *ngIf="myForm.get('contrasena').hasError('minlength') && myForm.get('contrasena').touched" class="alert alert-danger">
-                                    La contraseña es demasiado corta
+                                <input type="text" formControlName="apellido" maxlength="60" class="form-control" placeholder="Apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+                                <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                                    <div *ngIf="f.apellido.errors.required">El campo de Apellido es obligatorio</div>
+                                    <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
+                                    <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
                                 </div>
                             </div>
                             <br>
                             <div class="form-group">
-                                <input type="password" id="confirm_password" formControlName="confirm_password" class="form-control" placeholder="Confirmar contraseña" />
-                                <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" id='valida' class='i i-warning'>
-                                    <div *ngIf="f.confirm_password.errors.required">Repetir la contraseña es requerido.</div>
-                                    <div *ngIf="f.confirm_password.errors.confirmedValidator">Las contraseñas deben ser iguales.</div>
+                                <input type="password" formControlName="contrasena" maxlength="60" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }" />
+                                <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
+                                    <div *ngIf="f.contrasena.errors.required">El campo de Contraseña es obligatorio</div>
+                                    <div *ngIf="f.contrasena.errors.maxlength"> La contraseña es demasiado larga</div>
+                                    <div *ngIf="f.contrasena.errors.minlength"> La contraseña es demasiado corta</div>
                                 </div>
                             </div>
                             <br>
                             <div class="form-group">
-                                <input type="correo" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control" placeholder="correo" />
-                                <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched" id='valida' class='i i-warning'>
-                                    El correo es obligatorio
+                                <input type="password" formControlName="confirm_password" maxlength="60" class="form-control" placeholder="Confirmar contraseña" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" />
+                                <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.confirm_password.errors.required">El campo de Confirmar Contraseña es obligatorio</div>
+                                    <div *ngIf="f.confirm_password.errors.ConfirmedValidator">La Contraseña no es la misma</div>
                                 </div>
-                                <div *ngIf="myForm.get('correo').hasError('email') && myForm.get('correo').touched" class="alert alert-danger">
-                                    La correo debe tener un '@' y un '.'
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="correo" maxlength="60" class="form-control" placeholder="Correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
+                                <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                                    <div *ngIf="f.correo.errors.required">El campo de Correo es obligatorio</div>
+                                    <div *ngIf="f.correo.errors.email">Debe de ser un correo</div>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="telefono" maxlength="60" class="form-control" placeholder="Telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+                                <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                                    <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+                                    <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="iban" maxlength="60" class="form-control" placeholder="Numero Iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" />
+                                <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
+                                    <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
+                                    <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="dni" maxlength="60" class="form-control" placeholder="DNI" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" />
+                                <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+                                    <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
+                                    <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="cp" maxlength="60" class="form-control" placeholder="Codigo Postal" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }" />
+                                <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
+                                    <div *ngIf="f.cp.errors.required">El campo de Codigo Postal es obligatorio</div>
+                                    <div *ngIf="f.cp.errors.pattern">El codigo postal son 5 numeros</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" formControlName="direccio" maxlength="60" class="form-control"  placeholder="Direccion" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }" />
+                                <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
+                                    <div *ngIf="f.direccio.errors.required">El campo de Direecion es obligatorio</div>
+                                </div>
+                            </div>
 
-                            </div>
-
-                            <div class="form-group">
-                                <input type="telefono" [(ngModel)]="usuario.telefono" formControlName="telefono" class="form-control" placeholder="telefono" />
-                                <div *ngIf="myForm.get('telefono').hasError('required') && myForm.get('telefono').touched" id='valida' class='i i-warning'>
-                                    El telefono es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('telefono').hasError('pattern') && myForm.get('telefono').touched" class="alert alert-danger">
-                                    El telefono debe tener 9 digitos
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="iban" [(ngModel)]="usuario.iban" formControlName="iban" class="form-control" placeholder="iban" />
-                                <div *ngIf="myForm.get('iban').hasError('required') && myForm.get('iban').touched" id='valida' class='i i-warning'>
-                                    El iban es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('iban').hasError('minLength') && myForm.get('iban').touched" class="alert alert-danger">
-                                    Revisa los caracteres introducidos, deben ser 24
-                                </div>
-                                <div *ngIf="myForm.get('iban').hasError('maxLength') && myForm.get('iban').touched" class="alert alert-danger">
-                                    Revisa los caracteres introducidos, deben ser 24
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <input type="dni" [(ngModel)]="usuario.dni" formControlName="dni" class="form-control" placeholder="dni" />
-                                <div *ngIf="myForm.get('dni').hasError('required') && myForm.get('dni').touched" id='valida' class='i i-warning'>
-                                    El dni es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('dni').hasError('pattern') && myForm.get('dni').touched" class="alert alert-danger">
-                                    El dni debe tener 8 numeros y una letra
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="cp" [(ngModel)]="usuario.cp" formControlName="cp" class="form-control" placeholder="cp" />
-                                <div *ngIf="myForm.get('cp').hasError('required') && myForm.get('cp').touched" id='valida' class='i i-warning'>
-                                    El cp es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('cp').hasError('pattern') && myForm.get('cp').touched" class="alert alert-danger">
-                                    El cp son 5 numeros
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="direccion" [(ngModel)]="usuario.direccio" formControlName="direccio" class="form-control" placeholder="direccion" />
-                                <div *ngIf="myForm.get('direccio').hasError('required') && myForm.get('direccio').touched" id='valida' class='i i-warning'>
-                                    La direccion es obligatorio
-                                </div>
-                                <div *ngIf="myForm.get('direccio').hasError('maxLength') && myForm.get('direccio').touched" class="alert alert-danger">
-                                    La direccion tiene un maximo de 60 caracteres
-                                </div>
-                            </div>
-                            <br><br>
+                            <br>
                             <div class="form-group">
                                 <input type='submit' id='do_login' value='Registrar' />
-
-                                <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
-                    Registrar
-                </button> -->
-                                <a routerLink="/home" class="btn btn-link">Cancelar</a>
                             </div>
                         </form>
+                        <div>
+                            <a routerLink="/home" class="btn btn-link">Cancelar</a>
+                        </div>
                     </div>
                 </div>
             </div>

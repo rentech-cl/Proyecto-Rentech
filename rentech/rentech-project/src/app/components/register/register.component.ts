@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
 import { ConfirmedValidator } from '../confirmed.validator';
+import { ClienteService } from '../../services/cliente.service';
 
 @Component({
   selector: 'app-register',
@@ -11,15 +12,14 @@ import { ConfirmedValidator } from '../confirmed.validator';
 })
 export class RegisterComponent implements OnInit {
 
-  myForm: FormGroup;
   usuario = new Cliente;
   registerForm: FormGroup;
-
-  constructor(
-    public formBuilder: FormBuilder,
-        private router: Router
-  ) {
-    this.myForm = this.formBuilder.group({
+  submitted = false;
+ 
+  constructor(public formBuilder: FormBuilder, private router: Router,private ClienteService: ClienteService) {}
+  
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       apellido: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       correo: ['', [Validators.email, Validators.required]],
@@ -30,23 +30,21 @@ export class RegisterComponent implements OnInit {
       direccio: ['', [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
       contrasena: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       confirm_password: [null, Validators.required],
-    },
-    {
+    }, {
       validator: ConfirmedValidator('contrasena', 'confirm_password')
-    }
-    );
-   }
-
-  ngOnInit(): void {
+    });
   }
+
+  get f() {return this.registerForm.controls; }
 
   register() {
-    console.log('registro')
-    console.log(this.usuario)
-
-  }
-
-  get f(){
-    return this.myForm.controls;
+    this.submitted = true;
+    console.log(this.registerForm.value);
+    if (this.registerForm.invalid) {
+      return;
+    }else{
+      console.log("Has sido registrado!!");
+      this.ClienteService.register(this.registerForm.value);
+    }
   }
 }

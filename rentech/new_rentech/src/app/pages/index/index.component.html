@@ -80,7 +80,7 @@
       <h4 class="text-uppercase text-primary"><b>Iniciar sesión</b></h4>
     </div>
     <div class="login-form mt-4">
-      <form [formGroup]="myForm" (ngSubmit)="login()">
+      <form [formGroup]="myForm" (ngSubmit)="login(content)">
         <div class="form-group">
           <input type="text" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control"
             placeholder="Correo" />

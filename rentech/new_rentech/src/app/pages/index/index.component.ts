@@ -5,6 +5,7 @@ import { Cliente } from 'src/app/models/cliente';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfirmedValidator } from 'src/app/confirmed.validator';
 import { ClienteService } from '../../services/cliente.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class IndexComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   p:String = null;
+  datosUsuario;
 
   currentSection = 'home';
 
@@ -91,14 +93,43 @@ export class IndexComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
-  login(){
+  login(content){
     console.log('login')
     console.log(this.usuario)
     this.ClienteService.login(this.usuario).subscribe (
       datos => {
         console.log(datos)
-      }
-    )
+        try {
+          this.datosUsuario=datos;
+          if (datos[0]['correo'] == this.usuario.correo) {
+            console.log('Login realizado');
+            this.router.navigate(['/dashboard']);
+            localStorage.setItem('nombre',this.datosUsuario[0][0]);
+            localStorage.setItem('apellido',this.datosUsuario[0][1]);
+            localStorage.setItem('id',this.datosUsuario[0][2]);
+            localStorage.setItem('correo',this.datosUsuario[0][3]);
+            localStorage.setItem('telefono',this.datosUsuario[0][4]);
+            localStorage.setItem('iban',this.datosUsuario[0][5]);
+            localStorage.setItem('dni',this.datosUsuario[0][6]);
+            localStorage.setItem('cp',this.datosUsuario[0][7]);
+            localStorage.setItem('direccio',this.datosUsuario[0][8]);
+            localStorage.setItem('password',this.datosUsuario[0][9]);
+            this.modalService.dismissAll(content)
+          } else{
+            throw new Error('An error occurred');
+          }
+        }
+         catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login incorrecto',
+            text: 'Datos introducidos incorrectos, revisa tus datos',
+          })
+        }
+      });
+
+
+
   }
 
 

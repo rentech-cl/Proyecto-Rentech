@@ -1,42 +1,40 @@
 <?php
-require_once 'database.php';
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+  require_once 'database.php';
+  header('Access-Control-Allow-Origin: *');
+  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-$texto = file_get_contents("php://input");
-$jsoncliente = json_decode($texto);
+  $datos;
+  $texto = file_get_contents("php://input");
+  $jsoncliente = json_decode($texto);
+  $x=0;
 
-if(!$jsoncliente){
-  exit("No hay datos");
-}
 
-$instruccion ="SELECT count(*) AS cuantos FROM cliente WHERE correo = '$jsoncliente->correo'";
-$result = mysqli_query($con, $instruccion);
+  $instruccion = "SELECT password FROM cliente WHERE correo = '$jsoncliente->correo'";
+	$resultado = mysqli_query($con, $instruccion);
 
-while ($fila = $result->fetch_assoc()) {
-    $numero=$fila["cuantos"];
-}
-  if($numero==0){
-    echo('{ "result": "ERROR", "message": "El usuario no existe"  }');
-  } else{
-    //recogemos los datos si el usuario existe para comparar las contraseñas
-      $instruccion2 = "SELECT * FROM cliente WHERE correo = '$jsoncliente->correo'";
-      $result2 = mysqli_query($con, $instruccion2);
+	while ($fila = $resultado->fetch_assoc()) {
+		$password2=$fila["password"];
+  }
+  $pass=sha1($jsoncliente->contrasena);
 
-      while ($fila = $result2->fetch_assoc()) {
-        $datos [] =$fila;
-        $pwd2=$fila["pwd"];
-    }
 
-    $pass=sha1($jsoncliente->contrasena);
-  if($pwd2 === $pass){
+   if ($pass!=$password2){
     header('Content-Type: application/json');
-    json_encode($datos);
-
-
-  } else{
-      echo('{ "result": "ERROR", "message": "La contraseña no es correcta"  }');
+    echo json_encode('contraseña incorrecta');
+  }else{
+    $resultado = mysqli_query($con, "SELECT * FROM cliente WHERE correo = '$jsoncliente->correo'");
+    while ($registros = mysqli_fetch_array($resultado))
+    {
+      $datos[] = $registros;
     }
-}
+    header('Content-Type: application/json');
+     echo json_encode($datos);
+  }
+
+
+  // }
+
+
+
+
+    // echo json_encode($response); // MUESTRA EL JSON GENERADO

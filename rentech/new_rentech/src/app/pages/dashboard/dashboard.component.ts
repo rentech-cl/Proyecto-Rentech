@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(    private router: Router    ) { }
 
   ngOnInit(): void {
   }
@@ -15,6 +16,19 @@ export class DashboardComponent implements OnInit {
   toggleMenu() {
     document.getElementById('navbarCollapse').classList.toggle('show');
   }
-
+  logout(){
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('apellido');
+    localStorage.removeItem('nameUser');
+    localStorage.removeItem('id');
+    localStorage.removeItem('correo');
+    localStorage.removeItem('telefono');
+    localStorage.removeItem('iban');
+    localStorage.removeItem('dni');
+    localStorage.removeItem('cp');
+    localStorage.removeItem('direccio');
+    localStorage.removeItem('password');
+    this.router.navigate(['/']);
+  }
 
 }

@@ -30,7 +30,7 @@ while ($fila = $result->fetch_assoc()) {
         $pwd2=$fila["pwd"];
     }
 
-    $pass=sha1($jsoncliente->password);
+    $pass=sha1($jsoncliente->contrasena);
   if($pwd2 === $pass){
     header('Content-Type: application/json');
     json_encode($datos);

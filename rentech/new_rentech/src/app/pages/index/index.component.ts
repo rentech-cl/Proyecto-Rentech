@@ -22,6 +22,7 @@ export class IndexComponent implements OnInit {
   usuario = new Cliente;
   registerForm: FormGroup;
   submitted = false;
+  p:String = null;
 
   currentSection = 'home';
 
@@ -93,6 +94,11 @@ export class IndexComponent implements OnInit {
   login(){
     console.log('login')
     console.log(this.usuario)
+    this.ClienteService.login(this.usuario).subscribe (
+      datos => {
+        console.log(datos)
+      }
+    )
   }
 
 
@@ -112,7 +118,14 @@ export class IndexComponent implements OnInit {
       return;
     }else{
       console.log("Has sido registrado!!");
-      this.ClienteService.register(this.registerForm.value);
+      this.ClienteService.register(this.registerForm.value).subscribe (
+        datos => {
+          console.log(datos)
+        }
+      );
     }
   }
+
+  get f() {return this.registerForm.controls; }
+
 }

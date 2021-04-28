@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClienteService {
 
 
-  url = 'http://localhost:5050/www/'; // disponer de el url de su servidor que tiene los archivos PHP
+  url = 'http://localhost/'; // disponer de el url de su servidor que tiene los archivos PHP
 
   constructor(private http: HttpClient) { }
 
@@ -15,6 +15,6 @@ export class ClienteService {
     return this.http.post(`${this.url}login.php`, JSON.stringify(login));
   }
   register(register) {
-    return this.http.post(`${this.url}register.php`, JSON.stringify(register));
+    return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
   }
 }

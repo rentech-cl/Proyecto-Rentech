@@ -24,7 +24,7 @@ if($numero!=0){
 }
 else{
 //si el dni no esta registrado comprobamos el correo electronico
-  $instruccion ="SELECT count(*) AS cuantos FROM cliente WHERE email = '$jsoncliente->email'";
+  $instruccion ="SELECT count(*) AS cuantos FROM cliente WHERE correo = '$jsoncliente->correo'";
 $result = mysqli_query($con, $instruccion);
 
 while ($fila = $result->fetch_assoc()) {
@@ -35,12 +35,11 @@ if($numero!=0){
 }
 else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
-  $pwd1 = $jsoncliente->password;
+  $pwd1 = $jsoncliente->contrasena;
   $pass=sha1($pwd1);
-  $sentencia ="INSERT INTO `cliente`(`nombre`, `apellido`, `id_cliente`, `correo`, `telefono`, `iban`, `dni`, `cp`, `direccio`, `password`)
+  $sentencia ="INSERT INTO `cliente`(`nombre`, `apellido`, `correo`, `telefono`, `iban`, `dni`, `cp`, `direccio`, `password`)
   VALUES (                                      '$jsoncliente->nombre',
                                                 '$jsoncliente->apellido',
-                                                '$jsoncliente->id_cliente',
                                                 '$jsoncliente->correo',
                                                 '$jsoncliente->telefono',
                                                 '$jsoncliente->iban',
@@ -51,21 +50,10 @@ else{
   if ($res = mysqli_query($con,$sentencia)) {
 
     echo('{ "result": "OK" }');
+
   } else{
       echo('{ "result": "ERROR", "message": "Algo salio mal"  }');
     }
-
-
-
 }
-
-
-
 }
 ?>
-
-
-
-
-
-

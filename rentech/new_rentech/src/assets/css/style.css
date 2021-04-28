@@ -1,4 +1,4 @@
-/* Template Name: Lezir - Responsive Bootstrap 4 Landing Page Template
+/* Template Name: rentech - Responsive Bootstrap 4 Landing Page Template
    Author: Themesbrand
    Version: 1.0.0
    File Description: Main Css file of the template
@@ -17,11 +17,11 @@
 11.Footer
 12.modal
 ***********************/
-/* 
+/*
 // variables.scss
 */
 @import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,600;0,700;0,800;1,400;1,500&family=Quicksand:wght@400;500;600;700&display=swap");
-/* 
+/*
 // 1. General
 */
 a {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* 
+/*
 // 2. Menu
 */
 .nav-item .nav-link {
@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 
+/*
 // 03.Components
 */
 .btn {
@@ -790,7 +790,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* 
+/*
 // 04.Helper
 */
 .text-primary {
@@ -1227,7 +1227,7 @@ h1, h2, h3, h4, h5, h6 {
   top: -2px;
 }
 
-/* 
+/*
 // 05.Loader
 */
 #preloader {
@@ -1288,7 +1288,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 
+/*
 // 06.Hero
 */
 .hero-1-bg {
@@ -1564,7 +1564,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 
+/*
 // 7. Why Choose Us
 */
 .wc-box {
@@ -1739,7 +1739,7 @@ h1, h2, h3, h4, h5, h6 {
           box-shadow: 0 5px 18px rgba(255, 255, 255, 0.4);
 }
 
-/* 
+/*
 // 8. Features
 */
 .feather-bg-img {
@@ -1747,7 +1747,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 
-/* 
+/*
 // 9. Pricing
 */
 .pricing-box {
@@ -1791,7 +1791,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4% 20% 20% 20% / 4% 20% 20% 20%;
 }
 
-/* 
+/*
 // 10. Contact us
 */
 .form-control:focus {
@@ -1857,7 +1857,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-/* 
+/*
 // 11. Footer
 */
 .footer {
@@ -1895,7 +1895,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #23222f;
 }
 
-/* 
+/*
 // 12. modal
 */
 .modal .modal-dialog {

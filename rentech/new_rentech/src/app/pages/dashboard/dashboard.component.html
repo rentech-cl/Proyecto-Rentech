@@ -1,0 +1,91 @@
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand logo" [routerLink]="['/']">
+      <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
+      <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+        <li class="nav-item">
+          <a class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Alquilar producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link">Comprar producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link">Envíar una avería</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-center">
+        <li class="nav-item">
+          <a class="nav-link" >Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+
+      <div class="container">
+          <div class="container-fluid h100">
+              <h1 class="mt-4">Bienvenido </h1>
+
+              <!-- USUARIO -->
+              <div class="row">
+
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-primary text-white mb-4">
+                          <div class="card-body">Enviar una averia</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link">Más información</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-warning text-white mb-4">
+                          <div class="card-body">Alquilar producto</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link">Más información</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-success text-white mb-4">
+                          <div class="card-body">Vender producto</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link">Más información</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xl-3 col-md-6">
+                      <div class="card bg-danger text-white mb-4">
+                          <div class="card-body">Modificar perfil</div>
+                          <div class="card-footer d-flex align-items-center justify-content-between">
+                              <a class="small text-white stretched-link">Más información</a>
+                              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <app-footer></app-footer>
+

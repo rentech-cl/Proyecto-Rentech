@@ -17,4 +17,11 @@ export class ClienteService {
   register(register) {
     return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
   }
+  logged(){
+    if(localStorage.getItem('nombre')!=null){
+      return true;
+    }else{
+      return false
+    }
+  }
 }

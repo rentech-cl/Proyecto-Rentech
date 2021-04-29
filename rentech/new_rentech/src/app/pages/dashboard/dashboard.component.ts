@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('cp');
     localStorage.removeItem('direccio');
     localStorage.removeItem('password');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/']);
   }
 

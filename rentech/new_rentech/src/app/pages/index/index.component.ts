@@ -114,6 +114,7 @@ export class IndexComponent implements OnInit {
             localStorage.setItem('cp',this.datosUsuario[0][7]);
             localStorage.setItem('direccio',this.datosUsuario[0][8]);
             localStorage.setItem('password',this.datosUsuario[0][9]);
+            localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
           } else{
             throw new Error('An error occurred');

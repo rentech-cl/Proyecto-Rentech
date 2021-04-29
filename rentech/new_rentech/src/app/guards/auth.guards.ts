@@ -8,15 +8,20 @@ import { ClienteService } from '../services/cliente.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private ClienteService: ClienteService, private router: Router) { }
+  constructor(
+    private router: Router,
+    private AuthService: ClienteService
+) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const currentUser = this.ClienteService.logged;
-    if (currentUser) {
-      return true;
-    }else{
-      this.router.navigate(['/']), { queryParams: { returnUrl: state.url } };
-      return false;
+canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  const currentUser = this.AuthService.currentUserValue;
+  if (currentUser) {
+        // logged in so return true
+        return true;
     }
-  }
+    // not logged in so redirect to login page with the return url
+    this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
+    return false;
+    }
+
 }

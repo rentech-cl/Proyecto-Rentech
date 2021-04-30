@@ -1,0 +1,226 @@
+<nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand logo" [routerLink]="['/']">
+      <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
+      <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/AquilarProducto']">Alquilar producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" >Envíar una avería</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-center">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" >Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="top"></div>
+    <div class="bottom">
+      <div class="left">
+        <div class="details">
+          <h1>Chair</h1>
+          <p>£250</p>
+        </div>
+        <div class="buy"><i-feather name="shoppping-cart"></i-feather></div>
+      </div>
+      <div class="right">
+        <div class="done"><i-feather name="shopping-bag"></i-feather>
+</div>
+        <div class="details">
+          <h1>Chair</h1>
+          <p>Added to your cart</p>
+        </div>
+        <div class="remove"><i class="material-icons">clear</i></div>
+      </div>
+    </div>
+  </div>
+  <div class="inside">
+    <div class="icon"><i-feather name="send"></i-feather></div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>Width</th>
+          <th>Height</th>
+        </tr>
+        <tr>
+          <td>3000mm</td>
+          <td>4000mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="top"></div>
+    <div class="bottom">
+      <div class="left">
+        <div class="details">
+          <h1>Chair</h1>
+          <p>£250</p>
+        </div>
+        <div class="buy"><i-feather name="shoppping-cart"></i-feather></div>
+      </div>
+      <div class="right">
+        <div class="done"><i-feather name="shopping-bag"></i-feather>
+</div>
+        <div class="details">
+          <h1>Chair</h1>
+          <p>Added to your cart</p>
+        </div>
+        <div class="remove"><i class="material-icons">clear</i></div>
+      </div>
+    </div>
+  </div>
+  <div class="inside">
+    <div class="icon"><i-feather name="send"></i-feather></div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>Width</th>
+          <th>Height</th>
+        </tr>
+        <tr>
+          <td>3000mm</td>
+          <td>4000mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="top"></div>
+    <div class="bottom">
+      <div class="left">
+        <div class="details">
+          <h1>Chair</h1>
+          <p>£250</p>
+        </div>
+        <div class="buy"><i-feather name="shoppping-cart"></i-feather></div>
+      </div>
+      <div class="right">
+        <div class="done"><i-feather name="shopping-bag"></i-feather>
+</div>
+        <div class="details">
+          <h1>Chair</h1>
+          <p>Added to your cart</p>
+        </div>
+        <div class="remove"><i class="material-icons">clear</i></div>
+      </div>
+    </div>
+  </div>
+  <div class="inside">
+    <div class="icon"><i-feather name="send"></i-feather></div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>Width</th>
+          <th>Height</th>
+        </tr>
+        <tr>
+          <td>3000mm</td>
+          <td>4000mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+        <tr>
+          <th>Something</th>
+          <th>Something</th>
+        </tr>
+        <tr>
+          <td>200mm</td>
+          <td>200mm</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

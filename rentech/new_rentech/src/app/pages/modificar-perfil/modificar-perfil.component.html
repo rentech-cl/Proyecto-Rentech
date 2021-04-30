@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand logo" [routerLink]="['/']">
+      <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
+      <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+        <li class="nav-item">
+          <a class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/AquilarProducto']" >Alquilar producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link">Envíar una avería</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-center">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" >Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<app-footer></app-footer>

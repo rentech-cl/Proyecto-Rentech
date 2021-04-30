@@ -13,9 +13,12 @@ import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
+import { VenderProductoComponent } from './vender-producto/vender-producto.component';
+import { ModificarPerfilComponent } from './modificar-perfil/modificar-perfil.component';
 
 @NgModule({
-  declarations: [IndexComponent, DashboardComponent],
+  declarations: [IndexComponent, DashboardComponent, AlquilarProductoComponent, VenderProductoComponent, ModificarPerfilComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

@@ -17,10 +17,10 @@
           <a class="nav-link">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Alquilar producto</a>
+          <a class="nav-link" [routerLink]="['/AquilarProducto']" >Alquilar producto</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link">Comprar producto</a>
+          <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
         </li>
         <li class="nav-item" >
           <a class="nav-link">Envíar una avería</a>
@@ -49,7 +49,7 @@
                       <div class="card bg-primary text-white mb-4">
                           <div class="card-body">Enviar una averia</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link">Más información</a>
+                            <a class="small text-white stretched-link" (click)="enviaraveria()">Más información</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>
@@ -57,9 +57,9 @@
 
                   <div class="col-xl-3 col-md-6">
                       <div class="card bg-warning text-white mb-4">
-                          <div class="card-body">Alquilar producto</div>
+                          <div class="card-body"  >Alquilar producto</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link">Más información</a>
+                              <a class="small text-white stretched-link" [routerLink]="['/AquilarProducto']">Más información</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>
@@ -69,7 +69,7 @@
                       <div class="card bg-success text-white mb-4">
                           <div class="card-body">Vender producto</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link">Más información</a>
+                              <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">Más información</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>
@@ -79,7 +79,7 @@
                       <div class="card bg-danger text-white mb-4">
                           <div class="card-body">Modificar perfil</div>
                           <div class="card-footer d-flex align-items-center justify-content-between">
-                              <a class="small text-white stretched-link">Más información</a>
+                              <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">Más información</a>
                               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                           </div>
                       </div>

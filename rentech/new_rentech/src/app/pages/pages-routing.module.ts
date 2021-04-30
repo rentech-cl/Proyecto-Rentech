@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guards';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IndexComponent } from './index/index.component';
-
+import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
+import { VenderProductoComponent } from './vender-producto/vender-producto.component';
+import { ModificarPerfilComponent } from './modificar-perfil/modificar-perfil.component';
 
 const routes: Routes = [
   {
@@ -14,6 +16,18 @@ const routes: Routes = [
 {
   path: 'dashboard',
   component: DashboardComponent , canActivate: [AuthGuard]
+},
+{
+  path: 'AquilarProducto',
+  component: AlquilarProductoComponent , canActivate: [AuthGuard]
+},
+{
+  path: 'VenderProducto',
+  component: VenderProductoComponent , canActivate: [AuthGuard]
+},
+{
+  path: 'ModificarPerfil',
+  component: ModificarPerfilComponent , canActivate: [AuthGuard]
 },
 ];
 

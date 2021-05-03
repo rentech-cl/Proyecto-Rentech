@@ -97,6 +97,7 @@
             Este campo es obligatorio
           </div>
         </div>
+        <p class="nav-link" (click)="loginModal(loginContent)" >Soy técnico</p>
         <div class="form-group">
           <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
             Iniciar sesión
@@ -197,3 +198,43 @@
     </div>
   </div>
 </ng-template>
+
+<ng-template #loginContent let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="text-center">
+      <h3 class="title mb-4">Acceso para técnicos</h3>
+      <h4 class="text-uppercase text-primary"><b>Iniciar sesión</b></h4>
+    </div>
+    <div class="login-form mt-4">
+      <form [formGroup]="myForm" (ngSubmit)="login(loginContent)">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="usuario.correo" formControlName="correo" class="form-control"
+            placeholder="Correo" />
+        </div>
+
+        <div class="">
+          <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched"
+            class='alert alert-danger'>
+            Este campo es obligatorio
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="usuario.contrasena" formControlName="contrasena" class="form-control"
+            placeholder="Contraseña" />
+        </div>
+        <div class="">
+          <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched"
+            class='alert alert-danger'>
+            Este campo es obligatorio
+          </div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
+

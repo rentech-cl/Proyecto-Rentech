@@ -92,13 +92,17 @@ export class IndexComponent implements OnInit {
   loginModal(content) {
     this.modalService.open(content, { centered: true });
   }
+    /**
+   * Login modal
+   */
+  loginTecnicoModal(content) {
+    this.modalService.dismissAll(content)
+    this.modalService.open(content, { centered: true });
+  }
 
   login(content){
-    console.log('login')
-    console.log(this.usuario)
     this.ClienteService.login(this.usuario).subscribe (
       datos => {
-        console.log(datos)
         try {
           this.datosUsuario=datos;
           if (datos[0]['correo'] == this.usuario.correo) {
@@ -114,6 +118,7 @@ export class IndexComponent implements OnInit {
             localStorage.setItem('cp',this.datosUsuario[0][7]);
             localStorage.setItem('direccio',this.datosUsuario[0][8]);
             localStorage.setItem('password',this.datosUsuario[0][9]);
+            localStorage.setItem('role','ee11cbb19052e40b07aac0ca060c23ee');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
           } else{
@@ -132,6 +137,33 @@ export class IndexComponent implements OnInit {
 
 
   }
+  loginTecnico(content){
+    this.ClienteService.loginTecnico(this.usuario).subscribe (
+      datos => {
+        console.log(datos);
+        try {
+          this.datosUsuario=datos;
+          if (datos[0]['correo'] == this.usuario.correo) {
+            console.log('Login realizado');
+            this.router.navigate(['/dashboard']);
+            localStorage.setItem('nombre',this.datosUsuario[0][0]);
+            localStorage.setItem('role','21232f297a57a5a743894a0e4a801fc3');
+            localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
+            this.modalService.dismissAll(content)
+          } else{
+            throw new Error('An error occurred');
+          }
+        }
+         catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login incorrecto',
+            text: 'Datos introducidos incorrectos, revisa tus datos',
+          })
+        }
+      });
+  }
+
 
 
 

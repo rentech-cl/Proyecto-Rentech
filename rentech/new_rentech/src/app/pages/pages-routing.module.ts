@@ -6,12 +6,14 @@ import { IndexComponent } from './index/index.component';
 import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { ModificarPerfilComponent } from './modificar-perfil/modificar-perfil.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent
 },
+
 
 {
   path: 'dashboard',
@@ -28,6 +30,10 @@ const routes: Routes = [
 {
   path: 'ModificarPerfil',
   component: ModificarPerfilComponent , canActivate: [AuthGuard]
+},
+{
+  path: '**',
+  component: ErrorComponent
 },
 ];
 

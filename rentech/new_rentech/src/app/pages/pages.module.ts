@@ -16,9 +16,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { ModificarPerfilComponent } from './modificar-perfil/modificar-perfil.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
-  declarations: [IndexComponent, DashboardComponent, AlquilarProductoComponent, VenderProductoComponent, ModificarPerfilComponent],
+  declarations: [IndexComponent, DashboardComponent, AlquilarProductoComponent, VenderProductoComponent, ModificarPerfilComponent, ErrorComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

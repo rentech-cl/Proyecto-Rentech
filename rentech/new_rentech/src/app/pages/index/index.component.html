@@ -96,13 +96,13 @@
             Este campo es obligatorio
           </div>
         </div>
-        <p class="nav-link" (click)="loginModal(loginContent)" >Soy técnico</p>
         <div class="form-group">
           <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
             Iniciar sesión
           </button>
         </div>
       </form>
+      <p class="nav-link" (click)="loginTecnicoModal(loginContent)" >Soy técnico</p>
     </div>
   </div>
 </ng-template>

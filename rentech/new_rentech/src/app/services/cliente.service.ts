@@ -25,8 +25,14 @@ export class ClienteService {
   login(login) {
     return this.http.post(`${this.url}login.php`, JSON.stringify(login));
   }
+  loginTecnico(login) {
+    return this.http.post(`${this.url}login_tecnico.php`, JSON.stringify(login));
+  }
   register(register) {
     return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
+  }
+    registerTecnico(register) {
+    return this.http.post(`${this.url}registro_tecnico.php`, JSON.stringify(register));
   }
   logged(){
     if(localStorage.getItem('nombre')!=null){

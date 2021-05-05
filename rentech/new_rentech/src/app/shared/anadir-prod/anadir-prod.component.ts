@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ConfirmedValidator } from 'src/app/confirmed.validator';
+import { ClienteService } from '../../services/cliente.service';
+import Swal from 'sweetalert2';
+import { Producto } from 'src/app/models/producto';
 @Component({
   selector: 'app-anadir-prod',
   templateUrl: './anadir-prod.component.html',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnadirProdComponent implements OnInit {
 
-  constructor() { }
+
+  myForm: FormGroup;
+  submitted = false;
+  producto_nuevo = new Producto;
+  constructor(
+    public formBuilder: FormBuilder,
+    private router: Router,
+    private ClienteService: ClienteService
+    ) {
+
+    }
 
   ngOnInit(): void {
+    this.myForm = this.formBuilder.group({
+      nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      descripcion: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
+      cantidad: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      precio: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+    }
+    );
   }
 
 }

@@ -31,8 +31,11 @@ export class ClienteService {
   register(register) {
     return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
   }
-    registerTecnico(register) {
+  registerTecnico(register) {
     return this.http.post(`${this.url}registro_tecnico.php`, JSON.stringify(register));
+  }
+  anadirProducto(register) {
+    return this.http.post(`${this.url}add_producto.php`, JSON.stringify(register));
   }
   logged(){
     if(localStorage.getItem('nombre')!=null){

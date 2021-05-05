@@ -10,24 +10,25 @@ import { FooterComponent } from './footer/footer.component';
 
 import { FeatherModule } from 'angular-feather';
 import {
-  Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
-  ArrowRightCircle, PieChart, Triangle
+  Mail, Link, PhoneCall,  Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
+  ArrowRightCircle, PieChart, Triangle, ShoppingBag
 } from 'angular-feather/icons';
 import { ScrollspyDirective } from './scrollspy.directive';
+import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
 
 const icons = {
   Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
-  ArrowRightCircle, PieChart, Triangle
+  ArrowRightCircle, PieChart, Triangle, ShoppingBag
 };
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective],
+  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent],
   imports: [
     CommonModule,
     FeatherModule.pick(icons)
   ],
   // tslint:disable-next-line: max-line-length
-  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective]
+  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent]
 })
 export class SharedModule { }

@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
 })
 export class DashboardComponent implements OnInit {
 
+  anadir_producto:boolean= false;
+
   constructor(    private router: Router    ) { }
 
   ngOnInit(): void {
@@ -69,7 +71,15 @@ export class DashboardComponent implements OnInit {
   }
 
   Alquilar_producto(){
+  }
 
+  anadir_prod(){
+    if(this.anadir_producto==false){
+      this.anadir_producto=true;
+
+    }else{
+      this.anadir_producto=false;
+    }
 
   }
 

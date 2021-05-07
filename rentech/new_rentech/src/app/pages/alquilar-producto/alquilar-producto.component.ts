@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-alquilar-producto',
+  selector: 'app-alquilar-productos',
   templateUrl: './alquilar-producto.component.html',
   styleUrls: ['./alquilar-producto.component.css']
 })

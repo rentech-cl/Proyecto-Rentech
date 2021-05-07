@@ -58,7 +58,7 @@
         <div class="card bg-warning text-white mb-4">
           <div class="card-body">Alquilar producto</div>
           <div class="card-footer d-flex align-items-center justify-content-between">
-            <a class="small text-white stretched-link" [routerLink]="['/AquilarProducto']">Más información</a>
+            <a class="small text-white stretched-link" (click)="alquilar_prod()">Más información</a>
             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
           </div>
         </div>
@@ -102,7 +102,7 @@
             <div class="card bg-warning text-white mb-4">
               <div class="card-body">Averias pendientes</div>
               <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" [routerLink]="['/AquilarProducto']">Más información</a>
+                <a class="small text-white stretched-link" (click)="vender_prod()">Más información</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
               </div>
             </div>
@@ -132,5 +132,8 @@
 
  <app-anadir-prod *ngIf="anadir_producto==true"></app-anadir-prod>
   <app-anadir-averia *ngIf="anadir_averia==true"></app-anadir-averia>
+  <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
+  <app-vender-producto  *ngIf="vender_producto==true" ></app-vender-producto>
 </div>
 <app-footer></app-footer>
+ 

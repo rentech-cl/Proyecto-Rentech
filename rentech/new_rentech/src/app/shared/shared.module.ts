@@ -19,6 +19,8 @@ import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnadirAveriaComponent } from './anadir-averia/anadir-averia.component';
+import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
+import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 
 
 
@@ -29,7 +31,7 @@ const icons = {
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent ],
+  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent ],
   imports: [
     CommonModule,
     FeatherModule.pick(icons),
@@ -38,6 +40,6 @@ const icons = {
     ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length
-  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent ]
+  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent ]
 })
 export class SharedModule { }

@@ -1,20 +1,22 @@
 <div class="container">
-<form class="" [formGroup]="myForm" (ngSubmit)="anadir_producto()" >
-  <div class="form-group">
-    <input class="form-control" type="text" placeholder="Nombre">
-  </div>
-  <div class="form-group">
-    <textarea class="form-control"  placeholder="Descripcion" name="" id="" cols="40" rows="5"></textarea>
-  </div>
-  <div class="form-group">
-    <input class="form-control" type="text" placeholder="Cantidad">
-  </div>
-  <div class="form-group">
-    <input class="form-control" type="text" placeholder="Precio unitario €">
-  </div>
-  <button  type="submit" class="btn btn-primary"><i-feather name="shopping-bag"></i-feather>   Añadir producto
-  </button>
-</form>
+  <form [formGroup]="myForm" (ngSubmit)="anadir()">
+    <div class="form-group">
+      <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text"
+        placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <textarea class="form-control"  [(ngModel)]="producto_nuevo.descripcion" formControlName="descripcion" placeholder="Descripcion" name="" id="" cols="40" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text"  [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="Cantidad">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text"  [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="Precio unitario €">
+    </div>
+    <button type="submit" class="btn btn-primary">
+      <i-feather name="shopping-bag"></i-feather> Añadir producto
+    </button>
+  </form>
 </div>
 <br>
 <br>

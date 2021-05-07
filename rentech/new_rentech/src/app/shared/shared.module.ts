@@ -15,6 +15,8 @@ import {
 } from 'angular-feather/icons';
 import { ScrollspyDirective } from './scrollspy.directive';
 import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const icons = {
   Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
@@ -26,7 +28,10 @@ const icons = {
   declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent],
   imports: [
     CommonModule,
-    FeatherModule.pick(icons)
+    FeatherModule.pick(icons),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length
   exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent]

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ConfirmedValidator } from 'src/app/confirmed.validator';
 import { ClienteService } from '../../services/cliente.service';
 import Swal from 'sweetalert2';
 import { Producto } from 'src/app/models/producto';
@@ -32,6 +31,10 @@ export class AnadirProdComponent implements OnInit {
       precio: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
     }
     );
+  }
+
+  anadir(){
+    console.log(this.producto_nuevo)
   }
 
 }

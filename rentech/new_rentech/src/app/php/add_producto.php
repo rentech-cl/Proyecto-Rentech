@@ -13,7 +13,7 @@ if(!$jsonproducto){
 }
 
 //comprobamos que el nombre del producto no se repita para no confundir al cliente
-$instruccion ="SELECT count(*) AS cuantos FROM producto WHERE dni = '$jsonproducto->nombre'";
+$instruccion ="SELECT count(*) AS cuantos FROM producto WHERE nombre = '$jsonproducto->nombre'";
 $result = mysqli_query($con, $instruccion);
 
 while ($fila = $result->fetch_assoc()) {

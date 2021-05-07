@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../../services/cliente.service';
 import { Averia } from 'src/app/models/averia';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-anadir-averia',
   templateUrl: './anadir-averia.component.html',
@@ -31,6 +32,20 @@ export class AnadirAveriaComponent implements OnInit {
 
   enviaraveria(){
     console.log(this.averia_nueva)
+
+    this.ClienteService.anadirAveria(this.averia_nueva).subscribe(
+      datos => {
+        try {
+          console.log(datos)
+        }
+        catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Datos introducidos incorrectos, revisa tus datos',
+          })
+        }
+      });
   }
 
 }

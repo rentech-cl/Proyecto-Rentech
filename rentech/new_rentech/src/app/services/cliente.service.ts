@@ -37,6 +37,9 @@ export class ClienteService {
   anadirProducto(register) {
     return this.http.post(`${this.url}add_producto.php`, JSON.stringify(register));
   }
+  anadirAveria(register) {
+    return this.http.post(`${this.url}add_averia.php`, JSON.stringify(register));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

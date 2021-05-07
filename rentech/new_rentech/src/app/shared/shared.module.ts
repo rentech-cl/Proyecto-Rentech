@@ -15,8 +15,12 @@ import {
 } from 'angular-feather/icons';
 import { ScrollspyDirective } from './scrollspy.directive';
 import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnadirAveriaComponent } from './anadir-averia/anadir-averia.component';
+
+
 
 const icons = {
   Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
@@ -25,7 +29,7 @@ const icons = {
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent],
+  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent ],
   imports: [
     CommonModule,
     FeatherModule.pick(icons),
@@ -34,6 +38,6 @@ const icons = {
     ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length
-  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent]
+  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent ]
 })
 export class SharedModule { }

@@ -16,8 +16,9 @@ else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
 
   $sentencia ="INSERT INTO `averias`(`averia`,`urgencia`, `descripcion`)
-  VALUES (                                      '$jsonaveria->averia',
+  VALUES (                                      '$jsonaveria->nombre',
                                                 '$jsonaveria->urgencia',
+                                                '$jsonaveria->contacto',
                                                 '$jsonaveria->descripcion'
                                                 ')";
   if ($res = mysqli_query($con,$sentencia)) {

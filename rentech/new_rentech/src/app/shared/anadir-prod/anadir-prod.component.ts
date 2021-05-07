@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClienteService } from '../../services/cliente.service';
+import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
 import { Producto } from 'src/app/models/producto';
 @Component({
@@ -19,9 +19,9 @@ export class AnadirProdComponent implements OnInit {
     public formBuilder: FormBuilder,
     private router: Router,
     private ClienteService: ClienteService
-    ) {
+  ) {
 
-    }
+  }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
@@ -33,8 +33,21 @@ export class AnadirProdComponent implements OnInit {
     );
   }
 
-  anadir(){
+  anadir() {
     console.log(this.producto_nuevo)
+    this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
+      datos => {
+        try {
+          console.log(datos)
+        }
+        catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Datos introducidos incorrectos, revisa tus datos',
+          })
+        }
+      });
   }
 
 }

@@ -23,7 +23,6 @@ import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 
 
-
 const icons = {
   Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
   ArrowRightCircle, PieChart, Triangle, ShoppingBag

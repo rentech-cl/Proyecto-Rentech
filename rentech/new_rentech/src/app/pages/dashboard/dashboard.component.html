@@ -44,7 +44,7 @@
     <!-- USUARIO -->
     <div class="row">
 
-      <div class="col-xl-3 col-md-6">
+      <div class="col-xl-4 col-md-4">
         <div class="card bg-primary text-white mb-4">
           <div class="card-body">Enviar una averia</div>
           <div class="card-footer d-flex align-items-center justify-content-between">
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-md-6">
+      <div class="col-xl-4 col-md-4">
         <div class="card bg-warning text-white mb-4">
           <div class="card-body">Alquilar producto</div>
           <div class="card-footer d-flex align-items-center justify-content-between">
@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-md-6">
+      <div class="col-xl-4 col-md-4">
         <div class="card bg-success text-white mb-4">
           <div class="card-body">Vender producto</div>
           <div class="card-footer d-flex align-items-center justify-content-between">
@@ -74,15 +74,6 @@
         </div>
       </div>
 
-      <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white mb-4">
-          <div class="card-body">Modificar perfil</div>
-          <div class="card-footer d-flex align-items-center justify-content-between">
-            <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">Más información</a>
-            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
     </div>
 
         <!-- USUARIO -->
@@ -102,7 +93,7 @@
             <div class="card bg-warning text-white mb-4">
               <div class="card-body">Averias pendientes</div>
               <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" (click)="vender_prod()">Más información</a>
+                <a class="small text-white stretched-link" (click)="averias()">Más información</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
               </div>
             </div>
@@ -134,6 +125,6 @@
   <app-anadir-averia *ngIf="anadir_averia==true"></app-anadir-averia>
   <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
   <app-vender-producto  *ngIf="vender_producto==true" ></app-vender-producto>
+  <app-averias *ngIf="averia==true"></app-averias>
 </div>
 <app-footer></app-footer>
- 

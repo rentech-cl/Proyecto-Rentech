@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export class DashboardComponent implements OnInit {
 
   anadir_producto:boolean= false;
+  averia:boolean= false;
   anadir_averia:boolean= false;
   alquilar_producto:boolean= false;
   vender_producto:boolean= false;
@@ -62,19 +63,28 @@ export class DashboardComponent implements OnInit {
   alquilar_prod(){
     if(this.alquilar_producto==false){
       this.alquilar_producto=true;
-  
+
       }else{
         this.alquilar_producto=false;
-      } 
+      }
     }
 
-  vender_prod(){
-    if(this.vender_producto==false){
-      this.vender_producto=true;
-  
-      }else{
-        this.vender_producto=false;
-      } 
-    }  
+    vender_prod(){
+      if(this.vender_producto==false){
+        this.vender_producto=true;
+
+        }else{
+          this.vender_producto=false;
+        }
+      }
+
+      averias(){
+        if(this.averia==false){
+          this.averia=true;
+
+          }else{
+            this.averia=false;
+          }
+        }
 
 }

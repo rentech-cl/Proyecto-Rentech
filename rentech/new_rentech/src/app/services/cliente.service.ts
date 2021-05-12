@@ -40,10 +40,13 @@ export class ClienteService {
   anadirAveria(register) {
     return this.http.post(`${this.url}add_averia.php`, JSON.stringify(register));
   }
-  logged(){
-    if(localStorage.getItem('nombre')!=null){
+  listarAverias(averia) {
+    return this.http.post(`${this.url}listaveria.php`, JSON.stringify(averia));
+  }
+  logged() {
+    if (localStorage.getItem('nombre') != null) {
       return true;
-    }else{
+    } else {
       return false
     }
   }

@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FeatherModule } from 'angular-feather';
 import {
   Mail, Link, PhoneCall,  Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
-  ArrowRightCircle, PieChart, Triangle, ShoppingBag
+  ArrowRightCircle, PieChart, Triangle, ShoppingBag, ShoppingCart, FileText
 } from 'angular-feather/icons';
 import { ScrollspyDirective } from './scrollspy.directive';
 import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
@@ -26,7 +26,7 @@ import { AveriasComponent } from './averias/averias.component';
 
 const icons = {
   Mail, Link, PhoneCall, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Send, Calendar, User, Server, Rss, Layout, LifeBuoy,
-  ArrowRightCircle, PieChart, Triangle, ShoppingBag
+  ArrowRightCircle, PieChart, Triangle, ShoppingBag, ShoppingCart, FileText
 };
 
 @NgModule({

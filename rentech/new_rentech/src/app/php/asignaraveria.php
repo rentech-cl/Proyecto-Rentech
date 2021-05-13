@@ -15,9 +15,8 @@ if(!$jsonaveria){
 else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
 
-  $sentencia ="INSERT INTO `averias`(`idEmpleado`)
-  VALUES (                                      '$jsonaveria->idempleado'
-                                                )";
+  $sentencia ="UPDATE  `averias` set idEmpleado= '$jsonaveria->idempleado' WHERE idAveria='$jsonaveria->idAveria'";
+
   if ($res = mysqli_query($con,$sentencia)) {
 
     echo('{ "result": "OK" }');

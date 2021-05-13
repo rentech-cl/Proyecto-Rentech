@@ -43,6 +43,9 @@ export class ClienteService {
   listarAverias(averia) {
     return this.http.post(`${this.url}listaveria.php`, JSON.stringify(averia));
   }
+  asignarAveria(averia) {
+    return this.http.post(`${this.url}asignaraveria.php`, JSON.stringify(averia));
+  }
   listarProductos(productos) {
     return this.http.post(`${this.url}listproductos.php`, JSON.stringify(productos));
   }

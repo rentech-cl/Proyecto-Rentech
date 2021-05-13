@@ -7,7 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT * FROM averias WHERE idEmpleado = NULL ";
+$instruccion ="SELECT * FROM averias WHERE idEmpleado is NULL ";
 $result = mysqli_query($con, $instruccion);
 
 
@@ -19,3 +19,4 @@ while ($fila = $result->fetch_assoc()) {
 echo(json_encode($listaveria));
 
 ?>
+

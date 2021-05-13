@@ -22,6 +22,7 @@ import { AnadirAveriaComponent } from './anadir-averia/anadir-averia.component';
 import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { AveriasComponent } from './averias/averias.component';
+import { AnadirTecnicoComponent } from './anadir-tecnico/anadir-tecnico.component';
 
 
 const icons = {
@@ -31,7 +32,7 @@ const icons = {
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent ],
+  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent ],
   imports: [
     CommonModule,
     FeatherModule.pick(icons),
@@ -40,6 +41,6 @@ const icons = {
     ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length
-  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent ]
+  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent ]
 })
 export class SharedModule { }

@@ -1,130 +1,144 @@
 <!--Navbar Start-->
 <nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark" id="navbar">
-  <div class="container">
-    <!-- LOGO -->
-    <a class="navbar-brand logo" [routerLink]="['/']">
-      <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
-      <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+    <div class="container">
+        <!-- LOGO -->
+        <a class="navbar-brand logo" [routerLink]="['/']">
+            <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
+            <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
       <i class="mdi mdi-menu"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-        <li class="nav-item">
-          <a class="nav-link">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/AquilarProducto']">Alquilar producto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">Envíar una avería</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav navbar-center">
-        <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Cerrar sesión</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+                <li class="nav-item">
+                    <a class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/AquilarProducto']">Alquilar producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/AnadirTecnico']">Añadir Técnico</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Envíar una avería</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <br>
 <br>
 
 <div class="container">
-  <div class="container-fluid h100">
-    <h1 class="mt-4">Bienvenido </h1>
-
-    <!-- USUARIO -->
-    <div class="row">
-
-      <div class="col-xl-4 col-md-4">
-        <div class="card bg-primary text-white mb-4">
-          <div class="card-body">Enviar una averia</div>
-          <div class="card-footer d-flex align-items-center justify-content-between">
-            <a class="small text-white stretched-link" (click)="enviaraveria()">Más información</a>
-            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-4 col-md-4">
-        <div class="card bg-warning text-white mb-4">
-          <div class="card-body">Alquilar producto</div>
-          <div class="card-footer d-flex align-items-center justify-content-between">
-            <a class="small text-white stretched-link" (click)="alquilar_prod()">Más información</a>
-            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-4 col-md-4">
-        <div class="card bg-success text-white mb-4">
-          <div class="card-body">Vender producto</div>
-          <div class="card-footer d-flex align-items-center justify-content-between">
-            <a class="small text-white stretched-link" (click)="vender_prod()">Más información</a>
-            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <div class="container-fluid h100">
+        <h1 class="mt-4">Bienvenido </h1>
 
         <!-- USUARIO -->
         <div class="row">
 
-          <div class="col-xl-3 col-md-6 nav-link">
-            <div class="card bg-primary text-white mb-4">
-              <div class="card-body">Añadir producto</div>
-              <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" (click)="anadir_prod()">Más información</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-              </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Enviar una averia</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="enviaraveria()">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6 nav-link">
-            <div class="card bg-warning text-white mb-4">
-              <div class="card-body">Averias pendientes</div>
-              <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" (click)="averias()">Más información</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-              </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Alquilar producto</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="alquilar_prod()">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6 nav-link">
-            <div class="card bg-success text-white mb-4">
-              <div class="card-body">Averías disponibles</div>
-              <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">Más información</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-              </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Vender producto</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="vender_prod()">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6 nav-link">
-            <div class="card bg-danger text-white mb-4">
-              <div class="card-body">Modificar perfil</div>
-              <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">Más información</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-          </div>
         </div>
-  </div>
 
- <app-anadir-prod *ngIf="anadir_producto==true"></app-anadir-prod>
-  <app-anadir-averia *ngIf="anadir_averia==true"></app-anadir-averia>
-  <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
-  <app-vender-producto  *ngIf="vender_producto==true" ></app-vender-producto>
-  <app-averias *ngIf="averia==true"></app-averias>
+        <!-- USUARIO -->
+        <div class="row">
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Añadir producto</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="anadir_prod()">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Averias pendientes</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="averias()">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Averías disponibles</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Modificar perfil</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">Más información</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Añadir técnico</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="anadir_tecnic()">Agregar</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-anadir-prod *ngIf="anadir_producto==true"></app-anadir-prod>
+    <app-anadir-averia *ngIf="anadir_averia==true"></app-anadir-averia>
+    <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
+    <app-vender-producto *ngIf="vender_producto==true"></app-vender-producto>
+    <app-averias *ngIf="averia==true"></app-averias>
+    <app-anadir-tecnico>*ngIf="anadir_tecnic==true"</app-anadir-tecnico>
+
 </div>
 <app-footer></app-footer>

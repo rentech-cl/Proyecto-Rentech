@@ -25,7 +25,7 @@ if($numero!=0){
 else{
 
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
-
+  $precio= $jsonproducto->precio/6*0.4;
 
   $sentencia ="INSERT INTO `producto`(`nombre`, `descripcion`, `cantidad`, `precio`,`img`)
   VALUES (                                      '$jsonproducto->nombre',

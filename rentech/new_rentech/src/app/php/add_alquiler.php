@@ -21,12 +21,12 @@ else{
 
 
   //cogemos el precio total de el producto y lo dividimos por la cantidad de meses que haya seleccionado el cliente.
- $mensualidad= $jsonproducto->precio/$jsonproducto->fechafin*0.6;
+
 
 
 
   $sentencia ="INSERT INTO `salida_alquiler`(`mensualidad`,`fecha_inicio`, `fecha_fin`,`idProducto`)
-  VALUES (                                      '$mensualidad',
+  VALUES (                                      '$$jsonproducto->mensualidad',
                                                 '$hoy',
                                                 '$fechaFin',
                                                 '$jsonproducto->idproducto'

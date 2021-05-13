@@ -29,6 +29,7 @@ export class AnadirProdComponent implements OnInit {
       descripcion: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
       cantidad: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       precio: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      img: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
     }
     );
   }

@@ -3,6 +3,7 @@ export class Producto {
     descripcion?: string;
     cantidad?: number;
     precio?: number;
+    img?: string;
 }
 
 

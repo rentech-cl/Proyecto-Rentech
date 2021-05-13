@@ -16,7 +16,11 @@
       <td>{{this.averia[i]['Contacto']}}</td>
       <td>{{this.averia[i]['urgencia']}}</td>
       <td>{{this.averia[i]['Descripcion']}}</td>
-      <td><button class="btn btn-primary">Seleccionar avería</button></td>
+        <td>
+          <form (ngSubmit)="seleccionar(this.averia[i]['idAveria'])">
+            <button class="btn btn-primary" >Seleccionar avería</button>
+          </form>
+        </td>
     </tr>
   </tbody>
 </table>

@@ -43,6 +43,9 @@ export class ClienteService {
   listarProductos(productos) {
     return this.http.post(`${this.url}listproductos.php`, JSON.stringify(productos));
   }
+  asignarAveria(averia) {
+    return this.http.post(`${this.url}asignaraveria.php`, JSON.stringify(averia));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

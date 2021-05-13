@@ -27,11 +27,12 @@ else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
 
 
-  $sentencia ="INSERT INTO `producto`(`nombre`, `descripcion`, `cantidad`, `precio`)
+  $sentencia ="INSERT INTO `producto`(`nombre`, `descripcion`, `cantidad`, `precio`,`img`)
   VALUES (                                      '$jsonproducto->nombre',
                                                 '$jsonproducto->descripcion',
                                                 '$jsonproducto->cantidad',
-                                                '$jsonproducto->precio')";
+                                                '$jsonproducto->precio',
+                                                '$jsonproducto->img')";
   if ($res = mysqli_query($con,$sentencia)) {
 
     echo('{ "result": "OK" }');

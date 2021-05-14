@@ -1,47 +1,54 @@
-<div  *ngFor="let listarProductos of this.productos; index as i">
-  <div class="wrapper" >
-    <div class="container">
-      <div class="top">
-        <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
-      </div>
-      <div class="bottom">
-        <div class="left">
-          <div class="details">
-            <h5>{{this.productos[i]['nombre']}}</h5>
-            <p>{{this.productos[i]['precio']}}€/ mes</p>
+<div *ngFor="let listarProductos of this.productos; index as i">
+    <div class="wrapper">
+        <div class="container">
+            <div class="top">
+                <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="details">
+                        <h5>{{this.productos[i]['nombre']}}</h5>
+                        <p>{{this.productos[i]['precio']}}€/ mes</p>
 
-            <input type="number" class="form-control" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>pepepepep</p>
-            <br>
-            <br>
-          </div>
-          <div class="buy"><i-feather name="shoppping-cart"></i-feather></div>
+                        <input type="number" class="form-control" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
+                        <br>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <br>
+                        <br>
+                    </div>
+                    <div class="buy">
+                        <i-feather name="shoppping-cart"></i-feather>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="done2">
+
+                        <i-feather name="shopping-bag"></i-feather>
+                    </div>
+                    <div class="details">
+                        <h1>{{this.productos[i]['nombre']}}</h1>
+                        <p>Alquilar</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="right">
-          <div class="done"><i-feather name="shopping-bag"></i-feather>
+        <div class="inside">
+            <div class="icon">
+                <i-feather name="file-text"></i-feather>
+            </div>
+            <div class="contents">
+                <table>
+                    <tr>
+                        <th>{{this.productos[i]['descripcion']}}</th>
+                    </tr>
+                </table>
+            </div>
         </div>
-          <div class="details">
-            <h1>{{this.productos[i]['nombre']}}</h1>
-            <p>Alquilar</p>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="inside">
-      <div class="icon"><i-feather name="file-text"></i-feather>      </div>
-      <div class="contents">
-        <table>
-          <tr>
-            <th>{{this.productos[i]['descripcion']}}</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
 
 
 </div>

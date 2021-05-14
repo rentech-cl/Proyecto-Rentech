@@ -37,7 +37,7 @@ else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
   $pwd1 = $jsontecnico->contrasena;
   $pass=sha1($pwd1);
-  $sentencia ="INSERT INTO `empleados`(`nombre`, `apellido`, `correo`, `telefono`, `Iban`, `dni`,  `direccio`, `password` , `contrato`, `salario`)
+  $sentencia ="INSERT INTO `empleados`(`nombre`, `apellido`, `correo`, `telefono`, `Iban`, `dni`,  `direccion`, `password`, `salario`)
   VALUES (                                      '$jsontecnico->nombre',
                                                 '$jsontecnico->apellido',
                                                 '$jsontecnico->correo',
@@ -45,7 +45,7 @@ else{
                                                 '$jsontecnico->iban',
                                                 '$jsontecnico->dni',
                                                 '$jsontecnico->direccio',
-                                                '$jsontecnico->contrato',
+                    
                                                 '$jsontecnico->salario',
                                                 '$pass')";
   if ($res = mysqli_query($con,$sentencia)) {

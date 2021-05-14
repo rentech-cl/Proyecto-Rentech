@@ -4,6 +4,8 @@ import { Tecnico } from 'src/app/models/tecnico';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
+import { CustomValidators } from 'src/app/custom-validators';
+import { ConfirmedValidator } from 'src/app/confirmed.validator';
 
 @Component({
   selector: 'app-anadir-tecnico',
@@ -15,6 +17,7 @@ export class AnadirTecnicoComponent implements OnInit {
 
 
   myForm: FormGroup;
+  registerFormT: FormGroup;
   submitted = false;
   tecnico_nuevo = new Tecnico;
   constructor(
@@ -28,14 +31,20 @@ export class AnadirTecnicoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myForm = this.formBuilder.group({
+    this.registerFormT = this.formBuilder.group({
+      dni: ['', [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      descripcion: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
-      cantidad: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      precio: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      img: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
-    }
-    );
+      apellido: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      correo: ['', [Validators.email, Validators.required]],
+      telefono: ['', [ Validators.required, Validators.pattern("[0-9 ]{9}")]],
+      direccio: ['', [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
+      salario : ['', [Validators.required, Validators.pattern("[0-9 ]")]],
+      iban: ['', [Validators.minLength(24), Validators.maxLength(24), Validators.required]],
+      contrasena: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      confirm_password: [null, Validators.required],
+    }, {
+      validator: ConfirmedValidator('contrasena', 'confirm_password')
+    });
   }
 
   anadir() {
@@ -55,4 +64,25 @@ export class AnadirTecnicoComponent implements OnInit {
       });
   }
 
+  register() {
+    this.submitted = true;
+    console.log(this.registerFormT.value);
+    if (this.registerFormT.invalid) {
+      return;
+    }else{
+      console.log("Has sido registrado!!");
+      this.ClienteService.register(this.registerFormT.value).subscribe (
+        datos => {
+          console.log(datos)
+        }
+      );
+    }
+  }
+
+
+  get f() {return this.registerFormT.controls; }
+
 }
+
+
+

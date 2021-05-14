@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   anadir_averia:boolean= false;
   alquilar_producto:boolean= false;
   vender_producto:boolean= false;
-  anadir_tecnic:boolean= true;
+  anadir_tecnic:boolean= false;
   constructor(    private router: Router    ) { }
 
   ngOnInit(): void {

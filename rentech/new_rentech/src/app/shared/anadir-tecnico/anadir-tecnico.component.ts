@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
 

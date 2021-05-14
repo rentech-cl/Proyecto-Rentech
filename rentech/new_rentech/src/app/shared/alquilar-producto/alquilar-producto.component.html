@@ -4,40 +4,55 @@
             <div class="top">
                 <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
             </div>
-            <div class="bottom">
-                <div class="left">
-                    <div class="details">
-                        <h5>{{this.productos[i]['nombre']}}</h5>
-                        <p>{{this.productos[i]['precio']}}€/ mes</p>
+            <form (ngSubmit)="alquiler_producto(this.productos[i]['idProducto'])">
+                <div class="bottom">
 
-                        <input type="number" class="form-control" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
-                        <br>
 
-                        <br>
-                        <br>
-                        <br>
 
-                        <br>
-                        <br>
+                    <div class="left">
+                        <div class="details">
+
+
+
+                            <h5>{{this.productos[i]['nombre']}}</h5>
+                            <p>{{this.productos[i]['precio']}}€/ mes</p>
+
+                            <input type="number" class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
+                            <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
+
+
+                            <br>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <br>
+                            <br>
+                        </div>
+                        <div class="buy">
+                            <i-feather name="shoppping-cart"></i-feather>
+                        </div>
+                        <div class="">
+                            <div class="mover">
+
+
+                                <button class="buttonstyle">
+                                   <i-feather name="shopping-bag"></i-feather>
+                              </button>
+
+                            </div>
+                            <div class="details">
+                                <h1>{{this.productos[i]['nombre']}}</h1>
+                                <p>Alquilar</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="buy">
-                        <i-feather name="shoppping-cart"></i-feather>
-                    </div>
+
                 </div>
-                <div class="right">
-                    <div class="done2">
-
-                        <button (click)='alquiler_producto()' class="buttonstyle">
-                        <i-feather name="shopping-bag"></i-feather>
-                    </button>
-                    </div>
-                    <div class="details">
-                        <h1>{{this.productos[i]['nombre']}}</h1>
-                        <p>Alquilar</p>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
+
         <div class="inside">
             <div class="icon">
                 <i-feather name="file-text"></i-feather>

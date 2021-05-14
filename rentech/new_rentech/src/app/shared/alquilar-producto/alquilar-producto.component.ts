@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { alquilarProducto } from 'src/app/models/alquilarProducto';
 import { ClienteService } from '../service/cliente.service';
 
 @Component({
@@ -10,7 +11,11 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class AlquilarProductoComponent implements OnInit {
   nombre: String;
+  idEmpleado: string = null;
+  asignarAlquiler;
+  cantidad;
   productos;
+
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -29,11 +34,13 @@ export class AlquilarProductoComponent implements OnInit {
           console.log("error")
         }
       });
-
+      this.idEmpleado= localStorage.getItem('id');
   }
-  alquiler_producto(){
+  alquiler_producto(idProducto){
 
-    console.log('vendemos');
+    console.log('id producto venta '+idProducto, 'cantidad: '+ this.cantidad);
+    this.asignarAlquiler = new alquilarProducto(this.idEmpleado, idProducto)
+ console.log(this.asignarAlquiler);
 
   }
 }

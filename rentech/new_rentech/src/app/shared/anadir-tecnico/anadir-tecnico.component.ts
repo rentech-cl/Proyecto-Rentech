@@ -47,22 +47,7 @@ export class AnadirTecnicoComponent implements OnInit {
     });
   }
 
-  anadir() {
-    console.log(this.tecnico_nuevo)
-    this.ClienteService.anadirProducto(this.tecnico_nuevo).subscribe(
-      datos => {
-        try {
-          console.log(datos)
-        }
-        catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Datos introducidos incorrectos, revisa tus datos',
-          })
-        }
-      });
-  }
+
 
   register() {
     this.submitted = true;

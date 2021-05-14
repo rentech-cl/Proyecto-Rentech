@@ -51,4 +51,12 @@ export class AnadirProdComponent implements OnInit {
       });
   }
 
+
+
+  get f() {return this.myForm.controls; }
+
+
+
+
 }
+

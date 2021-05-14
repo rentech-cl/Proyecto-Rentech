@@ -1,7 +1,12 @@
 <div class="container">
     <form [formGroup]="myForm" (ngSubmit)="anadir()">
         <div class="form-group">
-            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="Nombre">
+            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
+              <div *ngIf="f.nombre.errors.required">El campo de Nombre es obligatorio</div>
+              <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+              <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+            </div>
         </div>
         <div class="form-group">
             <textarea class="form-control" [(ngModel)]="producto_nuevo.descripcion" formControlName="descripcion" placeholder="Descripcion" name="" id="" cols="40" rows="5"></textarea>

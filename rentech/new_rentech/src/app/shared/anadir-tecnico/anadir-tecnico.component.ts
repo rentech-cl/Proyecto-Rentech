@@ -36,9 +36,9 @@ export class AnadirTecnicoComponent implements OnInit {
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       apellido: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       correo: ['', [Validators.email, Validators.required]],
-      telefono: ['', [ Validators.required, Validators.pattern("[0-9 ]{9}")]],
+      telefono: ['', [ Validators.required, Validators.pattern("[0-9]{9}")]],
       direccio: ['', [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
-      salario : ['', [Validators.required, Validators.pattern("[0-9 ]")]],
+      salario : ['', [Validators.required, Validators.pattern("[0-9]{4}")]],
       iban: ['', [Validators.minLength(24), Validators.maxLength(24), Validators.required]],
       contrasena: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       confirm_password: [null, Validators.required],
@@ -71,7 +71,7 @@ export class AnadirTecnicoComponent implements OnInit {
       return;
     }else{
       console.log("Has sido registrado!!");
-      this.ClienteService.register(this.registerFormT.value).subscribe (
+      this.ClienteService.registerTecnico(this.registerFormT.value).subscribe (
         datos => {
           console.log(datos)
         }

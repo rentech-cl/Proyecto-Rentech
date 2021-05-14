@@ -4,7 +4,8 @@
       <br>
       <br>
       <div class="form-group">
-      <button type="submit" class="btn btn-primary">
+
+      <button type="submit" class="btn btn-primary" value='Registrar'>
         <i-feather name="user"></i-feather> Añadir Técnico
       </button>
     </div>
@@ -87,7 +88,7 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.contrasena" formControlName="contrasena" placeholder="contrasena" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
+            <input type="password" formControlName="contrasena" maxlength="60" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
             <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
               <div *ngIf="f.contrasena.errors.required">El campo de Contraseña es obligatorio</div>
               <div *ngIf="f.contrasena.errors.maxlength"> La contraseña es demasiado larga</div>

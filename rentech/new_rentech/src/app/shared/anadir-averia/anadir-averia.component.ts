@@ -31,9 +31,13 @@ export class AnadirAveriaComponent implements OnInit {
   }
 
   enviaraveria(){
+    this.submitted = true;
     console.log(this.averia_nueva)
+    if (this.myForm.invalid) {
+      return;
+    }else{
 
-    this.ClienteService.anadirAveria(this.averia_nueva).subscribe(
+      this.ClienteService.anadirAveria(this.averia_nueva).subscribe(
       datos => {
         try {
           console.log(datos)
@@ -46,6 +50,8 @@ export class AnadirAveriaComponent implements OnInit {
           })
         }
       });
-  }
+    }
 
+  }
+  get f() {return this.myForm.controls; }
 }

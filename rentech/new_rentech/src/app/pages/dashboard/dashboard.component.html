@@ -125,7 +125,7 @@
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">Añadir técnico</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="anadir_tecnic()">Agregar</a>
+                        <a class="small text-white stretched-link" (click)="anadir_tecnico()">Agregar</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
     <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
     <app-vender-producto *ngIf="vender_producto==true"></app-vender-producto>
     <app-averias *ngIf="averia==true"></app-averias>
-    <app-anadir-tecnico>*ngIf="anadir_tecnic==true"</app-anadir-tecnico>
+    <app-anadir-tecnico *ngIf="anadir_tecnic==true"></app-anadir-tecnico>
 
 </div>
 <app-footer></app-footer>

@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   anadir_averia:boolean= false;
   alquilar_producto:boolean= false;
   vender_producto:boolean= false;
-  anadir_tecnico:boolean= false;
+  anadir_tecnic:boolean= true;
   constructor(    private router: Router    ) { }
 
   ngOnInit(): void {
@@ -88,12 +88,13 @@ export class DashboardComponent implements OnInit {
           }
         }
 
-      anadir_tecnic(){
-        if(this.anadir_tecnico==false){
-          this.anadir_tecnico=true;
+
+      anadir_tecnico(){
+        if(this.anadir_tecnic==false){
+          this.anadir_tecnic=true;
 
         }else{
-          this.anadir_tecnico=false;
+          this.anadir_tecnic=false;
             }
           }
 

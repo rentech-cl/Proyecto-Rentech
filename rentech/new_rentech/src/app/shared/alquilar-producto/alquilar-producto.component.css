@@ -179,6 +179,14 @@ body {
     opacity: 1;
 }
 
+.buttonstyle {
+    background: #A6CDDE;
+    border: 0;
+    height: 90PX;
+    width: 90px;
+    margin-left: 20px;
+}
+
 .wrapper .inside:hover {
     width: 100%;
     right: 0;

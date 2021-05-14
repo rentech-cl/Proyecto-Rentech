@@ -212,6 +212,14 @@ body {
     width: 100%;
 }
 
+.buttonstyle {
+    background: #A6CDDE;
+    border: 0;
+    height: 90PX;
+    width: 90px;
+    margin-left: 20px;
+}
+
 .wrapper .inside .contents h1,
 .wrapper .inside .contents p,
 .wrapper .inside .contents table {

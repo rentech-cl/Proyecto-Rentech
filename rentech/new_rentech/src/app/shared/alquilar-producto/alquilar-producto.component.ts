@@ -31,5 +31,9 @@ export class AlquilarProductoComponent implements OnInit {
       });
 
   }
+  alquiler_producto(){
 
+    console.log('vendemos');
+
+  }
 }

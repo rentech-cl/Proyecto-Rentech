@@ -32,4 +32,10 @@ export class VenderProductoComponent implements OnInit {
 
   }
 
+
+  venta_producto(){
+
+    console.log('vendemos');
+
+  }
 }

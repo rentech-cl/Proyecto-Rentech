@@ -1,21 +1,29 @@
 <?php
-require_once 'database.php';
 header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-
-//Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT * FROM producto ";
-$result = mysqli_query($con, $instruccion);
+require_once 'database.php';
 
 
 
-while ($fila = $result->fetch_assoc()) {
-  $listproducto [] =$fila;
+
+
+$x = 0;
+
+$array[]=null;
+
+
+
+
+$query = $mysqli->query("select  * from producto2");
+
+
+
+while ($valores = mysqli_fetch_array($query)) {
+  $array[$x] = $valores;
+  $x++;
 }
 
-echo(json_encode($listproducto));
 
-?>
+header('Content-Type: application/json');
+echo json_encode($array);

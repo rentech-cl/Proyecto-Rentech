@@ -14,7 +14,7 @@ export class ModificarPerfilComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilCliente : Cliente;
-  
+  mod_nuevo = new Cliente;
   
   nombre: string;
   apellido: string;
@@ -24,7 +24,7 @@ export class ModificarPerfilComponent implements OnInit {
   dni: string;
   cp: string;
   direccio: string;
-  contrasena: string;
+  password: string;
   confirm_password: string;
   constructor( 
     private Router: Router,
@@ -43,10 +43,11 @@ export class ModificarPerfilComponent implements OnInit {
     this.dni= localStorage.getItem('dni');
     this.cp= localStorage.getItem('cp');
     this.dni= localStorage.getItem('dni');
-    this.direccio= localStorage.getItem('direccion');
-    this.contrasena= localStorage.getItem('contrasena');
+    this.direccio= localStorage.getItem('direccio');
+    this.password= localStorage.getItem('password');
     this.confirm_password= localStorage.getItem('confirm_password');
     console.log(this.perfilCliente);
+
     this.registerFormModify = this.formBuilder.group({
       
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
@@ -57,7 +58,7 @@ export class ModificarPerfilComponent implements OnInit {
       dni: ['', [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
       cp: ['', [Validators.required, Validators.pattern("[0-9 ]{5}")]],
       direccio: ['', [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
-      contrasena: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      password: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       confirm_password: [null, Validators.required],
     }, {
       validator: ConfirmedValidator('contrasena', 'confirm_password')
@@ -89,11 +90,12 @@ export class ModificarPerfilComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
+    console.log(this.registerFormModify.value);
     // stop here if form is invalid
     if (this.registerFormModify.invalid) {
+      console.log("eskere");
         return;
-    }
+    }else{
   this.ClienteService.modificarCliente(this.registerFormModify).subscribe(
     
     (datos: Cliente) => {
@@ -124,12 +126,12 @@ export class ModificarPerfilComponent implements OnInit {
         })
       }
       //this.ClienteService.setDatos(datos);
-
+      
+    
     }
     })
-
+   }
   }
 
 
-
-}
+  }

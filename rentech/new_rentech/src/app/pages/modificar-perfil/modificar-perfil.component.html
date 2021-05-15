@@ -42,15 +42,17 @@
       <h2><p>Modificar usuario {{this.nombre}}</p></h2>
     </div>
   </div>
-<form [formGroup]="registerFormModify" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerFormModify" (ngSubmit)="onSubmit()"  >
           
         
 
   <div class="form-group">
     <div>
-      <label>Nombre</label>
+      <label>Nombre :</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
+    
+    <input [(ngModel)]="mod_nuevo.nombre" class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
+    
     <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
       <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
       <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
@@ -62,7 +64,7 @@
     <div>
       <label>Apellido</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.apellido}}" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" ng-reflect-model="ee">
+    <input class="form-control" type="text"  placeholder="{{this.apellido}}" formControlName="apellido"  [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" >
     <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
       <div *ngIf="f.apellido.errors.required">El campo de apellido es obligatorio</div>
       <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
@@ -74,7 +76,7 @@
     <div>
       <label>Correo</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.correo}}" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" ng-reflect-model="ee">
+    <input class="form-control" type="text"  placeholder="{{this.correo}}" formControlName="correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" >
     <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
       <div *ngIf="f.correo.errors.required">El campo de correo es obligatorio</div>
       <div *ngIf="f.correo.errors.email"> Tiene que ser un correo</div>
@@ -86,7 +88,7 @@
     <div>
       <label>Teléfono</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.telefono}}" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" ng-reflect-model="ee">
+    <input class="form-control" type="text"  placeholder="{{this.telefono}}" formControlName="telefono"  [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" >
     <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
       <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
       <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
@@ -95,31 +97,84 @@
 
   <div class="form-group">
     <div>
-      <label>Nombre</label>
+      <label>Iban</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
-    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
-      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
-      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    <input class="form-control" type="text"  placeholder="{{this.iban}}"  formControlName="iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" >
+    <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
+      <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
+      <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
     </div>
   </div>
-  
+
   <div class="form-group">
     <div>
-      <label>Nombre</label>
+      <label>DNI</label>
     </div>
-    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
-    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
-      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
-      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    <input class="form-control" type="text"  placeholder="{{this.dni}}"  formControlName="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" >
+    <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+      <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
+      <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
     </div>
   </div>
 
- 
-          
+  <div class="form-group">
+    <div>
+      <label>CP</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.cp}}"   formControlName="cp" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }" >
+    <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
+      <div *ngIf="f.cp.errors.required">El campo de Codigo Postal es obligatorio</div>
+      <div *ngIf="f.cp.errors.pattern">El codigo postal son 5 numeros</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Direcció</label>
+    </div>
+    <input class="form-control" type="text" placeholder="{{this.direccio}}"  formControlName="direccio" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }" >
+    <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
+      <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Contraseña</label>
+    </div>
+    <input class="form-control" type="password"  value="{{this.password}}" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">El campo de Contraseña es obligatorio</div>
+        <div *ngIf="f.password.errors.maxlength"> La contraseña es demasiado larga</div>
+        <div *ngIf="f.password.errors.minlength"> La contraseña es demasiado corta</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Confirmar contraseña</label>
+    </div>
+    <input class="form-control" type="password"  value="{{this.password}}" formControlName="confirm_password" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" >
+    <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+      <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+        <div *ngIf="f.confirm_password.errors.required">El campo de Confirmar Contraseña es obligatorio</div>
+        <div *ngIf="f.confirm_password.errors.ConfirmedValidator">La Contraseña no es la misma</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <button type="submit" class="btn btn-primary" >
+    <i-feather name="user"></i-feather> Modificar
+  </button>
+       
 
 </form>
+
+<br>
 </div>
 <app-footer></app-footer>

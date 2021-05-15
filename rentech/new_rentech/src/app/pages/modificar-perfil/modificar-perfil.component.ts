@@ -14,7 +14,7 @@ export class ModificarPerfilComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilCliente : Cliente;
-  mod_nuevo = new Cliente;
+  
   
   nombre: string;
   apellido: string;
@@ -99,12 +99,32 @@ export class ModificarPerfilComponent implements OnInit {
       console.log("eskere");
         return;
     }else{
+
+
+
+    this.ClienteService.modificarCliente(this.registerFormModify.getRawValue()).subscribe((data: 
+      {}) => {
+            this.Router.navigate(['/dashboard'])
+          })
+          alert('SUCCESS!! :-)\n\n' + 
+      JSON.stringify(this.registerFormModify.getRawValue()))
+        }
+
+
+    /*this.submitted = true;
+    console.log(this.registerFormModify.value);
+    // stop here if form is invalid
+    if (this.registerFormModify.invalid) {
+      console.log("eskere");
+        return;
+    }else{
   this.ClienteService.modificarCliente(this.registerFormModify).subscribe(
     datos => {
       console.log(datos)
+
     }
   );
-   }
+   }*/
   }
 
 

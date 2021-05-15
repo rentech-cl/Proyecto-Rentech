@@ -7,7 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 $texto = file_get_contents("php://input");
 $jsoncliente = json_decode($texto);
-
+echo('prueba');
 if(!$jsoncliente){
   exit("No hay datos");
 }

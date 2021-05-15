@@ -6,18 +6,18 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 $texto = file_get_contents("php://input");
-$jsonproducto = json_decode($texto);
+$jsonalquilarProducto = json_decode($texto);
 
-if(!$jsonproducto){
+if(!$jsonalquilarProducto){
   exit("No hay datos");
 }
 
 else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
-  $hoy = date("Y-m-d H:i:s");
+  $hoy = strtotime($hoy."+ 2 week");
 
   //Añadimos los meses seleccionados en el contrato a la fecha de hoy para saber cuando volveremos a tener disponibles los ordenadores
-  $fechaFin = strtotime($hoy."+ $jsonproducto->fechafin month");
+  $fechaFin = strtotime($hoy."+ 6 month");
 
 
   //cogemos el precio total de el producto y lo dividimos por la cantidad de meses que haya seleccionado el cliente.
@@ -25,11 +25,12 @@ else{
 
 
 
-  $sentencia ="INSERT INTO `salida_alquiler`(`mensualidad`,`fecha_inicio`, `fecha_fin`,`idProducto`)
-  VALUES (                                      '$$jsonproducto->mensualidad',
+  $sentencia ="INSERT INTO `salida_alquiler`(`mensualidad`,`fecha_inicio`, `fecha_fin`,`idProducto`,`idCliente` )
+  VALUES (                                      '$$jsonalquilarProducto->mensualidad',
                                                 '$hoy',
                                                 '$fechaFin',
-                                                '$jsonproducto->idproducto'
+                                                '$jsonalquilarProducto->idproducto',
+                                                '$jsonalquilarProducto->idcliente'
                                                 ')";
   if ($res = mysqli_query($con,$sentencia)) {
 

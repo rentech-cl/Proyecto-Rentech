@@ -106,25 +106,12 @@ export class ModificarPerfilComponent implements OnInit {
       {}) => {
             this.Router.navigate(['/dashboard'])
           })
-          alert('SUCCESS!! :-)\n\n' + 
-      JSON.stringify(this.registerFormModify.getRawValue()))
+          alert('Modificado!! :-)\n\n' //+ JSON.stringify(this.registerFormModify.getRawValue())
+          )
         }
 
 
-    /*this.submitted = true;
-    console.log(this.registerFormModify.value);
-    // stop here if form is invalid
-    if (this.registerFormModify.invalid) {
-      console.log("eskere");
-        return;
-    }else{
-  this.ClienteService.modificarCliente(this.registerFormModify).subscribe(
-    datos => {
-      console.log(datos)
-
-    }
-  );
-   }*/
+   
   }
 
 

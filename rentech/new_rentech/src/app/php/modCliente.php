@@ -12,7 +12,7 @@ if(!$jsoncliente){
   exit("No hay datos");
 }
 
-//comprobamos que el dni del cliente no coincida con un cliente ya creado
+/*comprobamos que el dni del cliente no coincida con un cliente ya creado
 $instruccion ="SELECT count(*) AS cuantos FROM cliente WHERE dni = '$jsoncliente->dni'";
 $result = mysqli_query($con, $instruccion);
 
@@ -20,7 +20,7 @@ while ($fila = $result->fetch_assoc()) {
     $numero=$fila["cuantos"];
 }
 if($numero!=0){
-  echo('{ "result": "ERROR1" }');
+  echo('{ "resulto": "ERROR1" }');
 }
 else{
 //si el dni no esta registrado comprobamos el correo electronico
@@ -35,9 +35,9 @@ if($numero!=0){
 }
 else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
-  $pwd1 = $jsoncliente->contrasena;
-  $pass=sha1($pwd1);
-  $sentencia ="ALTER INTO `cliente`(`nombre`, `apellido`, `correo`, `telefono`, `iban`, `dni`, `cp`, `direccio`, `password`)
+  //$pwd1 = $jsoncliente->contrasena;
+ // $pass=sha1($pwd1);
+  $sentencia ="UPDATE INTO `cliente`(`nombre`, `apellido`, `correo`, `telefono`, `iban`, `dni`, `cp`, `direccio`)
   VALUES (                                      '$jsoncliente->nombre',
                                                 '$jsoncliente->apellido',
                                                 '$jsoncliente->correo',
@@ -46,7 +46,14 @@ else{
                                                 '$jsoncliente->dni',
                                                 '$jsoncliente->cp',
                                                 '$jsoncliente->direccio',
-                                                '$pass')";
+                                                   )";*/
+
+  $sentencia = "UPDATE cliente SET nombre = '$jsoncliente->nombre', apellido = 
+            '$jsoncliente->apellido', correo = '$jsoncliente->correo', telefono = '$jsoncliente->telefono', 
+            iban = '$jsoncliente->iban', dni = '$jsoncliente->dni', cp = '$jsoncliente->cp', direccio = '$jsoncliente->direccio'
+            a WHERE dni = '$jsoncliente->dni'";
+  
+
   if ($res = mysqli_query($con,$sentencia)) {
 
     echo('{ "result": "OK" }');
@@ -54,6 +61,6 @@ else{
   } else{
       echo('{ "result": "ERROR", "message": "Algo salio mal"  }');
     }
-}
-}
+
+
 ?>

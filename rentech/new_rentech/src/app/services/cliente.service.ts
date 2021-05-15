@@ -56,7 +56,9 @@ export class ClienteService {
   }
   modificarCliente(mod) {
     console.log(mod);
+
     return this.http.post(`${this.url}modCliente.php`, JSON.stringify(mod));
+    
   }
 
 

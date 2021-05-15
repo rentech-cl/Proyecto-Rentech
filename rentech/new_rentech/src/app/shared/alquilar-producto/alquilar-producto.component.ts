@@ -35,12 +35,25 @@ export class AlquilarProductoComponent implements OnInit {
         }
       });
       this.idEmpleado= localStorage.getItem('id');
+
   }
-  alquiler_producto(idProducto, cantidad){
+  alquiler_producto(idProducto, cantidad, precio){
 
     console.log('ID PRODUCTO: '+idProducto, '. CANTIDAD: '+ cantidad.value);
-    this.asignarAlquiler = new alquilarProducto(this.idEmpleado, idProducto,cantidad.value)
+    this.asignarAlquiler = new alquilarProducto(this.idEmpleado, idProducto,cantidad.value, precio)
+
     console.log(this.asignarAlquiler);
 
+    this.ClienteService.alquilerProducto(this.asignarAlquiler).subscribe(
+      datos => {
+        try {
+          console.log(datos)
+          this.asignarAlquiler=datos;
+          console.log(this.asignarAlquiler)
+        }
+        catch (error) {
+          console.log("error")
+        }
+      });
   }
 }

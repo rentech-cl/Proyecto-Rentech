@@ -46,6 +46,9 @@ export class ClienteService {
   asignarAveria(averia) {
     return this.http.post(`${this.url}asignaraveria.php`, JSON.stringify(averia));
   }
+  alquilerProducto(alquilarProducto) {
+    return this.http.post(`${this.url}add_alquiler.php`, JSON.stringify(alquilarProducto));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

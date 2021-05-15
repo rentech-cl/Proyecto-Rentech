@@ -35,20 +35,28 @@ export class AnadirProdComponent implements OnInit {
   }
 
   anadir() {
-    console.log(this.producto_nuevo)
-    this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
-      datos => {
-        try {
-          console.log(datos)
-        }
-        catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Datos introducidos incorrectos, revisa tus datos',
-          })
-        }
-      });
+
+    this.submitted = true;
+    if (this.myForm.invalid) {
+      return;
+    }else{
+      
+      this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
+        datos => {
+          try {
+            console.log(datos)
+          }
+          catch (error) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Datos introducidos incorrectos, revisa tus datos',
+            })
+          }
+        });
+      
+    }
+    
   }
 
 

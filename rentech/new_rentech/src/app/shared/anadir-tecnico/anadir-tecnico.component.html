@@ -12,7 +12,7 @@
       <br>
 
         <div class="form-group">
-            <input class="form-control" [(ngModel)]="tecnico_nuevo.dni" formControlName="dni" type="text" placeholder="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }">
+            <input class="form-control" [(ngModel)]="tecnico_nuevo.dni" formControlName="dni" type="text" placeholder="Dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }">
             <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
               <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
               <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
@@ -21,7 +21,7 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.nombre" formControlName="nombre" placeholder="nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.nombre" formControlName="nombre" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
               <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
               <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
@@ -32,7 +32,7 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.apellido" formControlName="apellido" placeholder="apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.apellido" formControlName="apellido" placeholder="Apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
             <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
               <div *ngIf="f.apellido.errors.required">El campo de Apellido es obligatorio</div>
               <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
@@ -42,7 +42,7 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.correo" formControlName="correo" placeholder="correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.correo" formControlName="correo" placeholder="Correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
             <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
               <div *ngIf="f.correo.errors.required">El campo de Correo es obligatorio</div>
               <div *ngIf="f.correo.errors.email">Debe de ser un correo</div>
@@ -51,16 +51,16 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.telefono" formControlName="telefono" placeholder="telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" >
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.telefono" formControlName="telefono" placeholder="Teléfono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" >
             <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
-              <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+              <div *ngIf="f.telefono.errors.required">El campo de Teléfono es obligatorio</div>
               <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
             </div>
         </div>
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.direccio" formControlName="direccio" placeholder="direccio" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }">
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.direccio" formControlName="direccio" placeholder="Dirección" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }">
             <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
               <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
             </div>
@@ -68,17 +68,18 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.salario" formControlName="salario" placeholder="salario" [ngClass]="{ 'is-invalid': submitted && f.salario.errors }">
-            <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
-              <div *ngIf="f.iban.errors.required">El campo de Salario es obligatorio</div>
-              <div *ngIf="f.iban.errors.pattern"> Debes introducir numeros</div>
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.salario" formControlName="salario" placeholder="Salario" [ngClass]="{ 'is-invalid': submitted && f.salario.errors }">
+            <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
+              <div *ngIf="f.salario.errors.required">El campo de salario es obligatorio</div>
+              <div *ngIf="f.salario.errors.maxLength"> El salario es demasiada largo</div>
+              <div *ngIf="f.salario.errors.minLength"> El salario es demasiada corto</div>
             </div>
 
         </div>
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.iban" formControlName="iban" placeholder="iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }">
+            <input class="form-control" type="text" [(ngModel)]="tecnico_nuevo.iban" formControlName="iban" placeholder="Iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }">
             <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
               <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
               <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>

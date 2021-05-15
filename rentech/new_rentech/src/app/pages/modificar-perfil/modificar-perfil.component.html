@@ -33,4 +33,93 @@
     </div>
   </div>
 </nav>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><p>Modificar usuario {{this.nombre}}</p></h2>
+    </div>
+  </div>
+<form [formGroup]="registerFormModify" (ngSubmit)="onSubmit()">
+          
+        
+
+  <div class="form-group">
+    <div>
+      <label>Nombre</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Apellido</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.apellido}}" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+      <div *ngIf="f.apellido.errors.required">El campo de apellido es obligatorio</div>
+      <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
+      <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Correo</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.correo}}" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+      <div *ngIf="f.correo.errors.required">El campo de correo es obligatorio</div>
+      <div *ngIf="f.correo.errors.email"> Tiene que ser un correo</div>
+      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Teléfono</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.telefono}}" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+      <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+      <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Nombre</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div>
+      <label>Nombre</label>
+    </div>
+    <input class="form-control" type="text"  value="{{this.nombre}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" ng-reflect-model="ee">
+    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    </div>
+  </div>
+
+ 
+          
+
+</form>
+</div>
 <app-footer></app-footer>

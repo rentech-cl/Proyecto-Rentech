@@ -14,7 +14,7 @@ export class ModificarPerfilComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilCliente : Cliente;
-  mod_nuevo = new Cliente;
+  
   
   nombre: string;
   apellido: string;
@@ -30,6 +30,8 @@ export class ModificarPerfilComponent implements OnInit {
     private Router: Router,
     public formBuilder: FormBuilder,
     private ClienteService: ClienteService ) {
+      
+   
     
    }
   
@@ -46,19 +48,20 @@ export class ModificarPerfilComponent implements OnInit {
     this.direccio= localStorage.getItem('direccio');
     this.password= localStorage.getItem('password');
     this.confirm_password= localStorage.getItem('confirm_password');
+    
     console.log(this.perfilCliente);
 
     this.registerFormModify = this.formBuilder.group({
       
-      nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      apellido: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      correo: ['', [Validators.email, Validators.required]],
-      telefono: ['', [ Validators.required, Validators.pattern("[0-9 ]{9}")]],
-      iban: ['', [Validators.minLength(24), Validators.maxLength(24), Validators.required]],
-      dni: ['', [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
-      cp: ['', [Validators.required, Validators.pattern("[0-9 ]{5}")]],
-      direccio: ['', [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
-      password: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      nombre: [this.nombre, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      apellido: [this.apellido, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      correo: [this.correo, [Validators.email, Validators.required]],
+      telefono: [this.telefono, [ Validators.required, Validators.pattern("[0-9 ]{9}")]],
+      iban: [this.iban, [Validators.minLength(24), Validators.maxLength(24), Validators.required]],
+      dni: [this.dni, [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
+      cp: [this.cp, [Validators.required, Validators.pattern("[0-9 ]{5}")]],
+      direccio: [this.direccio, [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
+      password: [this.password, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       confirm_password: [null, Validators.required],
     }, {
       validator: ConfirmedValidator('contrasena', 'confirm_password')
@@ -132,6 +135,13 @@ export class ModificarPerfilComponent implements OnInit {
     })
    }
   }
+
+
+
+  
+  
+
+  
 
 
   }

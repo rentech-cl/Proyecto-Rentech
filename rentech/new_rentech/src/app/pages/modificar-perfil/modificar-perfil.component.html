@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
         <li class="nav-item">
-          <a class="nav-link">Dashboard</a>
+          <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/AquilarProducto']" >Alquilar producto</a>
@@ -51,7 +51,7 @@
       <label>Nombre :</label>
     </div>
     
-    <input [(ngModel)]="mod_nuevo.nombre" class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
+    <input  class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
     
     <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
       <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
@@ -138,30 +138,7 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <div>
-      <label>Contraseña</label>
-    </div>
-    <input class="form-control" type="password"  value="{{this.password}}" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
-      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.required">El campo de Contraseña es obligatorio</div>
-        <div *ngIf="f.password.errors.maxlength"> La contraseña es demasiado larga</div>
-        <div *ngIf="f.password.errors.minlength"> La contraseña es demasiado corta</div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div>
-      <label>Confirmar contraseña</label>
-    </div>
-    <input class="form-control" type="password"  value="{{this.password}}" formControlName="confirm_password" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" >
-    <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-      <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-        <div *ngIf="f.confirm_password.errors.required">El campo de Confirmar Contraseña es obligatorio</div>
-        <div *ngIf="f.confirm_password.errors.ConfirmedValidator">La Contraseña no es la misma</div>
-      </div>
-    </div>
-  </div>
+  
 
 
 

@@ -51,7 +51,7 @@
       <label>Nombre :</label>
     </div>
     
-    <input  class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
+    <input   class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
     
     <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
       <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
@@ -137,6 +137,8 @@
       <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
     </div>
   </div>
+
+  
 
   
 

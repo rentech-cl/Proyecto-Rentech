@@ -14,7 +14,7 @@ export class ModificarPerfilComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilCliente : Cliente;
-  
+  mod_nuevo = new Cliente;
   
   nombre: string;
   apellido: string;
@@ -46,8 +46,8 @@ export class ModificarPerfilComponent implements OnInit {
     this.cp= localStorage.getItem('cp');
     this.dni= localStorage.getItem('dni');
     this.direccio= localStorage.getItem('direccio');
-    this.password= localStorage.getItem('password');
-    this.confirm_password= localStorage.getItem('confirm_password');
+    //this.password= localStorage.getItem('password');
+    //this.confirm_password= localStorage.getItem('confirm_password');
     
     console.log(this.perfilCliente);
 
@@ -61,10 +61,10 @@ export class ModificarPerfilComponent implements OnInit {
       dni: [this.dni, [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
       cp: [this.cp, [Validators.required, Validators.pattern("[0-9 ]{5}")]],
       direccio: [this.direccio, [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
-      password: [this.password, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      confirm_password: [null, Validators.required],
+      //password: [this.password, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+    // confirm_password: [ , Validators.required],
     }, {
-      validator: ConfirmedValidator('contrasena', 'confirm_password')
+      //validator: ConfirmedValidator('contrasena', 'confirm_password')
     });
   }
 
@@ -100,39 +100,10 @@ export class ModificarPerfilComponent implements OnInit {
         return;
     }else{
   this.ClienteService.modificarCliente(this.registerFormModify).subscribe(
-    
-    (datos: Cliente) => {
-      if (datos["result"] === "ERROR") {
-        Swal.fire({
-          icon: 'error',
-          title: datos["result"],
-          text: datos["message"]
-        })
-      }
-      else {
-      if (datos!= null) {
-        Swal.fire({
-          position: 'top',
-          icon: 'success',
-          title: 'Cliente modificado.',
-          showConfirmButton: false,
-          timer: 1500
-        })
-        this.Router.navigate(['/perfil-Cliente']);
-
-      }
-      else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Intentalo más tarde.',
-        })
-      }
-      //this.ClienteService.setDatos(datos);
-      
-    
+    datos => {
+      console.log(datos)
     }
-    })
+  );
    }
   }
 

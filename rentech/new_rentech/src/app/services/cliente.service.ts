@@ -52,6 +52,8 @@ export class ClienteService {
     return this.http.post(`${this.url}listproductos.php`, JSON.stringify(productos));
   }
   modificarCliente(mod) {
+    console.log(mod);
+    console.log("Eskerwe2");
     return this.http.post(`${this.url}modCliente.php`, JSON.stringify(mod));
   }
 

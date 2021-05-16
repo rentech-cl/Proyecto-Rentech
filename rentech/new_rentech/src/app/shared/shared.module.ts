@@ -23,7 +23,7 @@ import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { AveriasComponent } from './averias/averias.component';
 import { AnadirTecnicoComponent } from './anadir-tecnico/anadir-tecnico.component';
-
+import { AveriasDisponiblesComponent } from './averias-disponibles/averias-disponibles.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HistorialPedidoComponent } from './historial-pedido/historial-pedido.component';
@@ -40,7 +40,7 @@ const icons = {
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent, HistorialPedidoComponent ],
+  declarations: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent , HistorialPedidoComponent  ,   AveriasDisponiblesComponent],
   imports: [
     CommonModule,
     FeatherModule.pick(icons),
@@ -56,6 +56,6 @@ const icons = {
     ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length
-  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent, HistorialPedidoComponent ]
+  exports: [FeaturesComponent, PricingComponent, BlogComponent, ContactComponent, ServicesComponent, FooterComponent, FeatherModule, ScrollspyDirective, AnadirProdComponent, AnadirAveriaComponent, AlquilarProductoComponent, VenderProductoComponent, AveriasComponent, AnadirTecnicoComponent, HistorialPedidoComponent , AveriasDisponiblesComponent]
 })
 export class SharedModule { }

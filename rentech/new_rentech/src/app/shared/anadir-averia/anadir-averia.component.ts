@@ -38,7 +38,25 @@ export class AnadirAveriaComponent implements OnInit {
     }else{
 
       this.ClienteService.anadirAveria(this.averia_nueva).subscribe(
-      datos => {
+        (datos: Averia) => {
+          if (datos['result'] === 'OK') {
+            Swal.fire({
+              position: 'top',
+              icon: 'success',
+              title: 'Averia añadida!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+          else{
+            Swal.fire({
+              position:'top',
+              icon: 'error',
+              title:'Averia no asignada!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
         try {
           console.log(datos)
         }

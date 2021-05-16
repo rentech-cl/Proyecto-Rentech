@@ -1,15 +1,17 @@
+<h3>Historial de alquiler</h3>
 <table class="table justify-content-center">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Contacto</th>
-        <th scope="col">Urgencia</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Seleccionar avería</th>
-      </tr>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha inicio</th>
+            <th scope="col">Fecha fin</th>
+            <th scope="col">Mensualidad</th>
+            <th scope="col">Cantidad</th>
+        </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
       <tr>
         <th scope="row"></th>
         <td></td>
@@ -22,5 +24,42 @@
             </form>
           </td>
       </tr>
+=======
+        <tr *ngFor="let listarpedidos of this.alquiler; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{this.alquiler[i]['nombre']}}</td>
+            <td>{{this.alquiler[i]['fecha_inicio']}}</td>
+            <td>{{this.alquiler[i]['fecha_fin']}}</td>
+            <td>{{this.alquiler[i]['mensualidad']}}€/ mes</td>
+            <td>{{this.alquiler[i]['cantidad']}}</td>
+            <td></td>
+
+        </tr>
+>>>>>>> 76a30359e7d7d8f25927c98474c6a7c9aa3fa4be
     </tbody>
-  </table>
+</table>
+
+<h3>Historial de compras</h3>
+<table class="table justify-content-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha entrada</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let listarpedidos of this.alquiler; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{this.compra[i]['nombre']}}</td>
+            <td>{{this.compra[i]['fecha_entrada']}}</td>
+            <td>{{this.compra[i]['fecha_fin']}}</td>
+            <td>{{this.compra[i]['precio_final']/0.04}}€</td>
+            <td>{{this.compra[i]['cantidad']}}</td>
+            <td></td>
+
+        </tr>
+    </tbody>
+</table>

@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   anadir_producto:boolean= false;
   averia:boolean= false;
   anadir_averia:boolean= false;
+  averiaDisp:boolean= false;
   alquilar_producto:boolean= false;
   vender_producto:boolean= false;
   anadir_tecnic:boolean= false;
@@ -89,14 +90,24 @@ export class DashboardComponent implements OnInit {
           }
         }
 
+        averia_disponible(){
+          if(this.averiaDisp==false){
+            this.averiaDisp=true;
+
+            }else{
+              this.averiaDisp=false;
+            }
+          }
+
+
      historial_pedido(){
         if(this.historialpedido==false){
            this.historialpedido=true;
-    
+
             }else{
               this.historialpedido=false;
                 }
-              } 
+              }
 
       anadir_tecnico(){
         if(this.anadir_tecnic==false){

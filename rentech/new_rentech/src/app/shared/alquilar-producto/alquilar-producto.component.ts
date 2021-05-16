@@ -27,12 +27,12 @@ export class AlquilarProductoComponent implements OnInit {
     this.ClienteService.listarProductos("productos").subscribe(
       datos => {
         try {
-          console.log(datos)
+          //console.log(datos)
           this.productos = datos;
-          console.log(this.productos)
+          //console.log(this.productos)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
     this.idEmpleado = localStorage.getItem('id');
@@ -52,10 +52,10 @@ export class AlquilarProductoComponent implements OnInit {
     // Añades los meses
     fecha2.setMonth(fecha2.getMonth() + 6);
 
-    console.log('ID PRODUCTO: ' + idProducto, '. CANTIDAD: ' + cantidad.value);
+    //console.log('ID PRODUCTO: ' + idProducto, '. CANTIDAD: ' + cantidad.value);
     this.asignarAlquiler = new alquilarProducto(this.idEmpleado, idProducto, cantidad.value, precio, n, n2)
 
-    console.log(this.asignarAlquiler);
+    //console.log(this.asignarAlquiler);
 
 
 
@@ -82,12 +82,12 @@ export class AlquilarProductoComponent implements OnInit {
         }
 
         try {
-          console.log(datos)
+          //console.log(datos)
           this.asignarAlquiler = datos;
-          console.log(this.asignarAlquiler)
+          //console.log(this.asignarAlquiler)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
   }

@@ -78,6 +78,7 @@ export class IndexComponent implements OnInit {
     localStorage.removeItem('password');
     localStorage.removeItem('currentUser');
     localStorage.removeItem('role');
+    localStorage.removeItem('salario');
     this.router.navigate(['/index']);
   }
 
@@ -128,7 +129,7 @@ export class IndexComponent implements OnInit {
         try {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
-            console.log('Login realizado');
+            //console.log('Login realizado');
             localStorage.setItem('nombre', this.datosUsuario[0][0]);
             localStorage.setItem('apellido', this.datosUsuario[0][1]);
             localStorage.setItem('id', this.datosUsuario[0][2]);
@@ -142,6 +143,8 @@ export class IndexComponent implements OnInit {
             localStorage.setItem('role', 'ee11cbb19052e40b07aac0ca060c23ee');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
+            window.location.reload();
+
           } else {
             throw new Error('An error occurred');
           }
@@ -155,18 +158,15 @@ export class IndexComponent implements OnInit {
         }
       });
 
-      this.router.navigate(['/dashboard']);
-
-
   }
   loginTecnico(content) {
     this.ClienteService.loginTecnico(this.usuario).subscribe(
       datos => {
-        console.log(datos);
+        //console.log(datos);
         try {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
-            console.log('Login realizado');
+            //console.log('Login realizado');
             localStorage.setItem('dni', this.datosUsuario[0][0]);
             localStorage.setItem('nombre', this.datosUsuario[0][1]);
             localStorage.setItem('apellido', this.datosUsuario[0][2]);
@@ -180,6 +180,7 @@ export class IndexComponent implements OnInit {
             localStorage.setItem('role', '21232f297a57a5a743894a0e4a801fc3');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
+            window.location.reload();
           } else {
             throw new Error('An error occurred');
           }
@@ -192,9 +193,6 @@ export class IndexComponent implements OnInit {
           })
         }
       });
-
-      this.router.navigate(['/dashboard']);
-
   }
 
 
@@ -210,14 +208,14 @@ export class IndexComponent implements OnInit {
 
   register() {
     this.submitted = true;
-    console.log(this.registerForm.value);
+    //console.log(this.registerForm.value);
     if (this.registerForm.invalid) {
       return;
     } else {
-      console.log("Has sido registrado!!");
+      //console.log("Has sido registrado!!");
       this.ClienteService.register(this.registerForm.value).subscribe(
         datos => {
-          console.log(datos)
+          //console.log(datos)
         }
       );
     }

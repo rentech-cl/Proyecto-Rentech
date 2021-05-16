@@ -29,12 +29,12 @@ export class AveriasComponent implements OnInit {
     this.ClienteService.listarAverias("averias").subscribe(
       datos => {
         try {
-          console.log(datos)
+          //console.log(datos)
           this.averia=datos;
-          console.log(this.averia)
+          //console.log(this.averia)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
 
@@ -43,7 +43,7 @@ export class AveriasComponent implements OnInit {
 
   seleccionar(idAveria){
     this.asignarUsuario = new AsignarAveria(this.idEmpleado, idAveria)
-    console.log(this.asignarUsuario)
+    //console.log(this.asignarUsuario)
 
     this.ClienteService.asignarAveria(this.asignarUsuario).subscribe(
       datos => {
@@ -55,10 +55,8 @@ export class AveriasComponent implements OnInit {
             title: 'Averia asignada!',
             showConfirmButton: false,
             timer: 1500
-
           })
-
-              window.location.reload();
+          window.location.reload();
 
 
         }else{
@@ -72,11 +70,11 @@ export class AveriasComponent implements OnInit {
         }
 
         try {
-          console.log(datos)
-          console.log(this.averia)
+          //console.log(datos)
+          //console.log(this.averia)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
   }

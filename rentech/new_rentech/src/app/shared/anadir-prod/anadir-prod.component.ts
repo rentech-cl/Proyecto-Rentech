@@ -41,9 +41,9 @@ export class AnadirProdComponent implements OnInit {
     if (this.myForm.invalid) {
       return;
     }else{
-      
+
       this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
-        
+
         (datos: Producto) => {
           if (datos['result'] === 'OK') {
             Swal.fire({
@@ -63,10 +63,10 @@ export class AnadirProdComponent implements OnInit {
               timer: 1500
             })
           }
-          
+
           try {
-            
-            console.log(datos)
+
+            //console.log(datos)
           }
           catch (error) {
             Swal.fire({
@@ -76,9 +76,9 @@ export class AnadirProdComponent implements OnInit {
             })
           }
         });
-      
+
     }
-    
+
   }
 
 

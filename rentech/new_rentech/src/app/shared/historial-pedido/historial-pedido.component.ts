@@ -31,12 +31,12 @@ export class HistorialPedidoComponent implements OnInit {
     this.ClienteService.listarAlquiler(this.idEmpleado).subscribe(
       datos => {
         try {
-          console.log(datos)
+          //console.log(datos)
           this.alquiler=datos;
-          // console.log(this.alquiler)
+          // //console.log(this.alquiler)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
 
@@ -44,12 +44,12 @@ export class HistorialPedidoComponent implements OnInit {
       this.ClienteService.listarCompras(this.idEmpleado).subscribe(
         datos => {
           try {
-            console.log(datos)
+            //console.log(datos)
             this.compra=datos;
-            // console.log(this.compra)
+            // //console.log(this.compra)
           }
           catch (error) {
-            console.log("error")
+            //console.log("error")
           }
         });
 

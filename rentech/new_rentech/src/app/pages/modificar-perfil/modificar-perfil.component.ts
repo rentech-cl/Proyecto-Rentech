@@ -14,8 +14,8 @@ export class ModificarPerfilComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilCliente : Cliente;
-  
-  
+
+
   nombre: string;
   apellido: string;
   correo: string;
@@ -26,15 +26,15 @@ export class ModificarPerfilComponent implements OnInit {
   direccio: string;
   password: string;
   confirm_password: string;
-  constructor( 
+  constructor(
     private Router: Router,
     public formBuilder: FormBuilder,
     private ClienteService: ClienteService ) {
-      
-   
-    
+
+
+
    }
-  
+
   ngOnInit(): void {
     this.perfilCliente= this.ClienteService.getDatos();
     this.nombre= localStorage.getItem('nombre');
@@ -46,11 +46,11 @@ export class ModificarPerfilComponent implements OnInit {
     this.cp= localStorage.getItem('cp');
     this.dni= localStorage.getItem('dni');
     this.direccio= localStorage.getItem('direccio');
-    
-    console.log(this.perfilCliente);
+
+    //console.log(this.perfilCliente);
 
     this.registerFormModify = this.formBuilder.group({
-      
+
       nombre: [this.nombre, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       apellido: [this.apellido, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       correo: [this.correo, [Validators.email, Validators.required]],
@@ -84,14 +84,14 @@ export class ModificarPerfilComponent implements OnInit {
   toggleMenu() {
     document.getElementById('navbarCollapse').classList.toggle('show');
   }
-  
+
 
   get f() { return this.registerFormModify.controls; }
 
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.registerFormModify.value);
+    //console.log(this.registerFormModify.value);
     // stop here if form is invalid
     if (this.registerFormModify.invalid) {
         return;
@@ -101,7 +101,7 @@ export class ModificarPerfilComponent implements OnInit {
 
     this.ClienteService.modificarCliente(this.registerFormModify.getRawValue()).subscribe(
       (data: {}) => {
-        
+
         if (data['result'] === 'OK') {
           Swal.fire({
             position: 'top',
@@ -121,20 +121,20 @@ export class ModificarPerfilComponent implements OnInit {
         }
             this.Router.navigate(['/dashboard'])
           })
-         
-          
+
+
         }
 
 
-   
+
   }
 
 
 
-  
-  
 
-  
+
+
+
 
 
   }

@@ -14,8 +14,8 @@ export class ModificarEmpleadoComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
   perfilTecnico : Tecnico;
-  
-  
+
+
   nombre: string;
   apellido: string;
   correo: string;
@@ -24,16 +24,16 @@ export class ModificarEmpleadoComponent implements OnInit {
   dni: string;
   salario: string;
   direccio: string;
- 
-  constructor( 
+
+  constructor(
     private Router: Router,
     public formBuilder: FormBuilder,
     private ClienteService: ClienteService ) {
-      
-   
-    
+
+
+
    }
-  
+
   ngOnInit(): void {
     this.perfilTecnico= this.ClienteService.getDatos();
     this.nombre= localStorage.getItem('nombre');
@@ -45,11 +45,11 @@ export class ModificarEmpleadoComponent implements OnInit {
     this.salario= localStorage.getItem('salario');
     this.dni= localStorage.getItem('dni');
     this.direccio= localStorage.getItem('direccio');
-    
-    console.log(this.perfilTecnico);
+
+    //console.log(this.perfilTecnico);
 
     this.registerFormModify = this.formBuilder.group({
-      
+
       nombre: [this.nombre, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       apellido: [this.apellido, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       correo: [this.correo, [Validators.email, Validators.required]],
@@ -83,14 +83,14 @@ export class ModificarEmpleadoComponent implements OnInit {
   toggleMenu() {
     document.getElementById('navbarCollapse').classList.toggle('show');
   }
-  
+
 
   get f() { return this.registerFormModify.controls; }
 
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.registerFormModify.value);
+    //console.log(this.registerFormModify.value);
     // stop here if form is invalid
     if (this.registerFormModify.invalid) {
         return;
@@ -100,7 +100,7 @@ export class ModificarEmpleadoComponent implements OnInit {
       alert("ESKERE");
     this.ClienteService.modificarEmpledo(this.registerFormModify.getRawValue()).subscribe(
       (data: {}) => {
-        
+
         if (data['result'] === 'OK') {
           Swal.fire({
             position: 'top',
@@ -120,20 +120,20 @@ export class ModificarEmpleadoComponent implements OnInit {
         }
             this.Router.navigate(['/dashboard'])
           })
-         
-          
+
+
         }
 
 
-   
+
   }
 
 
 
-  
-  
 
-  
+
+
+
 
 
   }

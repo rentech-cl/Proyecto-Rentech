@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AsignarAveria } from 'src/app/models/asignarAveria';
 import { Averia } from 'src/app/models/averia';
+import Swal from 'sweetalert2';
 import { ClienteService } from '../service/cliente.service';
 
 
@@ -33,12 +34,11 @@ export class AveriasDisponiblesComponent implements OnInit {
     this.ClienteService.listarAveriasTecnico(this.idEmpleado).subscribe(
       datos => {
         try {
-          console.log(datos)
           this.averia=datos;
-          // console.log(this.alquiler)
+          // //console.log(this.alquiler)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
 
@@ -52,11 +52,19 @@ export class AveriasDisponiblesComponent implements OnInit {
     this.ClienteService.averiaresuelta(idAveria).subscribe(
       datos => {
         try {
-          console.log(datos)
-          console.log(this.averia)
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Averia solucionada!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          window.location.reload();
+
+          //console.log(this.averia)
         }
         catch (error) {
-          console.log("error")
+          //console.log("error")
         }
       });
   }

@@ -24,6 +24,7 @@ export class AveriasComponent implements OnInit {
     private ClienteService: ClienteService
   ) { }
 
+
   ngOnInit(): void {
     this.ClienteService.listarAverias("averias").subscribe(
       datos => {
@@ -54,8 +55,12 @@ export class AveriasComponent implements OnInit {
             title: 'Averia asignada!',
             showConfirmButton: false,
             timer: 1500
+
           })
-          
+
+              window.location.reload();
+
+
         }else{
           Swal.fire({
             position:'top',

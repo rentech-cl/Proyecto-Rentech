@@ -46,7 +46,9 @@ export class AnadirAveriaComponent implements OnInit {
               title: 'Averia añadida!',
               showConfirmButton: false,
               timer: 1500
+
             })
+             window.location.reload();
           }
           else{
             Swal.fire({

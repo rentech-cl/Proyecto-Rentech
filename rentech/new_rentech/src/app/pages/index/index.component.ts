@@ -25,6 +25,7 @@ export class IndexComponent implements OnInit {
   submitted = false;
   p: String = null;
   datosUsuario;
+  logged: boolean = false;
 
   currentSection = 'home';
 
@@ -57,6 +58,27 @@ export class IndexComponent implements OnInit {
     }, {
       validator: ConfirmedValidator('contrasena', 'confirm_password')
     });
+
+    if(localStorage.getItem('currentUser')){
+      this.logged= true;
+    }
+  }
+
+  logout(){
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('apellido');
+    localStorage.removeItem('nameUser');
+    localStorage.removeItem('id');
+    localStorage.removeItem('correo');
+    localStorage.removeItem('telefono');
+    localStorage.removeItem('iban');
+    localStorage.removeItem('dni');
+    localStorage.removeItem('cp');
+    localStorage.removeItem('direccio');
+    localStorage.removeItem('password');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('role');
+    this.router.navigate(['/index']);
   }
 
   /**
@@ -107,7 +129,6 @@ export class IndexComponent implements OnInit {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
             console.log('Login realizado');
-            this.router.navigate(['/dashboard']);
             localStorage.setItem('nombre', this.datosUsuario[0][0]);
             localStorage.setItem('apellido', this.datosUsuario[0][1]);
             localStorage.setItem('id', this.datosUsuario[0][2]);
@@ -134,6 +155,7 @@ export class IndexComponent implements OnInit {
         }
       });
 
+      this.router.navigate(['/dashboard']);
 
 
   }
@@ -145,8 +167,6 @@ export class IndexComponent implements OnInit {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
             console.log('Login realizado');
-            this.router.navigate(['/dashboard']);        
-            
             localStorage.setItem('dni', this.datosUsuario[0][0]);
             localStorage.setItem('nombre', this.datosUsuario[0][1]);
             localStorage.setItem('apellido', this.datosUsuario[0][2]);
@@ -172,6 +192,9 @@ export class IndexComponent implements OnInit {
           })
         }
       });
+
+      this.router.navigate(['/dashboard']);
+
   }
 
 

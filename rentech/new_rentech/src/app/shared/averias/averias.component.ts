@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AsignarAveria } from 'src/app/models/asignarAveria';
 import { Averia } from 'src/app/models/averia';
 import { ClienteService } from '../service/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-averias',
@@ -45,6 +46,17 @@ export class AveriasComponent implements OnInit {
 
     this.ClienteService.asignarAveria(this.asignarUsuario).subscribe(
       datos => {
+
+        if (datos['result'] === 'OK') {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Averia asignada!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+
         try {
           console.log(datos)
           console.log(this.averia)

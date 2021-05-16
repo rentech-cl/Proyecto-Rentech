@@ -5,7 +5,7 @@
       <div class="col-lg-4">
         <div class="mb-5">
           <img src="assets/images/logo-light.png" alt="" class="" height="24">
-          <p class="text-white-50 my-4 font-size-15">Bienvenido a la era de la tecnologia y la innovación. En nuestra página podrás alquilar o comprar diferentes componentes electrónicos.</p>
+          <p class="text-white-50 my-4 font-size-15">{{'FOOTER-MSG' | translate}}</p>
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1">
@@ -23,6 +23,16 @@
               </p>
               <p class="">
                 <i-feather  name="map-pin"></i-feather>  <span>C/Antoni Guix Ribelles</span>
+              </p>
+              <p>
+                <label>
+                  {{'CAMBIAR-IDIOMA' | translate}}
+                  <select #langSelect (change)="changeLang(langSelect.value)">
+                    <option *ngFor="let lang of langs" [value]="lang">
+                      {{ lang }}
+                    </option>
+                  </select>
+                </label>
               </p>
             </div>
           </div>

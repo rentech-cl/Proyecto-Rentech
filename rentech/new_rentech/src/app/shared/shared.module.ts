@@ -16,13 +16,20 @@ import {
 import { ScrollspyDirective } from './scrollspy.directive';
 import { AnadirProdComponent } from './anadir-prod/anadir-prod.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnadirAveriaComponent } from './anadir-averia/anadir-averia.component';
 import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { AveriasComponent } from './averias/averias.component';
 import { AnadirTecnicoComponent } from './anadir-tecnico/anadir-tecnico.component';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/','.json');
+}
 
 
 const icons = {
@@ -38,6 +45,13 @@ const icons = {
     FeatherModule.pick(icons),
     HttpClientModule,
     FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     ReactiveFormsModule
   ],
   // tslint:disable-next-line: max-line-length

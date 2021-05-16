@@ -15,21 +15,21 @@
                     <a class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/AquilarProducto']">Alquilar producto</a>
+                    <a class="nav-link" [routerLink]="['/AquilarProducto']">{{'ALQUILAR-PRODUCTO' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
+                    <a class="nav-link" [routerLink]="['/VenderProducto']">{{'VENDER-PRODUCTO' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/AnadirTecnico']">Añadir Técnico</a>
+                    <a class="nav-link" [routerLink]="['/AnadirTecnico']">{{'AÑADIR-TECNICO' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Envíar una avería</a>
+                    <a class="nav-link">{{'ENVIAR-AVERIA' | translate}}</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-center">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="logout()">Cerrar sesión</a>
+                    <a class="nav-link" (click)="logout()">{{'LOGOUT' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -41,16 +41,16 @@
 
 <div class="container">
     <div class="container-fluid h100">
-        <h1 class="mt-4">Bienvenido </h1>
+        <h1 class="mt-4">{{'BIENBENIDO' | translate}}</h1>
 
         <!-- USUARIO -->
         <div class="row">
 
             <div class="col-xl-4 col-md-4">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Enviar una avería</div>
+                    <div class="card-body">{{'ENVIAR-AVERIA' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="enviaraveria()">Más información</a>
+                        <a class="small text-white stretched-link" (click)="enviaraveria()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -58,9 +58,9 @@
 
             <div class="col-xl-4 col-md-4">
                 <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">Alquilar producto</div>
+                    <div class="card-body">{{'ALQUILAR-PRODUCTO' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="alquilar_prod()">Más información</a>
+                        <a class="small text-white stretched-link" (click)="alquilar_prod()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
 
             <div class="col-xl-4 col-md-4">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Vender producto</div>
+                    <div class="card-body">{{'VENDER-PRODUCTO' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="vender_prod()">Más información</a>
+                        <a class="small text-white stretched-link" (click)="vender_prod()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -83,9 +83,9 @@
 
             <div class="col-xl-3 col-md-6 nav-link">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Añadir producto</div>
+                    <div class="card-body">{{'AÑADIR-PRODUCTO' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="anadir_prod()">Más información</a>
+                        <a class="small text-white stretched-link" (click)="anadir_prod()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -93,9 +93,9 @@
 
             <div class="col-xl-3 col-md-6 nav-link">
                 <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">Averías pendientes</div>
+                    <div class="card-body">{{'AVERIA-PENDIENTE' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="averias()">Más información</a>
+                        <a class="small text-white stretched-link" (click)="averias()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -103,9 +103,9 @@
 
             <div class="col-xl-3 col-md-6 nav-link">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Averías disponibles</div>
+                    <div class="card-body">{{'AVERIA-DISPONIBLES' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">Más información</a>
+                        <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -113,9 +113,9 @@
 
             <div class="col-xl-3 col-md-6 nav-link">
                 <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">Modificar perfil</div>
+                    <div class="card-body">{{'MODIFICAR-PERFIL' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">Más información</a>
+                        <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -123,9 +123,9 @@
 
             <div class="col-xl-3 col-md-6 nav-link">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Añadir técnico</div>
+                    <div class="card-body">{{'AÑADIR-TECNICO' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="anadir_tecnico()">Agregar</a>
+                        <a class="small text-white stretched-link" (click)="anadir_tecnico()">{{'ADD' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>

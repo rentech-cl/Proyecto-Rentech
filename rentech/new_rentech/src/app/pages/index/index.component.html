@@ -14,24 +14,24 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
         <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
-          <a [ngxScrollTo]="'#home'" class="nav-link">Inicio</a>
+          <a [ngxScrollTo]="'#home'" class="nav-link">{{'INICIO' | translate}}</a>
         </li>
         <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
-          <a [ngxScrollTo]="'#features'" class="nav-link">Características</a>
+          <a [ngxScrollTo]="'#features'" class="nav-link">{{'CARACTERISTICAS' | translate}}</a>
         </li>
         <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">
-          <a [ngxScrollTo]="'#pricing'" class="nav-link" [ngxScrollToOffset]="5">Precios</a>
+          <a [ngxScrollTo]="'#pricing'" class="nav-link" [ngxScrollToOffset]="5">{{'PRECIOS' | translate}}</a>
         </li>
         <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
-          <a [ngxScrollTo]="'#contact'" class="nav-link" [ngxScrollToOffset]="5">Contacto</a>
+          <a [ngxScrollTo]="'#contact'" class="nav-link" [ngxScrollToOffset]="5">{{'CONTACTO' | translate}}</a>
         </li>
       </ul>
       <ul class="navbar-nav navbar-center">
         <li class="nav-item">
-          <a class="nav-link" (click)="loginModal(content)">Iniciar sesión</a>
+          <a class="nav-link" (click)="loginModal(content)">{{'LOGIN' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="registerModal(registercontent)">Darme de alta</a>
+          <a class="nav-link" (click)="registerModal(registercontent)">{{'SIGNIN' | translate}}</a>
         </li>
       </ul>
     </div>
@@ -46,8 +46,8 @@
         <div class="col-lg-6">
           <h1 class="hero-1-title text-dark font-weight-bold ">Rentech</h1>
           <div class="w-75 mb-5 mb-lg-0">
-            <p class="text-muted mb-5 pb-5 font-size-17">Bienvenido a la era de la tecnología y la innovación</p>
-            <p class=""><span class="font-size-20 mr-2"><i-feather name="send"></i-feather></span>Permite escalar tu negocio con la última tecnología</p>
+            <p class="text-muted mb-5 pb-5 font-size-17">{{'WELCOME' | translate}}</p>
+            <p class=""><span class="font-size-20 mr-2"><i-feather name="send"></i-feather></span>{{'ESCALAR' | translate}}</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-10">
@@ -71,8 +71,8 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-body">
     <div class="text-center">
-      <h3 class="title mb-4">Bienvenido a Rentech</h3>
-      <h4 class="text-uppercase text-primary"><b>Iniciar sesión</b></h4>
+      <h3 class="title mb-4">{{'BIENBENIDO' | translate}}</h3>
+      <h4 class="text-uppercase text-primary"><b>{{'LOGIN' | translate}}</b></h4>
     </div>
     <div class="login-form mt-4">
       <form [formGroup]="myForm" (ngSubmit)="login(content)">
@@ -84,7 +84,7 @@
         <div class="">
           <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched"
             class='alert alert-danger'>
-            Este campo es obligatorio
+            {{'CAMPOOBLIGATORIO' | translate}}
           </div>
         </div>
         <div class="form-group">
@@ -94,16 +94,16 @@
         <div class="">
           <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched"
             class='alert alert-danger'>
-            Este campo es obligatorio
+            {{'CAMPOOBLIGATORIO' | translate}}
           </div>
         </div>
         <div class="form-group">
           <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
-            Iniciar sesión
+            {{'LOGIN' | translate}}
           </button>
         </div>
       </form>
-      <p class="nav-link" (click)="loginTecnicoModal(loginContent)" >Soy técnico</p>
+      <p class="nav-link" (click)="loginTecnicoModal(loginContent)" >{{'SOYTECH' | translate}}</p>
     </div>
   </div>
 </ng-template>
@@ -119,7 +119,7 @@
         <div class="form-group">
             <input type="text" formControlName="nombre" maxlength="60" class="form-control" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-                <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+                <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
                 <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
             </div>
@@ -127,7 +127,7 @@
         <div class="form-group">
             <input type="text" formControlName="apellido" maxlength="60" class="form-control" placeholder="Apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
             <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-                <div *ngIf="f.apellido.errors.required">El campo de Apellido es obligatorio</div>
+                <div *ngIf="f.apellido.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
                 <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
             </div>
@@ -135,7 +135,7 @@
         <div class="form-group">
             <input type="password" formControlName="contrasena" maxlength="60" class="form-control" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }" />
             <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
-                <div *ngIf="f.contrasena.errors.required">El campo de Contraseña es obligatorio</div>
+                <div *ngIf="f.contrasena.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.contrasena.errors.maxlength"> La contraseña es demasiado larga</div>
                 <div *ngIf="f.contrasena.errors.minlength"> La contraseña es demasiado corta</div>
             </div>
@@ -143,55 +143,56 @@
         <div class="form-group">
             <input type="password" formControlName="confirm_password" maxlength="60" class="form-control" placeholder="Confirmar contraseña" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" />
             <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-                <div *ngIf="f.confirm_password.errors.required">El campo de Confirmar Contraseña es obligatorio</div>
+                <div *ngIf="f.confirm_password.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.confirm_password.errors.ConfirmedValidator">La Contraseña no es la misma</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="correo" maxlength="60" class="form-control" placeholder="Correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
             <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
-                <div *ngIf="f.correo.errors.required">El campo de Correo es obligatorio</div>
+                <div *ngIf="f.correo.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.correo.errors.email">Debe de ser un correo</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="telefono" maxlength="60" class="form-control" placeholder="Telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
             <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
-                <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+                <div *ngIf="f.telefono.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="iban" maxlength="60" class="form-control" placeholder="Numero Iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" />
             <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
-                <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
+                <div *ngIf="f.iban.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="dni" maxlength="60" class="form-control" placeholder="DNI" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" />
             <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
-                <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
+                <div *ngIf="f.dni.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="cp" maxlength="60" class="form-control" placeholder="Codigo Postal" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }" />
             <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
-                <div *ngIf="f.cp.errors.required">El campo de Codigo Postal es obligatorio</div>
+                <div *ngIf="f.cp.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.cp.errors.pattern">El codigo postal son 5 numeros</div>
             </div>
         </div>
         <div class="form-group">
             <input type="text" formControlName="direccio" maxlength="60" class="form-control"  placeholder="Direccion" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }" />
             <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
-                <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
+                <div *ngIf="f.direccio.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
         </div>
 
         <br>
         <div class="form-group">
             <input   type="submit" class="btn btn-primary" value='Registrar' />
+            {{'SIGNIN' | translate}}
         </div>
     </form>
 
@@ -215,7 +216,7 @@
         <div class="">
           <div *ngIf="myForm.get('correo').hasError('required') && myForm.get('correo').touched"
             class='alert alert-danger'>
-            Este campo es obligatorio
+            {{'CAMPOOBLIGATORIO' | translate}}
           </div>
         </div>
         <div class="form-group">
@@ -225,12 +226,12 @@
         <div class="">
           <div *ngIf="myForm.get('contrasena').hasError('required') && myForm.get('contrasena').touched"
             class='alert alert-danger'>
-            Este campo es obligatorio
+            {{'CAMPOOBLIGATORIO' | translate}}
           </div>
         </div>
         <div class="form-group">
           <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">
-            Iniciar sesión
+            {{'SOYTECH' | translate}}
           </button>
         </div>
       </form>

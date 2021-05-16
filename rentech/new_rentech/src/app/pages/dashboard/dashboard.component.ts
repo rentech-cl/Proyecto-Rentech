@@ -18,9 +18,15 @@ export class DashboardComponent implements OnInit {
   vender_producto:boolean= false;
   anadir_tecnic:boolean= false;
   historialpedido:boolean= false;
+  isAdmin: boolean = false;
   constructor(    private router: Router    ) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('role')==='21232f297a57a5a743894a0e4a801fc3'){
+      this.isAdmin=true;
+    }else{
+      this.isAdmin=false;
+    }
   }
 
   toggleMenu() {

@@ -36,13 +36,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let listarpedidos of this.alquiler; index as i">
-            <th scope="row">{{i+1}}</th>
-            <td>{{this.compra[i]['nombre']}}</td>
-            <td>{{this.compra[i]['fecha_entrada']}}</td>
-            <td>{{this.compra[i]['fecha_fin']}}</td>
-            <td>{{this.compra[i]['precio_final']/0.04}}€</td>
-            <td>{{this.compra[i]['cantidad']}}</td>
+        <tr *ngFor="let listarpedidos of this.alquiler; index as e">
+            <th scope="row">{{e+1}}</th>
+            <td>{{this.compra[e]['nombre']}}</td>
+            <td>{{this.compra[e]['fecha_entrada']}}</td>
+
+            <td>{{this.compra[e]['precio_final']/0.04}}€</td>
+            <td>{{this.compra[e]['cantidad']}}</td>
             <td></td>
 
         </tr>

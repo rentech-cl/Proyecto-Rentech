@@ -15,7 +15,7 @@ export class HistorialPedidoComponent implements OnInit {
   listarpedidos: HistorialPedidoComponent;
   alquiler;
   compra =new compra;
-  nombre: String;
+
   idEmpleado: string = null;
   asignarUsuario;
 
@@ -46,7 +46,7 @@ export class HistorialPedidoComponent implements OnInit {
           try {
             console.log(datos)
             this.compra=datos;
-            console.log(this.compra)
+            // console.log(this.compra)
           }
           catch (error) {
             console.log("error")

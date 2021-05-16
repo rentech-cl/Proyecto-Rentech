@@ -40,6 +40,9 @@ export class ClienteService {
   listarAverias(averia) {
     return this.http.post(`${this.url}listaveria.php`, JSON.stringify(averia));
   }
+  listarAveriasTecnico(averia) {
+    return this.http.post(`${this.url}listAveriaTecnico.php`, JSON.stringify(averia));
+  }
   listarAlquiler(listAlquiler) {
     return this.http.post(`${this.url}historial_cliente_Alquiler.php`, JSON.stringify(listAlquiler));
   }
@@ -51,6 +54,9 @@ export class ClienteService {
   }
   asignarAveria(averia) {
     return this.http.post(`${this.url}asignaraveria.php`, JSON.stringify(averia));
+  }
+  averiaresuelta(averia) {
+    return this.http.post(`${this.url}averiaResuelta.php`, JSON.stringify(averia));
   }
   alquilerProducto(alquilarProducto) {
     return this.http.post(`${this.url}add_alquiler.php`, JSON.stringify(alquilarProducto));

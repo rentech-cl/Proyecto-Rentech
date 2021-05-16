@@ -20,7 +20,7 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/VenderProducto']">{{'VENDER-PRODUCTO' | translate}}</a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link">Envíar una avería</a>
                 </li>
@@ -104,7 +104,7 @@
                 <div class="card bg-success text-white mb-4">
                     <div class="card-body">{{'AVERIA-DISPONIBLES' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" [routerLink]="['/VenderProducto']">{{'MAS-INFO' | translate}}</a>
+                        <a class="small text-white stretched-link" (click)="averia_disponible()">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -147,6 +147,7 @@
     <app-alquilar-producto *ngIf="alquilar_producto==true"></app-alquilar-producto>
     <app-vender-producto *ngIf="vender_producto==true"></app-vender-producto>
     <app-averias *ngIf="averia==true"></app-averias>
+    <app-averias-disponibles *ngIf="averiaDisp==true"></app-averias-disponibles>
     <app-anadir-tecnico *ngIf="anadir_tecnic==true"></app-anadir-tecnico>
     <app-historial-pedido *ngIf="historialpedido==true"></app-historial-pedido>
 

@@ -105,8 +105,8 @@
 <ng-template #registercontent let-c="close" let-d="dismiss">
     <div class="modal-body">
         <div class="text-center">
-            <h3 class="title mb-4">Bienvenido a Rentech</h3>
-            <h4 class="text-uppercase text-primary"><b>Darme de alta</b></h4>
+            <h3 class="title mb-4">{{'BIENBENIDO' | translate}}</h3>
+            <h4 class="text-uppercase text-primary"><b>{{'SIGNIN' | translate}}</b></h4>
         </div>
         <div class="login-form mt-4">
             <form [formGroup]="registerForm" (ngSubmit)="register()">

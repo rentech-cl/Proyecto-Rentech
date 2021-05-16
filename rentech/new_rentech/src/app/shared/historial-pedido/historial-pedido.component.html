@@ -10,14 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let listarAverias of this.averia; index as i">
+      <tr>
         <th scope="row"></th>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
           <td>
-            <form (ngSubmit)="seleccionar(this.averia[i]['idAveria'])">
+            <form>
               <button class="btn btn-primary" >Seleccionar avería</button>
             </form>
           </td>

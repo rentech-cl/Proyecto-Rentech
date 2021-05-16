@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
 import { Producto } from 'src/app/models/producto';
+
 @Component({
   selector: 'app-anadir-prod',
   templateUrl: './anadir-prod.component.html',
@@ -42,8 +43,20 @@ export class AnadirProdComponent implements OnInit {
     }else{
       
       this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
-        datos => {
+        
+        (datos: Producto) => {
+          if (datos['result'] === 'OK') {
+            Swal.fire({
+              position: 'top',
+              icon: 'success',
+              title: 'Producto guardado.',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+          
           try {
+            
             console.log(datos)
           }
           catch (error) {

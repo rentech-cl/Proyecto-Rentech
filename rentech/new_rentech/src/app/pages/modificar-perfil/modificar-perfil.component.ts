@@ -99,8 +99,18 @@ export class ModificarPerfilComponent implements OnInit {
 
 
 
-    this.ClienteService.modificarCliente(this.registerFormModify.getRawValue()).subscribe((data: 
-      {}) => {
+    this.ClienteService.modificarCliente(this.registerFormModify.getRawValue()).subscribe(
+      (data: {}) => {
+        
+        if (data['result'] === 'OK') {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Usuario modificado!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
             this.Router.navigate(['/dashboard'])
           })
          

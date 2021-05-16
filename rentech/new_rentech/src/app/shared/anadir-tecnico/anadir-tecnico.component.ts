@@ -57,10 +57,16 @@ export class AnadirTecnicoComponent implements OnInit {
     }else{
       console.log("Has sido registrado!!");
       this.ClienteService.registerTecnico(this.registerFormT.value).subscribe (
-        datos => {
-          console.log(datos)
-          
-        }
+        (datos: Tecnico) => {
+          if (datos['result'] === 'OK') {
+            Swal.fire({
+              position: 'top',
+              icon: 'success',
+              title: 'Técnico registrado!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }}
       );
     }
   }

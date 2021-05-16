@@ -119,7 +119,7 @@
     <div>
       <label>Salario</label>
     </div>
-    <input class="form-control" type="text"  placeholder="{{this.salario}}"   formControlName="salario" [ngClass]="{ 'is-invalid': submitted && f.salario.errors }" >
+    <input class="form-control" type="text"  placeholder="{{this.salario}}"   formControlName="salario" readonly [ngClass]="{ 'is-invalid': submitted && f.salario.errors }" >
     <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
       <div *ngIf="f.salario.errors.required">El campo de salario es obligatorio</div>
     </div>

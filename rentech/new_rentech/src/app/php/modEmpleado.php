@@ -17,7 +17,7 @@ if(!$jsontecnico){
  
  
  $sentencia = " UPDATE daw2_rentech.empleados
-  SET dni='$jsontecnico->dni' ,nombre='$jsontecnico->nombre',iban='$jsontecnico->iban',salario= '$jsontecnico->salario',direccio='$jsontecnico->direccio',telefono='$jsontecnico->telefono',apellido='$jsontecnico->apellido',correo='$jsontecnico->correo'
+  SET dni='$jsontecnico->dni' ,nombre='$jsontecnico->nombre',iban='$jsontecnico->iban',salario= '$jsontecnico->salario',direccion='$jsontecnico->direccio',telefono='$jsontecnico->telefono',apellido='$jsontecnico->apellido',correo='$jsontecnico->correo'
   WHERE dni = '$jsontecnico->dni'";
 
   if ($res = mysqli_query($con,$sentencia)) {

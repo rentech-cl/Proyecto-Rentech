@@ -145,16 +145,17 @@ export class IndexComponent implements OnInit {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
             console.log('Login realizado');
-            this.router.navigate(['/dashboard']);
-            localStorage.setItem('nombre', this.datosUsuario[0][0]);
-            localStorage.setItem('apellido', this.datosUsuario[0][1]);
-            localStorage.setItem('id', this.datosUsuario[0][2]);
+            this.router.navigate(['/dashboard']);        
+            
+            localStorage.setItem('dni', this.datosUsuario[0][0]);
+            localStorage.setItem('nombre', this.datosUsuario[0][1]);
+            localStorage.setItem('apellido', this.datosUsuario[0][2]);
             localStorage.setItem('correo', this.datosUsuario[0][3]);
             localStorage.setItem('telefono', this.datosUsuario[0][4]);
-            localStorage.setItem('iban', this.datosUsuario[0][5]);
-            localStorage.setItem('dni', this.datosUsuario[0][6]);
-            localStorage.setItem('cp', this.datosUsuario[0][7]);
-            localStorage.setItem('direccio', this.datosUsuario[0][8]);
+            localStorage.setItem('direccio', this.datosUsuario[0][5]);
+            localStorage.setItem('salario', this.datosUsuario[0][6]);
+            localStorage.setItem('id', this.datosUsuario[0][7]);
+            localStorage.setItem('iban', this.datosUsuario[0][8]);
             localStorage.setItem('password', this.datosUsuario[0][9]);
             localStorage.setItem('role', '21232f297a57a5a743894a0e4a801fc3');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));

@@ -28,7 +28,7 @@
             </ul>
             <ul class="navbar-nav navbar-center">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="logout()">{{'ENVIAR-AVERIA' | translate}}</a>
+                    <a class="nav-link" (click)="logout()">{{'Cerrar sesión' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -115,6 +115,16 @@
                     <div class="card-body">{{'MODIFICAR-PERFIL' | translate}}</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">{{'MAS-INFO' | translate}}</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">{{'MODIFICAR-EMPLEADO' | translate}}</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" [routerLink]="['/ModificarEmpleado']">{{'MAS-INFO' | translate}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>

@@ -46,8 +46,6 @@ export class ModificarPerfilComponent implements OnInit {
     this.cp= localStorage.getItem('cp');
     this.dni= localStorage.getItem('dni');
     this.direccio= localStorage.getItem('direccio');
-    //this.password= localStorage.getItem('password');
-    //this.confirm_password= localStorage.getItem('confirm_password');
     
     console.log(this.perfilCliente);
 
@@ -96,7 +94,6 @@ export class ModificarPerfilComponent implements OnInit {
     console.log(this.registerFormModify.value);
     // stop here if form is invalid
     if (this.registerFormModify.invalid) {
-      console.log("eskere");
         return;
     }else{
 
@@ -106,8 +103,8 @@ export class ModificarPerfilComponent implements OnInit {
       {}) => {
             this.Router.navigate(['/dashboard'])
           })
-          alert('Modificado!! :-)\n\n' //+ JSON.stringify(this.registerFormModify.getRawValue())
-          )
+         
+          
         }
 
 

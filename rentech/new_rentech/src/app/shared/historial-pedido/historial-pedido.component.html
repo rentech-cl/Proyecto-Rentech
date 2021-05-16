@@ -1,0 +1,26 @@
+<table class="table justify-content-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Contacto</th>
+        <th scope="col">Urgencia</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Seleccionar avería</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listarAverias of this.averia; index as i">
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+          <td>
+            <form (ngSubmit)="seleccionar(this.averia[i]['idAveria'])">
+              <button class="btn btn-primary" >Seleccionar avería</button>
+            </form>
+          </td>
+      </tr>
+    </tbody>
+  </table>

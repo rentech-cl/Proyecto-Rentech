@@ -132,6 +132,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-xl-3 col-md-6 nav-link">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">{{'HISOTRIAL-PEDIDO' | translate}}</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" (click)="historial_pedido()">{{'ADD' | translate}}</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -141,6 +151,7 @@
     <app-vender-producto *ngIf="vender_producto==true"></app-vender-producto>
     <app-averias *ngIf="averia==true"></app-averias>
     <app-anadir-tecnico *ngIf="anadir_tecnic==true"></app-anadir-tecnico>
+    <app-historial-pedido *ngIf="historialpedido==true"></app-historial-pedido>
 
 </div>
 <app-footer></app-footer>

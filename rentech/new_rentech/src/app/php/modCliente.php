@@ -7,7 +7,9 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 $texto = file_get_contents("php://input");
 $jsoncliente = json_decode($texto);
-echo('prueba');
+
+
+
 if(!$jsoncliente){
   exit("No hay datos");
 }
@@ -48,11 +50,11 @@ else{
                                                 '$jsoncliente->direccio',
                                                    )";*/
 
-  $sentencia = "UPDATE cliente SET nombre = '$jsoncliente->nombre', apellido = 
-            '$jsoncliente->apellido', correo = '$jsoncliente->correo', telefono = '$jsoncliente->telefono', 
-            iban = '$jsoncliente->iban', dni = '$jsoncliente->dni', cp = '$jsoncliente->cp', direccio = '$jsoncliente->direccio'
-            a WHERE dni = '$jsoncliente->dni'";
-  
+ 
+ 
+ $sentencia = " UPDATE daw2_rentech.cliente
+  SET dni='$jsoncliente->dni' ,nombre='$jsoncliente->nombre',iban='$jsoncliente->iban',cp= '$jsoncliente->cp',direccio='$jsoncliente->direccio',telefono='$jsoncliente->telefono',apellido='$jsoncliente->apellido',correo='$jsoncliente->correo'
+  WHERE dni = '$jsoncliente->dni'";
 
   if ($res = mysqli_query($con,$sentencia)) {
 

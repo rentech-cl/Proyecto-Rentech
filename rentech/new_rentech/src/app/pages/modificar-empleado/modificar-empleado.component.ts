@@ -99,7 +99,7 @@ export class ModificarEmpleadoComponent implements OnInit {
 
 
 
-    this.ClienteService.modificarCliente(this.registerFormModify.getRawValue()).subscribe(
+    this.ClienteService.modificarEmpledo(this.registerFormModify.getRawValue()).subscribe(
       (data: {}) => {
         
         if (data['result'] === 'OK') {

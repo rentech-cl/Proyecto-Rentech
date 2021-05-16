@@ -60,8 +60,14 @@ export class ClienteService {
     return this.http.post(`${this.url}modCliente.php`, JSON.stringify(mod));
     
   }
+  modificarEmpledo(mod) {
+    console.log(mod);
 
+    return this.http.post(`${this.url}modEmpleado.php`, JSON.stringify(mod));
+    
+  }
 
+ 
  
   setDatos(datos) {
     this.datos = datos;

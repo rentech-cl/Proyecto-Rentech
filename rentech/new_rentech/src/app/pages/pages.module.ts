@@ -20,13 +20,14 @@ import { ErrorComponent } from './error/error.component';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-empleado.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/','.json');
 }
 
 @NgModule({
-  declarations: [IndexComponent, DashboardComponent, AlquilarProductoComponent, VenderProductoComponent, ModificarPerfilComponent, ErrorComponent],
+  declarations: [IndexComponent, DashboardComponent, AlquilarProductoComponent, VenderProductoComponent, ModificarPerfilComponent, ErrorComponent, ModificarEmpleadoComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

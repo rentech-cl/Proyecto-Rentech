@@ -3,17 +3,17 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ClienteService } from '../../services/cliente.service';
-import { Cliente } from '../../models/cliente';
+import { Tecnico } from '../../models/tecnico';
 
 @Component({
-  selector: 'app-modificar-perfil',
-  templateUrl: './modificar-perfil.component.html',
-  styleUrls: ['./modificar-perfil.component.css']
+  selector: 'app-modificar-empleado',
+  templateUrl: './modificar-empleado.component.html',
+  styleUrls: ['./modificar-empleado.component.css']
 })
-export class ModificarPerfilComponent implements OnInit {
+export class ModificarEmpleadoComponent implements OnInit {
   submitted = false;
   registerFormModify: FormGroup;
-  perfilCliente : Cliente;
+  perfilTecnico : Tecnico;
   
   
   nombre: string;
@@ -22,7 +22,7 @@ export class ModificarPerfilComponent implements OnInit {
   telefono: string;
   iban: string;
   dni: string;
-  cp: string;
+  salario: string;
   direccio: string;
   password: string;
   confirm_password: string;
@@ -36,18 +36,18 @@ export class ModificarPerfilComponent implements OnInit {
    }
   
   ngOnInit(): void {
-    this.perfilCliente= this.ClienteService.getDatos();
+    this.perfilTecnico= this.ClienteService.getDatos();
     this.nombre= localStorage.getItem('nombre');
     this.apellido= localStorage.getItem('apellido');
     this.correo= localStorage.getItem('correo');
     this.telefono= localStorage.getItem('telefono');
     this.iban= localStorage.getItem('iban');
     this.dni= localStorage.getItem('dni');
-    this.cp= localStorage.getItem('cp');
+    this.salario= localStorage.getItem('salario');
     this.dni= localStorage.getItem('dni');
     this.direccio= localStorage.getItem('direccio');
     
-    console.log(this.perfilCliente);
+    console.log(this.perfilTecnico);
 
     this.registerFormModify = this.formBuilder.group({
       
@@ -57,7 +57,7 @@ export class ModificarPerfilComponent implements OnInit {
       telefono: [this.telefono, [ Validators.required, Validators.pattern("[0-9 ]{9}")]],
       iban: [this.iban, [Validators.minLength(24), Validators.maxLength(24), Validators.required]],
       dni: [this.dni, [Validators.required, Validators.pattern("^[0-9]{8}[A-Za-z]$")]],
-      cp: [this.cp, [Validators.required, Validators.pattern("[0-9 ]{5}")]],
+      salario: [this.salario, [Validators.required, ]],
       direccio: [this.direccio, [Validators.minLength(2), Validators.maxLength(60), Validators.required]],
       //password: [this.password, [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
     // confirm_password: [ , Validators.required],
@@ -75,7 +75,7 @@ export class ModificarPerfilComponent implements OnInit {
     localStorage.removeItem('telefono');
     localStorage.removeItem('iban');
     localStorage.removeItem('dni');
-    localStorage.removeItem('cp');
+    localStorage.removeItem('salario');
     localStorage.removeItem('direccio');
     localStorage.removeItem('password');
     localStorage.removeItem('currentUser');

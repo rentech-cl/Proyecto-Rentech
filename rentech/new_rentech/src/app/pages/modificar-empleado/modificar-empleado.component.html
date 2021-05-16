@@ -1,0 +1,156 @@
+nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand logo" [routerLink]="['/']">
+      <img src="assets/images/logo-dark.png" alt="" class="logo-dark" height="24" />
+      <img src="assets/images/logo-light.png" alt="" class="logo-light" height="24" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/AquilarProducto']" >Alquilar producto</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" [routerLink]="['/VenderProducto']">Vender producto</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav navbar-center">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" >Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><p>Modificar usuario {{this.nombre}}</p></h2>
+    </div>
+  </div>
+<form [formGroup]="registerFormModify" (ngSubmit)="onSubmit()"  >
+          
+        
+
+  <div class="form-group">
+    <div>
+      <label>Nombre </label>
+    </div>
+    
+    <input  class="form-control" type="text"  placeholder="{{this.nombre}}" formControlName="nombre"   [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" >
+    
+    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+      <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
+      <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
+      <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Apellido</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.apellido}}" formControlName="apellido"  [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" >
+    <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+      <div *ngIf="f.apellido.errors.required">El campo de apellido es obligatorio</div>
+      <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
+      <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Correo</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.correo}}" formControlName="correo" readonly [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" >
+    <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+      <div *ngIf="f.correo.errors.required">El campo de correo es obligatorio</div>
+      <div *ngIf="f.correo.errors.email"> Tiene que ser un correo</div>
+      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Teléfono</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.telefono}}" formControlName="telefono"  [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" >
+    <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+      <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
+      <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Iban</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.iban}}"  formControlName="iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" >
+    <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
+      <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
+      <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>DNI</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.dni}}" readonly formControlName="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" >
+    <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+      <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
+      <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Salario</label>
+    </div>
+    <input class="form-control" type="text"  placeholder="{{this.salario}}"   formControlName="salario" [ngClass]="{ 'is-invalid': submitted && f.salario.errors }" >
+    <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
+      <div *ngIf="f.salario.errors.required">El campo de salario es obligatorio</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label>Direcció</label>
+    </div>
+    <input class="form-control" type="text" placeholder="{{this.direccio}}"  formControlName="direccio" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }" >
+    <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
+      <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
+    </div>
+  </div>
+
+  
+
+  
+
+
+
+
+
+
+  <button type="submit" class="btn btn-primary" >
+    <i-feather name="user"></i-feather> Modificar
+  </button>
+       
+
+</form>
+
+<br>
+</div>
+<app-footer></app-footer>

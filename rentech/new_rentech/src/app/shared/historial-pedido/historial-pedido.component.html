@@ -11,20 +11,6 @@
         </tr>
     </thead>
     <tbody>
-<<<<<<< HEAD
-      <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-          <td>
-            <form>
-              <button class="btn btn-primary" >Seleccionar avería</button>
-            </form>
-          </td>
-      </tr>
-=======
         <tr *ngFor="let listarpedidos of this.alquiler; index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{this.alquiler[i]['nombre']}}</td>
@@ -35,7 +21,6 @@
             <td></td>
 
         </tr>
->>>>>>> 76a30359e7d7d8f25927c98474c6a7c9aa3fa4be
     </tbody>
 </table>
 

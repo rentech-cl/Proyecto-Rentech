@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AsignarAveria } from 'src/app/models/asignarAveria';
-import { alquiler } from 'src/app/models/listAlquiler';
 import { compra } from 'src/app/models/listCompra';
 import { ClienteService } from '../service/cliente.service';
 
@@ -14,7 +13,7 @@ import { ClienteService } from '../service/cliente.service';
 export class HistorialPedidoComponent implements OnInit {
 
   listarpedidos: HistorialPedidoComponent;
-  alquiler= new alquiler;
+  alquiler;
   compra =new compra;
   nombre: String;
   idEmpleado: string = null;
@@ -26,22 +25,23 @@ export class HistorialPedidoComponent implements OnInit {
     private ClienteService: ClienteService) { }
 
   ngOnInit(): void {
+    this.idEmpleado= localStorage.getItem('id');
 
-    this.ClienteService.listarAlquiler("alquiler").subscribe(
+
+    this.ClienteService.listarAlquiler(this.idEmpleado).subscribe(
       datos => {
         try {
           console.log(datos)
           this.alquiler=datos;
-          console.log(this.alquiler)
+          // console.log(this.alquiler)
         }
         catch (error) {
           console.log("error")
         }
       });
 
-      this.idEmpleado= localStorage.getItem('id');
 
-      this.ClienteService.listarCompras("compra").subscribe(
+      this.ClienteService.listarCompras(this.idEmpleado).subscribe(
         datos => {
           try {
             console.log(datos)

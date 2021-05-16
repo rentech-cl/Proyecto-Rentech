@@ -10,19 +10,20 @@ $jsonhistorialAlquiler = json_decode($texto);
 
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT producto2.nombre , s.*  FROM salida_alquiler s, producto2
-                inner join producto2 on s.idProducto = producto2.idProducto
-                WHERE idCliente='$jsonhistorialAlquiler->idcliente' ";
+$instruccion ="select  p2.nombre , sa.*
+from salida_alquiler sa
+inner join producto2 p2 on p2.idProducto = sa.idProducto
+where sa.idCliente =$jsonhistorialAlquiler ";
 
 $result = mysqli_query($con, $instruccion);
 
 
 
 while ($fila = $result->fetch_assoc()) {
-  $listalquiler [] =$fila;
+  $listaveria [] =$fila;
 }
 
-echo(json_encode($listalquiler));
+echo(json_encode($listaveria));
 
 ?>
 

@@ -59,6 +59,7 @@ export class AnadirTecnicoComponent implements OnInit {
       this.ClienteService.registerTecnico(this.registerFormT.value).subscribe (
         datos => {
           console.log(datos)
+          
         }
       );
     }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AsignarAveria } from 'src/app/models/asignarAveria';
-import { compra } from 'src/app/models/listCompra';
 import { ClienteService } from '../service/cliente.service';
 @Component({
   selector: 'app-listar-salidas',
@@ -12,7 +10,7 @@ import { ClienteService } from '../service/cliente.service';
 export class ListarSalidasComponent implements OnInit {
   listarpedidos: ListarSalidasComponent;
   alquiler;
-  compra =new compra;
+  compra;
 
   idEmpleado: string = null;
   asignarUsuario;
@@ -38,7 +36,7 @@ export class ListarSalidasComponent implements OnInit {
         datos => {
           try {
             console.log(datos)
-            this.alquiler=datos;
+            this.compra=datos;
             // console.log(this.alquiler)
           }
           catch (error) {

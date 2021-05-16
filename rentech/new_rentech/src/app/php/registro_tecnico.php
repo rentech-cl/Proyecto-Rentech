@@ -45,9 +45,9 @@ else{
                                                 '$jsontecnico->iban',
                                                 '$jsontecnico->dni',
                                                 '$jsontecnico->direccio',
-                    
-                                                '$jsontecnico->salario',
-                                                '$pass')";
+                                                '$pass',
+                                                '$jsontecnico->salario'
+                                                )";
   if ($res = mysqli_query($con,$sentencia)) {
 
     echo('{ "result": "OK" }');

@@ -49,7 +49,16 @@ export class AnadirProdComponent implements OnInit {
             Swal.fire({
               position: 'top',
               icon: 'success',
-              title: 'Producto guardado.',
+              title: 'Producto guardado!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+          else{
+            Swal.fire({
+              position:'top',
+              icon: 'error',
+              title:'Producto no agregado!',
               showConfirmButton: false,
               timer: 1500
             })

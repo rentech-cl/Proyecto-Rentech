@@ -67,6 +67,14 @@ export class VenderProductoComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+        }else{
+          Swal.fire({
+            position:'top',
+            icon: 'error',
+            title:'Producto no agregado!',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
 
         try {

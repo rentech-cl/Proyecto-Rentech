@@ -110,6 +110,14 @@ export class ModificarPerfilComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+        }else{
+          Swal.fire({
+            position:'top',
+            icon: 'error',
+            title:'Usuario no modificado!',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
             this.Router.navigate(['/dashboard'])
           })

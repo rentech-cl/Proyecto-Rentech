@@ -66,6 +66,14 @@ export class AnadirTecnicoComponent implements OnInit {
               showConfirmButton: false,
               timer: 1500
             })
+          }else{
+            Swal.fire({
+              position:'top',
+              icon: 'error',
+              title:'Técnico no registrado!',
+              showConfirmButton: false,
+              timer: 1500
+            })
           }}
       );
     }

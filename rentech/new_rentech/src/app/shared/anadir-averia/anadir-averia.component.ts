@@ -48,6 +48,15 @@ export class AnadirAveriaComponent implements OnInit {
               timer: 1500
             })
           }
+          else{
+            Swal.fire({
+              position:'top',
+              icon: 'error',
+              title:'Averia no asignada!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
         try {
           console.log(datos)
         }

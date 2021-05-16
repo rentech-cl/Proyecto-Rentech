@@ -71,7 +71,16 @@ export class AlquilarProductoComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+        }else{
+          Swal.fire({
+            position:'top',
+            icon: 'error',
+            title:'Producto no agregado!',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
+
         try {
           console.log(datos)
           this.asignarAlquiler = datos;

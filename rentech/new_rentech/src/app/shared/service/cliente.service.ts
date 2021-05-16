@@ -40,6 +40,12 @@ export class ClienteService {
   listarAverias(averia) {
     return this.http.post(`${this.url}listaveria.php`, JSON.stringify(averia));
   }
+  listarAlquiler(listAlquiler) {
+    return this.http.post(`${this.url}historial_cliente_Alquiler.php`, JSON.stringify(listAlquiler));
+  }
+  listarCompras(listCompra) {
+    return this.http.post(`${this.url}historial_cliente_Compra.php`, JSON.stringify(listCompra));
+  }
   listarProductos(productos) {
     return this.http.post(`${this.url}listproductos.php`, JSON.stringify(productos));
   }

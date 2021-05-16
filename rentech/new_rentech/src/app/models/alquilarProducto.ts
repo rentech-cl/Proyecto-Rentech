@@ -6,6 +6,8 @@ export class alquilarProducto {
     public idproducto: string,
     public cantidad: number,
     public precio: number,
+    public fecha: string,
+    public fecha2: string,
 
   ){}
 

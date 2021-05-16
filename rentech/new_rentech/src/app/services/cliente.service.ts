@@ -34,6 +34,9 @@ export class ClienteService {
     return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
   }
   registerTecnico(register) {
+    console.log("a baix");
+    console.log(register);
+    console.log("amunt");
     return this.http.post(`${this.url}registro_tecnico.php`, JSON.stringify(register));
   }
   anadirProducto(register) {
@@ -53,8 +56,9 @@ export class ClienteService {
   }
   modificarCliente(mod) {
     console.log(mod);
-    console.log("Eskerwe2");
+
     return this.http.post(`${this.url}modCliente.php`, JSON.stringify(mod));
+    
   }
 
 

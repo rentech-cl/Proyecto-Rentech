@@ -24,15 +24,17 @@ else{
   // (idAlquiler, mensualidad, fecha_inicio, fecha_fin, idProducto, idCliente, cantidad)
   // VALUES(NULL, NULL, NULL, NULL, NULL, '', 0);
 
+  $sentencia ="INSERT INTO daw2_rentech.salida_alquiler (mensualidad,fecha_inicio,fecha_fin,idProducto,idCliente,cantidad)
+	VALUES ($jsonalquilarProducto->precio,'$jsonalquilarProducto->fecha','$jsonalquilarProducto->fecha2',$jsonalquilarProducto->idproducto,'$jsonalquilarProducto->idcliente',$jsonalquilarProducto->cantidad)";
 
-  $sentencia ="INSERT INTO salida_alquiler (mensualidad, fecha_inicio, fecha_fin, idProducto, idCliente, cantidad) VALUES(
-                                              $jsonalquilarProducto->precio,
-                                              $jsonalquilarProducto->fecha,
-                                              $jsonalquilarProducto->fecha2,
-                                              $jsonalquilarProducto->idproducto,
-                                              $jsonalquilarProducto->idcliente,
-                                              $jsonalquilarProducto->cantidad
-                                            )";
+  // $sentencia ="INSERT INTO salida_alquiler (mensualidad, fecha_inicio, fecha_fin, idProducto, idCliente, cantidad) VALUES(
+  //                                             $jsonalquilarProducto->precio,
+  //                                             $jsonalquilarProducto->fecha,
+  //                                             $jsonalquilarProducto->fecha2,
+  //                                             $jsonalquilarProducto->idproducto,
+  //                                             $jsonalquilarProducto->idcliente,
+  //                                             $jsonalquilarProducto->cantidad
+  //                                           )";
   if ($res = mysqli_query($con,$sentencia)) {
 
 // "SyntaxError: Unexpected token < in JSON at position 0\n    at JSON.parse (<anonymous>)\n

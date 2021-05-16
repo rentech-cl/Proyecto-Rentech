@@ -49,6 +49,9 @@ export class ClienteService {
   alquilerProducto(alquilarProducto) {
     return this.http.post(`${this.url}add_alquiler.php`, JSON.stringify(alquilarProducto));
   }
+  venderProducto(ventaProducto) {
+    return this.http.post(`${this.url}add_venta.php`, JSON.stringify(ventaProducto));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

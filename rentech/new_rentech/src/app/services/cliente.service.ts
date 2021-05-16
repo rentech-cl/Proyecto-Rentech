@@ -61,8 +61,6 @@ export class ClienteService {
     
   }
   modificarEmpledo(mod) {
-    console.log(mod);
-
     return this.http.post(`${this.url}modEmpleado.php`, JSON.stringify(mod));
     
   }

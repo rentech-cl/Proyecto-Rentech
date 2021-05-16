@@ -24,8 +24,7 @@ export class ModificarEmpleadoComponent implements OnInit {
   dni: string;
   salario: string;
   direccio: string;
-  password: string;
-  confirm_password: string;
+ 
   constructor( 
     private Router: Router,
     public formBuilder: FormBuilder,

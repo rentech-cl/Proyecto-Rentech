@@ -7,9 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 $texto = file_get_contents("php://input");
 $jsonvenderProducto = json_decode($texto);
-$hoy ;
-$hoy2;
-$fechaFin;
+
 
 if(!$jsonvenderProducto){
   exit("No hay datos");
@@ -22,10 +20,9 @@ else{
 $sentencia ="INSERT INTO `salida_compra`(`precio_final`,`fecha_entrada`, `idProducto`,`idCliente`, `cantidad`)
   VALUES (                                      '$jsonvenderProducto->precio',
                                                 '$jsonvenderProducto->fecha',
-                                                '$jsonvenderProducto->idProducto',
-                                                '$jsonvenderProducto->idCliente',
+                                                '$jsonvenderProducto->idproducto',
+                                                '$jsonvenderProducto->idcliente',
                                                 '$jsonvenderProducto->cantidad'
-
                                                 )";
   if ($res = mysqli_query($con,$sentencia)) {
 

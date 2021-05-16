@@ -55,16 +55,16 @@ export class VenderProductoComponent implements OnInit {
 
 
 
-    // this.ClienteService.alquilerProducto(this.venderProducto).subscribe(
-    //   datos => {
-    //     try {
-    //       console.log(datos)
-    //       this.venderProducto = datos;
-    //       console.log(this.venderProducto)
-    //     }
-    //     catch (error) {
-    //       console.log("error")
-    //     }
-    //   });
+    this.ClienteService.venderProducto(this.venderProducto).subscribe(
+      datos => {
+        try {
+          console.log(datos)
+          this.venderProducto = datos;
+          console.log(this.venderProducto)
+        }
+        catch (error) {
+          console.log("error")
+        }
+      });
   }
 }

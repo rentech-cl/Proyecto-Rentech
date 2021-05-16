@@ -149,6 +149,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-3 col-md-6 nav-link">
+              <div class="card bg-primary text-white mb-4">
+                  <div class="card-body">{{'Listar Salidas' | translate}}</div>
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                      <a class="small text-white stretched-link" (click)="listarSalidas()">{{'List out' | translate}}</a>
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
 
@@ -160,6 +169,6 @@
     <app-averias-disponibles *ngIf="averiaDisp==true"></app-averias-disponibles>
     <app-anadir-tecnico *ngIf="anadir_tecnic==true"></app-anadir-tecnico>
     <app-historial-pedido *ngIf="historialpedido==true"></app-historial-pedido>
-
+    <app-listar-salidas *ngIf="salidas==true"></app-listar-salidas>
 </div>
 <app-footer></app-footer>

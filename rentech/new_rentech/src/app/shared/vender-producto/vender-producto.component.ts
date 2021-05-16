@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { venderProducto } from 'src/app/models/venderProducto';
 import { ClienteService } from '../service/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vender-producto',
@@ -57,6 +58,17 @@ export class VenderProductoComponent implements OnInit {
 
     this.ClienteService.venderProducto(this.venderProducto).subscribe(
       datos => {
+
+        if (datos['result'] === 'OK') {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Producto agregado!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+
         try {
           console.log(datos)
           this.venderProducto = datos;

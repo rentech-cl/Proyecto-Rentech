@@ -1,0 +1,50 @@
+<h3>Historial de alquiler</h3>
+<table class="table justify-content-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha inicio</th>
+            <th scope="col">Fecha fin</th>
+            <th scope="col">Mensualidad</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let listarpedidos of this.alquiler; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{this.alquiler[i]['nombre']}}</td>
+            <td>{{this.alquiler[i]['fecha_inicio']}}</td>
+            <td>{{this.alquiler[i]['fecha_fin']}}</td>
+            <td>{{this.alquiler[i]['mensualidad']}}€/ mes</td>
+            <td>{{this.alquiler[i]['cantidad']}}</td>
+            <td></td>
+
+        </tr>
+    </tbody>
+</table>
+
+<h3>Historial de compras</h3>
+<table class="table justify-content-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha entrada</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let listarpedidos of this.alquiler; index as e">
+            <th scope="row">{{e+1}}</th>
+            <td>{{this.compra[e]['nombre']}}</td>
+            <td>{{this.compra[e]['fecha_entrada']}}</td>
+
+            <td>{{this.compra[e]['precio_final']/0.04}}€</td>
+            <td>{{this.compra[e]['cantidad']}}</td>
+            <td></td>
+
+        </tr>
+    </tbody>
+</table>

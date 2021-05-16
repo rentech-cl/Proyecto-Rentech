@@ -64,6 +64,12 @@ export class ClienteService {
   venderProducto(ventaProducto) {
     return this.http.post(`${this.url}add_venta.php`, JSON.stringify(ventaProducto));
   }
+  ListarSalidasAlquiler(ventaProducto){
+    return this.http.post(`${this.url}listSalidasAlquiler.php`, JSON.stringify(ventaProducto));
+  }
+  ListarSalidasCompra(ventaProducto){
+    return this.http.post(`${this.url}listSalidasCompra.php`, JSON.stringify(ventaProducto));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

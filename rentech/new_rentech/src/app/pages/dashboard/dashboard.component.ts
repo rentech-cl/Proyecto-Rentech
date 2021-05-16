@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   anadir_averia:boolean= false;
   averiaDisp:boolean= false;
   alquilar_producto:boolean= false;
+  salidas:boolean= false;
   vender_producto:boolean= false;
   anadir_tecnic:boolean= false;
   historialpedido:boolean= false;
@@ -124,4 +125,12 @@ export class DashboardComponent implements OnInit {
           this.anadir_tecnic=false;
             }
           }
+          listarSalidas(){
+            if(this.salidas==false){
+              this.salidas=true;
+
+            }else{
+              this.salidas=false;
+                }
+              }
 }

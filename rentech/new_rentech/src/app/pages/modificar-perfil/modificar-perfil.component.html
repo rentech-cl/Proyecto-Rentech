@@ -74,7 +74,7 @@
     <div>
       <label>Correo</label>
     </div>
-    <input class="form-control" type="text"  placeholder="{{this.correo}}" formControlName="correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" >
+    <input class="form-control" type="text"  placeholder="{{this.correo}}" formControlName="correo" readonly [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" >
     <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
       <div *ngIf="f.correo.errors.required">El campo de correo es obligatorio</div>
       <div *ngIf="f.correo.errors.email"> Tiene que ser un correo</div>
@@ -108,7 +108,7 @@
     <div>
       <label>DNI</label>
     </div>
-    <input class="form-control" type="text"  placeholder="{{this.dni}}"  formControlName="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" >
+    <input class="form-control" type="text"  placeholder="{{this.dni}}" readonly formControlName="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" >
     <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
       <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
       <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>

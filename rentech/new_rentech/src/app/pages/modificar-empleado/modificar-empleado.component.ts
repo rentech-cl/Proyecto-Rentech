@@ -25,6 +25,7 @@ export class ModificarEmpleadoComponent implements OnInit {
   salario: string;
   direccio: string;
 
+  datosUsuario;
   constructor(
     private Router: Router,
     public formBuilder: FormBuilder,
@@ -89,15 +90,27 @@ export class ModificarEmpleadoComponent implements OnInit {
 
 
   onSubmit() {
+    
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('apellido');
+    localStorage.removeItem('telefono');
+    localStorage.removeItem('iban');
+    localStorage.removeItem('direccio');
+
+    localStorage.setItem('nombre', this.registerFormModify.value.nombre);
+    localStorage.setItem('apellido',this.registerFormModify.value.apellido);
+    localStorage.setItem('telefono', this.registerFormModify.value.telefono);
+    localStorage.setItem('direccio', this.registerFormModify.value.direccio);
+    localStorage.setItem('iban', this.registerFormModify.value.iban);
     this.submitted = true;
-    //console.log(this.registerFormModify.value);
+    console.log(this.registerFormModify.value);
     // stop here if form is invalid
     if (this.registerFormModify.invalid) {
         return;
     }else{
 
-
-      alert("ESKERE");
+     
+      
     this.ClienteService.modificarEmpledo(this.registerFormModify.getRawValue()).subscribe(
       (data: {}) => {
 
@@ -108,7 +121,19 @@ export class ModificarEmpleadoComponent implements OnInit {
             title: 'Usuario modificado!',
             showConfirmButton: false,
             timer: 1500
-          })
+
+
+          }
+          )
+          datos => {
+           
+            this.datosUsuario = datos;
+              }
+             
+            
+            
+          
+        
         }else{
           Swal.fire({
             position:'top',

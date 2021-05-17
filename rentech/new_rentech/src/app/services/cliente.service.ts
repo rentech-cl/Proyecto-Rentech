@@ -61,7 +61,6 @@ export class ClienteService {
 
   }
   modificarEmpledo(mod) {
-    alert("ESKERE");
     //console.log(mod);
     return this.http.post(`${this.url}modEmpleado.php`, JSON.stringify(mod));
 

@@ -1,0 +1,28 @@
+<table class="table justify-content-center">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Contacto</th>
+      <th scope="col">Urgencia</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Eliminar producto</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    <tr *ngFor="let listarproducto of this.producto; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{this.producto[i]['nombre']}}</td>
+      <td>{{this.producto[i]['descripcion']}}</td>
+      <td>{{this.producto[i]['cantidad']}}</td>
+      <td>{{this.producto[i]['precio']}}</td>
+        <td>
+          <form (ngSubmit)="seleccionar(this.producto[i]['idProducto'])">
+            <button  class="btn btn-danger" >Eliminar</button>
+          </form>
+        </td>
+    </tr>
+  </tbody>
+</table>

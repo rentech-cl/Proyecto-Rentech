@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   averiaDisp:boolean= false;
   alquilar_producto:boolean= false;
   salidas:boolean= false;
+  listProdc:boolean= false;
   vender_producto:boolean= false;
   anadir_tecnic:boolean= false;
   historialpedido:boolean= false;
@@ -67,7 +68,7 @@ export class DashboardComponent implements OnInit {
 
     }else{
       this.anadir_producto=false;
-      
+
     }
   }
 
@@ -191,6 +192,22 @@ export class DashboardComponent implements OnInit {
           this.anadir_tecnic=false;
             }
           }
+          listarProductos(){
+            if(this.listProdc==false){
+              this.listProdc=true;
+              this.averia=false;
+              this.anadir_producto=false;
+              this.anadir_averia=false;
+              this.alquilar_producto=false;
+              this.vender_producto=false;
+              this.averiaDisp=false;
+              this.historialpedido=false;
+              this.salidas=false;
+
+            }else{
+              this.listProdc=false;
+                }
+          }
           listarSalidas(){
             if(this.salidas==false){
               this.salidas=true;
@@ -202,7 +219,7 @@ export class DashboardComponent implements OnInit {
               this.averiaDisp=false;
               this.historialpedido=false;
               this.anadir_tecnic=false;
-              
+
 
             }else{
               this.salidas=false;

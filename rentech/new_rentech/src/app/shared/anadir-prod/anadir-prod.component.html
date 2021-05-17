@@ -4,57 +4,57 @@
     <form [formGroup]="myForm" (ngSubmit)="anadir()">
         
         <div class="form-group">
-            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="{{'NOMBRE1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-              <div *ngIf="f.nombre.errors.required">El campo de Nombre es obligatorio</div>
-              <div *ngIf="f.nombre.errors.maxLength"> El nombre es demasiado largo</div>
-              <div *ngIf="f.nombre.errors.minLength"> El nombre es demasiado corto</div>
+              <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+              <div *ngIf="f.nombre.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+              <div *ngIf="f.nombre.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
             </div>
         </div>
 
 
         <div class="form-group">
-            <textarea class="form-control" [(ngModel)]="producto_nuevo.descripcion" formControlName="descripcion" placeholder="Descripción" name="" id="" cols="40" rows="5"  [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+            <textarea class="form-control" [(ngModel)]="producto_nuevo.descripcion" formControlName="descripcion" placeholder="{{'DESCRIPCION1' | translate}}" name="" id="" cols="40" rows="5"  [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
             <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
-                <div *ngIf="f.descripcion.errors.required">El campo de descripción es obligatorio</div>
-                <div *ngIf="f.descripcion.errors.maxLength"> La descripción es demasiada largo</div>
-                <div *ngIf="f.descripcion.errors.minLength"> La descripción es demasiada corto</div>
+                <div *ngIf="f.descripcion.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.descripcion.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+                <div *ngIf="f.descripcion.errors.minLength">{{'CAMPOCORTO' | translate}}</div>
               </div>
         </div>
 
         
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="Cantidad" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="{{'CANTIDAD1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
             <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
-                <div *ngIf="f.cantidad.errors.required">El campo de cantidad es obligatorio</div>
-                <div *ngIf="f.cantidad.errors.maxLength"> La cantidad es demasiada largo</div>
-                <div *ngIf="f.cantidad.errors.minLength"> La cantidad es demasiada corto</div>
+                <div *ngIf="f.cantidad.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.cantidad.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+                <div *ngIf="f.cantidad.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
               </div>
         </div>
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.img" formControlName="img" placeholder="URL de la imagen" [ngClass]="{ 'is-invalid': submitted && f.img.errors }">
+            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.img" formControlName="img" placeholder="{{'URLIMG1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.img.errors }">
             <div *ngIf="submitted && f.img.errors" class="invalid-feedback">
-                <div *ngIf="f.img.errors.required">El campo de img es obligatorio</div>
-                <div *ngIf="f.img.errors.maxLength"> La img es demasiada largo</div>
-                <div *ngIf="f.img.errors.minLength"> La img es demasiada corto</div>
+                <div *ngIf="f.img.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.img.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+                <div *ngIf="f.img.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
               </div>
         </div>
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="Precio unitario €"[ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
+            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="{{'PRECIO1' | translate}}"[ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
             <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
-                <div *ngIf="f.precio.errors.required">El campo de precio es obligatorio</div>
-                <div *ngIf="f.precio.errors.maxLength"> El precio es demasiada largo</div>
-                <div *ngIf="f.precio.errors.minLength"> El precio es demasiada corto</div>
+                <div *ngIf="f.precio.errors.required"> {{'CAMPOOBLIGATORIO' | translate}} </div>
+                <div *ngIf="f.precio.errors.maxLength"> {{'CAMPOLARGO' | translate}} </div>
+                <div *ngIf="f.precio.errors.minLength"> {{'CAMPOCORTO' | translate}} </div>
               </div>
         </div>
 
 
         <button type="submit" class="btn btn-primary">
-      <i-feather name="shopping-bag"></i-feather> Añadir producto
+      <i-feather name="shopping-bag"></i-feather> {{'ADDPROD1' | translate}}
     </button>
     </form>
 </div>

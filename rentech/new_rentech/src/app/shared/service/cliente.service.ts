@@ -70,6 +70,12 @@ export class ClienteService {
   ListarSalidasCompra(ventaProducto){
     return this.http.post(`${this.url}listSalidasCompra.php`, JSON.stringify(ventaProducto));
   }
+  listarProducto(ListProd){
+    return this.http.post(`${this.url}list_productos.php`, JSON.stringify(ListProd));
+  }
+  borrarProducto(borrar){
+    return this.http.post(`${this.url}eliminar_producto.php`, JSON.stringify(borrar));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

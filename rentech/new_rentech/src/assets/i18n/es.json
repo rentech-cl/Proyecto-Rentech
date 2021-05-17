@@ -9,6 +9,10 @@
     "ESCALAR": "Permite escalar tu negocio con la última tecnología",
     "BIENBENIDO": "Bienvenido a Rentech",
     "CAMPOOBLIGATORIO": "Este campo es obligatorio",
+    "CAMPOLARGO": "Campo demasiado largo",
+    "CAMPOCORTO": "Campo demasiado corto",
+    "CAMPOCORREO": "Este campo debe ser un correo",
+    "CAMPOPASWD": "La contraseña no coincide",
     "SOYTECH": "Soy técnico",
     "ALQUILAR-PRODUCTO": "Alquilar producto",
     "VENDER-PRODUCTO": "Vender producto",
@@ -60,10 +64,21 @@
     "CONTACTARNOS": "Contactarnos",
     "INFO-CONTACT-US": "Aquí podrás ponerte en contacto con nosotros para mas información o resolver cualquier tipo de dudas.",
     "MODIFICAR-EMPLEADO": "Modificar empleado",
+<<<<<<< HEAD
     "INCIDENCIA":"El ordenador no enciende // Va demasiado lento // Se a roto el teclado/pantalla",
     "EJEMPLO": "ejemplo@correo.com",
     "NIVEL-URGENCIA": "Nivel Urgencia",
     "LEVE": "Leve",
     "MODERADO": "Moderate",
     "URGENTE": "Urgente"
+=======
+    "ESCOJE1": "Escoje",
+    "NOMBRE1": "Nombre",
+    "DESCRIPCION1": "Descripción",
+    "CANTIDAD1": "Cantidad",
+    "URLIMG1": "URL de la imagen",
+    "PRECIO1": "Precio por unidad €",
+    "ADDPROD1": "Añadir producto"
+
+>>>>>>> 997742e995f67977687d4c19107e4fd27c15c005
 }

@@ -21,8 +21,9 @@ else{
   
 $result = mysqli_query($con, $instruccion);
 
-while ($mostrar = $result->fetch_assoc()) {
+while ($mostrar = mysqli_fetch_array($result)) {
 $cantidadDisponible= $mostrar['Nombre'];
+
 }
 if($cantidadDisponible>=$jsonvenderProducto->cantidad){
 

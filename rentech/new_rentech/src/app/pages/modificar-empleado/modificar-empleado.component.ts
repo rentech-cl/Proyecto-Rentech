@@ -90,18 +90,6 @@ export class ModificarEmpleadoComponent implements OnInit {
 
 
   onSubmit() {
-    
-    localStorage.removeItem('nombre');
-    localStorage.removeItem('apellido');
-    localStorage.removeItem('telefono');
-    localStorage.removeItem('iban');
-    localStorage.removeItem('direccio');
-
-    localStorage.setItem('nombre', this.registerFormModify.value.nombre);
-    localStorage.setItem('apellido',this.registerFormModify.value.apellido);
-    localStorage.setItem('telefono', this.registerFormModify.value.telefono);
-    localStorage.setItem('direccio', this.registerFormModify.value.direccio);
-    localStorage.setItem('iban', this.registerFormModify.value.iban);
     this.submitted = true;
     console.log(this.registerFormModify.value);
     // stop here if form is invalid
@@ -124,17 +112,26 @@ export class ModificarEmpleadoComponent implements OnInit {
 
 
           }
+
           )
           datos => {
            
             this.datosUsuario = datos;
               }
-             
-            
-            
+    
+              localStorage.removeItem('nombre');
+              localStorage.removeItem('apellido');
+              localStorage.removeItem('telefono');
+              localStorage.removeItem('iban');
+              localStorage.removeItem('direccio');
           
-        
-        }else{
+              localStorage.setItem('nombre', this.registerFormModify.value.nombre);
+              localStorage.setItem('apellido',this.registerFormModify.value.apellido);
+              localStorage.setItem('telefono', this.registerFormModify.value.telefono);
+              localStorage.setItem('direccio', this.registerFormModify.value.direccio);
+              localStorage.setItem('iban', this.registerFormModify.value.iban);
+       
+            }else{
           Swal.fire({
             position:'top',
             icon: 'error',

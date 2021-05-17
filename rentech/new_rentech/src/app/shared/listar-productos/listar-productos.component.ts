@@ -38,6 +38,13 @@ export class ListarProductosComponent implements OnInit {
 
 }
 
+Modificar(idProductM){
+
+
+}
+
+
+
 seleccionar(idProducto){
   console.log(idProducto)
 

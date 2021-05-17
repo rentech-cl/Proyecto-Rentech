@@ -15,7 +15,16 @@ if(!$jsonvenderProducto){
 
 else{
 
+  $instruccion ="select disponible
+  from producto2
+  where idProducto = $jsonvenderProducto->idproducto ";
+  
+$result = mysqli_query($con, $instruccion);
 
+while ($mostrar = $result->fetch_assoc()) {
+$cantidadDisponible= $mostrar['Nombre'];
+}
+if($cantidadDisponible>=$jsonvenderProducto->cantidad){
 
 $sentencia ="INSERT INTO `salida_compra`(`precio_final`,`fecha_entrada`, `idProducto`,`idCliente`, `cantidad`)
   VALUES (                                      '$jsonvenderProducto->precio',
@@ -24,15 +33,26 @@ $sentencia ="INSERT INTO `salida_compra`(`precio_final`,`fecha_entrada`, `idProd
                                                 '$jsonvenderProducto->idcliente',
                                                 '$jsonvenderProducto->cantidad'
                                                 )";
-  if ($res = mysqli_query($con,$sentencia)) {
 
+$disponible2=$cantidadDisponible+$jsonvenderProducto->cantidad;
 
+  $sentencia2 ="UPDATE daw2_rentech.producto2
+  SET   disponible='$disponible2'
+  WHERE idProducto=' $jsonvenderProducto->idproducto'";
+
+  if ($res = mysqli_query($con,$sentencia) && $res = mysqli_query($con,$sentencia2)) {
 
     echo('{ "result": "OK" }');
 
   } else{
       echo('{ "result": "ERROR", "message": "Algo salio mal"  }');
     }
+
+}else{
+  echo('{ "result": "ERROR2", "message": "Producto Sin stock"  }');
+}
+
+
 
 
 

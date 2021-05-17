@@ -77,7 +77,19 @@ export class VenderProductoComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-        }else{
+
+        }
+       else if (datos['result'] === 'ERROR2') {
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title:'Producto sin stock!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+        }
+        else{
           Swal.fire({
             position:'top',
             icon: 'error',

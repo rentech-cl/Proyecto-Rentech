@@ -2,29 +2,29 @@
     <form class="" [formGroup]="myForm" (ngSubmit)="enviaraveria()">
         <div class="form-group">
             <label for="">Nombre</label>
-            <input class="form-control" [(ngModel)]="averia_nueva.nombre" formControlName="nombre" type="text" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <input class="form-control" [(ngModel)]="averia_nueva.nombre" formControlName="nombre" type="text" placeholder="{{'NOMBRE' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-              <div *ngIf="f.nombre.errors.minLength">El nombre es demasiado corto</div>
-              <div *ngIf="f.nombre.errors.maxLength">El nombre es demasiado largo</div>
-              <div *ngIf="f.nombre.errors.required">Campo obligatorio</div>
+              <div *ngIf="f.nombre.errors.minLength">{{'NOMBRE' | translate}} {{'TOO-SHORT' | translate}}</div>
+              <div *ngIf="f.nombre.errors.maxLength">{{'NOMBRE' | translate}} {{'TOO-LONG' | translate}}</div>
+              <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
         </div>
         <div class="form-group">
             <label for="">Descripcion</label>
             <textarea class="form-control" [(ngModel)]="averia_nueva.descripcion" formControlName="descripcion"  [ngClass]="{ 'is-invalid': submitted && f.contacto.errors }" placeholder="El ordenador no enciende // Va demasiado lento // Se a roto el teclado/pantalla" name="" id="" cols="40" rows="5"></textarea>
             <div *ngIf="submitted && f.contacto.errors" class="invalid-feedback">
-              <div *ngIf="f.contacto.errors.minLength">El nombre es demasiado corto</div>
-              <div *ngIf="f.contacto.errors.maxLength">El nombre es demasiado largo</div>
-              <div *ngIf="f.contacto.errors.required">Campo obligatorio</div>
+              <div *ngIf="f.contacto.errors.minLength">{{'NOMBRE' | translate}} {{'TOO-SHORT' | translate}}</div>
+              <div *ngIf="f.contacto.errors.maxLength">{{'NOMBRE' | translate}} {{'TOO-LONG' | translate}}</div>
+              <div *ngIf="f.contacto.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
           </div>
         <div class="form-group">
             <label for="">Contacto </label>
             <textarea class="form-control" [(ngModel)]="averia_nueva.contacto" formControlName="contacto" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" placeholder="ejemplo@correo.com" name="" id="" cols="40" rows="5"></textarea>
             <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
-              <div *ngIf="f.descripcion.errors.minLength">El nombre es demasiado corto</div>
-              <div *ngIf="f.descripcion.errors.maxLength">El nombre es demasiado largo</div>
-              <div *ngIf="f.descripcion.errors.required">Campo obligatorio</div>
+              <div *ngIf="f.descripcion.errors.minLength">{{'NOMBRE' | translate}} {{'TOO-SHORT' | translate}}</div>
+              <div *ngIf="f.descripcion.errors.maxLength">{{'NOMBRE' | translate}} {{'TOO-LONG' | translate}}</div>
+              <div *ngIf="f.descripcion.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
           </div>
         <div class="form-group">

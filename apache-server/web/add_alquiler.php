@@ -35,7 +35,7 @@ else{
   WHERE idProducto=' $jsonalquilarProducto->idproducto'";
 
    
-    if ($res = mysqli_query($con,$sentencia)&& $res = mysqli_query($con,$sentencia2)) {
+    if ($res = mysqli_query($con,$sentencia) && $res = mysqli_query($con,$sentencia2)) {
   
   
   
@@ -46,7 +46,7 @@ else{
       }
 
   }else{
-    echo('{ "result": "ERROR", "message": "No hay cantidad disponible"  }');
+    echo('{ "result": "ERROR2", "message": "No hay cantidad disponible"  }');
     }
 
 

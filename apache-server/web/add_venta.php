@@ -22,7 +22,7 @@ else{
 $result = mysqli_query($con, $instruccion);
 
 while ($mostrar = mysqli_fetch_array($result)) {
-$cantidadDisponible= $mostrar['Nombre'];
+$cantidadDisponible= $mostrar['disponible'];
 
 }
 if($cantidadDisponible>=$jsonvenderProducto->cantidad){

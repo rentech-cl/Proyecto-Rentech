@@ -76,6 +76,9 @@ export class ClienteService {
   borrarProducto(borrar){
     return this.http.post(`${this.url}eliminar_producto.php`, JSON.stringify(borrar));
   }
+  modificarProducto(producto){
+    return this.http.post(`${this.url}mod_producto.php`, JSON.stringify(producto));
+  }
   logged(){
     if(localStorage.getItem('nombre')!=null){
       return true;

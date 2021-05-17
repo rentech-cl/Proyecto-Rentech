@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
+import { modificarProducto } from 'src/app/models/modificarProducto';
 
 @Component({
   selector: 'app-listar-productos',
@@ -16,6 +17,7 @@ export class ListarProductosComponent implements OnInit {
   nombre: String;
   idEmpleado: string = null;
   asignarUsuario;
+  modificarProducto;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -38,8 +40,43 @@ export class ListarProductosComponent implements OnInit {
 
 }
 
-Modificar(idProductM){
+modificar(idProducto, nombre, descripcion, cantidad, precio){
 
+this.modificarProducto = new modificarProducto(idProducto,nombre.value,descripcion.value,cantidad.value,precio.value)
+
+this.ClienteService.modificarProducto(this.modificarProducto).subscribe(
+  datos => {
+    if (datos['result'] === 'OK') {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Producto modificado!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      window.location.reload();
+     }else{
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'No se puede modificar este producto!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+    try {
+      //console.log(datos)
+      //console.log(this.averia)
+    }
+    catch (error) {
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'No se puede modificar este producto!',
+        showConfirmButton: false,
+        timer: 1500
+      })    }
+  });
 
 }
 

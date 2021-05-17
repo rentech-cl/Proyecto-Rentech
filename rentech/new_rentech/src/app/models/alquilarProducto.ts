@@ -1,5 +1,3 @@
-import { NgbPaginationNumber } from "@ng-bootstrap/ng-bootstrap";
-
 export class alquilarProducto {
   constructor(
     public idcliente: string,

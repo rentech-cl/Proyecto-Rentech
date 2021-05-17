@@ -58,5 +58,20 @@
     "SOPORTE":"Soporte / si",
     "COMPRAR":"Comprar",
     "CONTACTARNOS":"Contactarnos",
-    "INFO-CONTACT-US": "Aquí podrás ponerte en contacto con nosotros para mas información o resolver cualquier tipo de dudas."
+    "INFO-CONTACT-US": "Aquí podrás ponerte en contacto con nosotros para mas información o resolver cualquier tipo de dudas.",
+    "NOMBRE":"Nombre",
+    "CORREO":"Correo",
+    "TELEFONO":"Telefone",
+    "CONTRASEÑA":"Constraseña",
+    "NUM-IBAN":"Numero Iban",
+    "CODIGO-POSTAL":"Codigo postal",
+    "DIRECCION":"Direccion",
+    "CONFIRMAR":"Confirmar",
+    "TOO-LONG":"es demasiado largo",
+    "TOO-SHORT":"es demasiado corto",
+    "PSSWD-MATCH": "La Contraseña no es la misma",
+    "RESTRICCION-TELEFONO":"Deben ser 9 numeros",
+    "RESTRICCION-NUM.IBAN":" Revisa los caracteres introducidos, deben ser 24",
+    "RESTRICCION-DNI":"La identificación debe tener 8 números y una letra",
+    "RESTRICCION-POSTAL": "El codigo postal son 5 numeros"
  }

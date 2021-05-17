@@ -54,6 +54,16 @@ export class VenderProductoComponent implements OnInit {
     //console.log(this.venderProducto);
 
 
+    if(cantidad.value<1){
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'Inserte una cantidad!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }else{
+
 
 
     this.ClienteService.venderProducto(this.venderProducto).subscribe(
@@ -63,7 +73,7 @@ export class VenderProductoComponent implements OnInit {
           Swal.fire({
             position: 'top',
             icon: 'success',
-            title: 'Producto agregado!',
+            title: 'Producto comprado!',
             showConfirmButton: false,
             timer: 1500
           })
@@ -71,7 +81,7 @@ export class VenderProductoComponent implements OnInit {
           Swal.fire({
             position:'top',
             icon: 'error',
-            title:'Producto no agregado!',
+            title:'Producto no comprado!',
             showConfirmButton: false,
             timer: 1500
           })
@@ -86,5 +96,7 @@ export class VenderProductoComponent implements OnInit {
           //console.log("error")
         }
       });
+    }
+
   }
 }

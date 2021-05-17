@@ -13,7 +13,7 @@
                           <br><br>
                             <h5>{{this.productos[i]['nombre']}}</h5>
                             <p>{{this.productos[i]['precio']/0.04}}€</p>
-                            <input type="number" #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
+                            <input type="number" value="1" min="1"  #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
                             <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
                             <br>
                             <br>

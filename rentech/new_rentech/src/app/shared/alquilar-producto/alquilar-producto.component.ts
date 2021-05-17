@@ -58,6 +58,16 @@ export class AlquilarProductoComponent implements OnInit {
     //console.log(this.asignarAlquiler);
 
 
+    if(cantidad.value<1){
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'Inserte una cantidad!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }else{
+
 
 
     this.ClienteService.alquilerProducto(this.asignarAlquiler).subscribe(
@@ -90,5 +100,6 @@ export class AlquilarProductoComponent implements OnInit {
           //console.log("error")
         }
       });
+    }
   }
 }

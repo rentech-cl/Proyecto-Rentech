@@ -28,7 +28,7 @@ else{
     $sentencia ="INSERT INTO daw2_rentech.salida_alquiler (mensualidad,fecha_inicio,fecha_fin,idProducto,idCliente,cantidad)
     VALUES ($jsonalquilarProducto->precio,'$jsonalquilarProducto->fecha','$jsonalquilarProducto->fecha2',$jsonalquilarProducto->idproducto,'$jsonalquilarProducto->idcliente',$jsonalquilarProducto->cantidad)";
   
-  $disponible2=$cantidadDisponible+$jsonalquilarProducto->cantidad;
+  $disponible2=$cantidadDisponible-$jsonalquilarProducto->cantidad;
 
   $sentencia2 ="UPDATE daw2_rentech.producto2
   SET   disponible='$disponible2'

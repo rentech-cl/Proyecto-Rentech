@@ -35,7 +35,7 @@ $sentencia ="INSERT INTO `salida_compra`(`precio_final`,`fecha_entrada`, `idProd
                                                 '$jsonvenderProducto->cantidad'
                                                 )";
 
-$disponible2=$cantidadDisponible+$jsonvenderProducto->cantidad;
+$disponible2=$cantidadDisponible-$jsonvenderProducto->cantidad;
 
   $sentencia2 ="UPDATE daw2_rentech.producto2
   SET   disponible='$disponible2'

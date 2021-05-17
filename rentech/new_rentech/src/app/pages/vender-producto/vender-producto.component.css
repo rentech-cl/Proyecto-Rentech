@@ -51,7 +51,7 @@ html, body {
 .wrapper .container .bottom .left {
   height: 100%;
   width: 50%;
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
   position: relative;
   float: left;
 }

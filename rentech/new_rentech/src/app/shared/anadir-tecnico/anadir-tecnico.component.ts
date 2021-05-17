@@ -51,11 +51,11 @@ export class AnadirTecnicoComponent implements OnInit {
 
   register() {
     this.submitted = true;
-    console.log(this.registerFormT.value);
+    //console.log(this.registerFormT.value);
     if (this.registerFormT.invalid) {
       return;
     }else{
-      console.log("Has sido registrado!!");
+      //console.log("Has sido registrado!!");
       this.ClienteService.registerTecnico(this.registerFormT.value).subscribe (
         (datos: Tecnico) => {
           if (datos['result'] === 'OK') {

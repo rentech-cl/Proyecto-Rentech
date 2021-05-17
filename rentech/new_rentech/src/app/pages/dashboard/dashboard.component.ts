@@ -14,12 +14,19 @@ export class DashboardComponent implements OnInit {
   anadir_averia:boolean= false;
   averiaDisp:boolean= false;
   alquilar_producto:boolean= false;
+  salidas:boolean= false;
   vender_producto:boolean= false;
   anadir_tecnic:boolean= false;
   historialpedido:boolean= false;
+  isAdmin: boolean = false;
   constructor(    private router: Router    ) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('role')==='21232f297a57a5a743894a0e4a801fc3'){
+      this.isAdmin=true;
+    }else{
+      this.isAdmin=false;
+    }
   }
 
   toggleMenu() {
@@ -38,7 +45,8 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('direccio');
     localStorage.removeItem('password');
     localStorage.removeItem('currentUser');
-    this.router.navigate(['/']);
+    localStorage.removeItem('role');
+    this.router.navigate(['/index']);
   }
 
 
@@ -117,4 +125,12 @@ export class DashboardComponent implements OnInit {
           this.anadir_tecnic=false;
             }
           }
+          listarSalidas(){
+            if(this.salidas==false){
+              this.salidas=true;
+
+            }else{
+              this.salidas=false;
+                }
+              }
 }

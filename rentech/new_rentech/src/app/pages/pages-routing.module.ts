@@ -6,6 +6,7 @@ import { IndexComponent } from './index/index.component';
 import { AlquilarProductoComponent } from './alquilar-producto/alquilar-producto.component';
 import { VenderProductoComponent } from './vender-producto/vender-producto.component';
 import { ModificarPerfilComponent } from './modificar-perfil/modificar-perfil.component';
+import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-empleado.component';
 import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
     component: IndexComponent
 },
 
-
+{
+  path: 'index',
+  component: IndexComponent
+},
 {
   path: 'dashboard',
   component: DashboardComponent , canActivate: [AuthGuard]
@@ -30,6 +34,10 @@ const routes: Routes = [
 {
   path: 'ModificarPerfil',
   component: ModificarPerfilComponent , canActivate: [AuthGuard]
+},
+{
+  path: 'ModificarEmpleado',
+  component: ModificarEmpleadoComponent , canActivate: [AuthGuard]
 },
 {
   path: '**',

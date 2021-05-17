@@ -12,23 +12,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
                 <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/index']">Home</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/AquilarProducto']">{{'ALQUILAR-PRODUCTO' | translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/VenderProducto']">{{'VENDER-PRODUCTO' | translate}}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link">{{'VENDER-PRODUCTO' | translate}}</a>
                 </li>
 
             </ul>
             <ul class="navbar-nav navbar-center">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="logout()">{{'ENVIAR-AVERIA' | translate}}</a>
+                    <a class="nav-link" (click)="logout()">{{'Cerrar sesión' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -42,104 +35,135 @@
     <div class="container-fluid h100">
         <h1 class="mt-4">{{'BIENBENIDO' | translate}}</h1>
 
+        <div *ngIf="this.isAdmin ===false">
+            <div class="row">
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">{{'ENVIAR-AVERIA' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="enviaraveria()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">{{'ALQUILAR-PRODUCTO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="alquilar_prod()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">{{'VENDER-PRODUCTO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="vender_prod()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">{{'MODIFICAR-PERFIL' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12 nav-link">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">{{'HISOTRIAL-PEDIDO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="historial_pedido()">{{'ADD' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- USUARIO -->
-        <div class="row">
 
-            <div class="col-xl-4 col-md-4">
-                <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">{{'ENVIAR-AVERIA' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="enviaraveria()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+
+
+        <div *ngIf="this.isAdmin ===true">
+            <div class="row">
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">{{'AÑADIR-PRODUCTO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="anadir_prod()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-xl-4 col-md-4">
-                <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">{{'ALQUILAR-PRODUCTO' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="alquilar_prod()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">{{'AVERIA-PENDIENTE' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="averias()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-xl-4 col-md-4">
-                <div class="card bg-success text-white mb-4">
-                    <div class="card-body">{{'VENDER-PRODUCTO' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="vender_prod()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">{{'AVERIA-DISPONIBLES' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="averia_disponible()">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 nav-link">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">{{'MODIFICAR-EMPLEADO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" [routerLink]="['/ModificarEmpleado']">{{'MAS-INFO' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-md-6 nav-link">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">{{'AÑADIR-TECNICO' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="anadir_tecnico()">{{'ADD' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 nav-link">
+                    <div class="card bg-dark text-light mb-4">
+                        <div class="card-body">{{'Listar Salidas' | translate}}</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" (click)="listarSalidas()">{{'Desplegar' | translate}}</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
+        <!-- tecnico -->
 
-        <!-- USUARIO -->
-        <div class="row">
 
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">{{'AÑADIR-PRODUCTO' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="anadir_prod()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">{{'AVERIA-PENDIENTE' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="averias()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-success text-white mb-4">
-                    <div class="card-body">{{'AVERIA-DISPONIBLES' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="averia_disponible()">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">{{'MODIFICAR-PERFIL' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" [routerLink]="['/ModificarPerfil']">{{'MAS-INFO' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">{{'AÑADIR-TECNICO' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="anadir_tecnico()">{{'ADD' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 nav-link">
-                <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">{{'HISOTRIAL-PEDIDO' | translate}}</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" (click)="historial_pedido()">{{'ADD' | translate}}</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <app-anadir-prod *ngIf="anadir_producto==true"></app-anadir-prod>
@@ -150,6 +174,6 @@
     <app-averias-disponibles *ngIf="averiaDisp==true"></app-averias-disponibles>
     <app-anadir-tecnico *ngIf="anadir_tecnic==true"></app-anadir-tecnico>
     <app-historial-pedido *ngIf="historialpedido==true"></app-historial-pedido>
-
+    <app-listar-salidas *ngIf="salidas==true"></app-listar-salidas>
 </div>
 <app-footer></app-footer>

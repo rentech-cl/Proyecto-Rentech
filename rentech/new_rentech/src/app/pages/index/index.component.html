@@ -24,12 +24,20 @@
                     <a [ngxScrollTo]="'#contact'" class="nav-link" [ngxScrollToOffset]="5">{{'CONTACTO' | translate}}</a>
                 </li>
             </ul>
-            <ul class="navbar-nav navbar-center">
+            <ul *ngIf="this.logged === false" class="navbar-nav navbar-center">
                 <li class="nav-item">
                     <a class="nav-link" (click)="loginModal(content)">{{'LOGIN' | translate}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" (click)="registerModal(registercontent)">{{'SIGNIN' | translate}}</a>
+                </li>
+            </ul>
+            <ul *ngIf="this.logged === true" class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()">{{'LOGOUT' | translate}}</a>
                 </li>
             </ul>
         </div>

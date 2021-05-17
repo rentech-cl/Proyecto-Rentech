@@ -25,6 +25,7 @@ export class IndexComponent implements OnInit {
   submitted = false;
   p: String = null;
   datosUsuario;
+  logged: boolean = false;
 
   currentSection = 'home';
 
@@ -57,6 +58,28 @@ export class IndexComponent implements OnInit {
     }, {
       validator: ConfirmedValidator('contrasena', 'confirm_password')
     });
+
+    if(localStorage.getItem('currentUser')){
+      this.logged= true;
+    }
+  }
+
+  logout(){
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('apellido');
+    localStorage.removeItem('nameUser');
+    localStorage.removeItem('id');
+    localStorage.removeItem('correo');
+    localStorage.removeItem('telefono');
+    localStorage.removeItem('iban');
+    localStorage.removeItem('dni');
+    localStorage.removeItem('cp');
+    localStorage.removeItem('direccio');
+    localStorage.removeItem('password');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('role');
+    localStorage.removeItem('salario');
+    this.router.navigate(['/index']);
   }
 
   /**
@@ -106,8 +129,7 @@ export class IndexComponent implements OnInit {
         try {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
-            console.log('Login realizado');
-            this.router.navigate(['/dashboard']);
+            //console.log('Login realizado');
             localStorage.setItem('nombre', this.datosUsuario[0][0]);
             localStorage.setItem('apellido', this.datosUsuario[0][1]);
             localStorage.setItem('id', this.datosUsuario[0][2]);
@@ -121,6 +143,8 @@ export class IndexComponent implements OnInit {
             localStorage.setItem('role', 'ee11cbb19052e40b07aac0ca060c23ee');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
+            window.location.reload();
+
           } else {
             throw new Error('An error occurred');
           }
@@ -134,31 +158,29 @@ export class IndexComponent implements OnInit {
         }
       });
 
-
-
   }
   loginTecnico(content) {
     this.ClienteService.loginTecnico(this.usuario).subscribe(
       datos => {
-        console.log(datos);
+        //console.log(datos);
         try {
           this.datosUsuario = datos;
           if (datos[0]['correo'] == this.usuario.correo) {
-            console.log('Login realizado');
-            this.router.navigate(['/dashboard']);
-            localStorage.setItem('nombre', this.datosUsuario[0][0]);
-            localStorage.setItem('apellido', this.datosUsuario[0][1]);
-            localStorage.setItem('id', this.datosUsuario[0][2]);
+            //console.log('Login realizado');
+            localStorage.setItem('dni', this.datosUsuario[0][0]);
+            localStorage.setItem('nombre', this.datosUsuario[0][1]);
+            localStorage.setItem('apellido', this.datosUsuario[0][2]);
             localStorage.setItem('correo', this.datosUsuario[0][3]);
             localStorage.setItem('telefono', this.datosUsuario[0][4]);
-            localStorage.setItem('iban', this.datosUsuario[0][5]);
-            localStorage.setItem('dni', this.datosUsuario[0][6]);
-            localStorage.setItem('cp', this.datosUsuario[0][7]);
-            localStorage.setItem('direccio', this.datosUsuario[0][8]);
+            localStorage.setItem('direccio', this.datosUsuario[0][5]);
+            localStorage.setItem('salario', this.datosUsuario[0][6]);
+            localStorage.setItem('id', this.datosUsuario[0][7]);
+            localStorage.setItem('iban', this.datosUsuario[0][8]);
             localStorage.setItem('password', this.datosUsuario[0][9]);
             localStorage.setItem('role', '21232f297a57a5a743894a0e4a801fc3');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)
+            window.location.reload();
           } else {
             throw new Error('An error occurred');
           }
@@ -186,14 +208,14 @@ export class IndexComponent implements OnInit {
 
   register() {
     this.submitted = true;
-    console.log(this.registerForm.value);
+    //console.log(this.registerForm.value);
     if (this.registerForm.invalid) {
       return;
     } else {
-      console.log("Has sido registrado!!");
+      //console.log("Has sido registrado!!");
       this.ClienteService.register(this.registerForm.value).subscribe(
         datos => {
-          console.log(datos)
+          //console.log(datos)
         }
       );
     }

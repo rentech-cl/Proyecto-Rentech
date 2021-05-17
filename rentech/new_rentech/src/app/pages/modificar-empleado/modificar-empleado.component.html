@@ -114,12 +114,11 @@
 
         <div class="form-group">
             <div>
-                <label>CP</label>
+                <label>Salario</label>
             </div>
-            <input class="form-control" type="text" placeholder="{{this.cp}}" formControlName="cp" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }">
-            <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
-                <div *ngIf="f.cp.errors.required">El campo de Codigo Postal es obligatorio</div>
-                <div *ngIf="f.cp.errors.pattern">El codigo postal son 5 numeros</div>
+            <input class="form-control" type="text" placeholder="{{this.salario}}" formControlName="salario" readonly [ngClass]="{ 'is-invalid': submitted && f.salario.errors }">
+            <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
+                <div *ngIf="f.salario.errors.required">El campo de salario es obligatorio</div>
             </div>
         </div>
 

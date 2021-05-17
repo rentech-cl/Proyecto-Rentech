@@ -32,7 +32,7 @@ export class AnadirAveriaComponent implements OnInit {
 
   enviaraveria(){
     this.submitted = true;
-    console.log(this.averia_nueva)
+    //console.log(this.averia_nueva)
     if (this.myForm.invalid) {
       return;
     }else{
@@ -46,7 +46,9 @@ export class AnadirAveriaComponent implements OnInit {
               title: 'Averia añadida!',
               showConfirmButton: false,
               timer: 1500
+
             })
+             window.location.reload();
           }
           else{
             Swal.fire({
@@ -58,7 +60,7 @@ export class AnadirAveriaComponent implements OnInit {
             })
           }
         try {
-          console.log(datos)
+          //console.log(datos)
         }
         catch (error) {
           Swal.fire({

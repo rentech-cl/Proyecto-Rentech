@@ -9,11 +9,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ClienteService {
 
   datos:any;
-  
+
   private currentUserSubject: BehaviorSubject<Cliente>;
   public currentUser: Observable<Cliente>;
 
-  url = 'http://localhost/'; // disponer de el url de su servidor que tiene los archivos PHP
+  url = 'https://rentech-cl.herokuapp.com/'; // disponer de el url de su servidor que tiene los archivos PHP
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<Cliente>(JSON.parse(localStorage.getItem('currentUser')));
@@ -34,9 +34,9 @@ export class ClienteService {
     return this.http.post(`${this.url}registro_cliente.php`, JSON.stringify(register));
   }
   registerTecnico(register) {
-    console.log("a baix");
-    console.log(register);
-    console.log("amunt");
+    //console.log("a baix");
+    //console.log(register);
+    //console.log("amunt");
     return this.http.post(`${this.url}registro_tecnico.php`, JSON.stringify(register));
   }
   anadirProducto(register) {
@@ -55,20 +55,26 @@ export class ClienteService {
     return this.http.post(`${this.url}listproductos.php`, JSON.stringify(productos));
   }
   modificarCliente(mod) {
-    console.log(mod);
+    //console.log(mod);
 
     return this.http.post(`${this.url}modCliente.php`, JSON.stringify(mod));
-    
+
+  }
+  modificarEmpledo(mod) {
+    alert("ESKERE");
+    //console.log(mod);
+    return this.http.post(`${this.url}modEmpleado.php`, JSON.stringify(mod));
+
   }
 
 
- 
+
   setDatos(datos) {
     this.datos = datos;
   }
 
   getDatos() {
-    console.log(this.datos);
+    //console.log(this.datos);
 
     return this.datos;
   }

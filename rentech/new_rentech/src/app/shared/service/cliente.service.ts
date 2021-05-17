@@ -11,7 +11,7 @@ export class ClienteService {
   private currentUserSubject: BehaviorSubject<Cliente>;
   public currentUser: Observable<Cliente>;
 
-  url = 'http://localhost/'; // disponer de el url de su servidor que tiene los archivos PHP
+  url = 'https://rentech-cl.herokuapp.com/'; // disponer de el url de su servidor que tiene los archivos PHP
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<Cliente>(JSON.parse(localStorage.getItem('currentUser')));
@@ -63,6 +63,12 @@ export class ClienteService {
   }
   venderProducto(ventaProducto) {
     return this.http.post(`${this.url}add_venta.php`, JSON.stringify(ventaProducto));
+  }
+  ListarSalidasAlquiler(ventaProducto){
+    return this.http.post(`${this.url}listSalidasAlquiler.php`, JSON.stringify(ventaProducto));
+  }
+  ListarSalidasCompra(ventaProducto){
+    return this.http.post(`${this.url}listSalidasCompra.php`, JSON.stringify(ventaProducto));
   }
   logged(){
     if(localStorage.getItem('nombre')!=null){

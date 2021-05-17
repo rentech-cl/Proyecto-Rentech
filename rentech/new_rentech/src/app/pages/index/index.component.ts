@@ -215,6 +215,24 @@ export class IndexComponent implements OnInit {
       //console.log("Has sido registrado!!");
       this.ClienteService.register(this.registerForm.value).subscribe(
         datos => {
+          if (datos['result'] === 'OK') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Usuario Regsitrado',
+              text: 'El usuario ha sido registrado correctamente!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }else if(datos['result'] === 'ERROR1'){
+            console.log(datos);
+            Swal.fire({
+              icon: 'error',
+              title: 'Este usuario ya existe!',
+              text: 'Revise el correo o el dni!',
+              showConfirmButton: false,
+            })
+          }
+
           //console.log(datos)
         }
       );

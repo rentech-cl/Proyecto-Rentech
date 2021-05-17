@@ -71,6 +71,7 @@ export class AnadirTecnicoComponent implements OnInit {
               position:'top',
               icon: 'error',
               title:'Técnico no registrado!',
+              text: 'Revise el correo o el dni!',
               showConfirmButton: false,
               timer: 1500
             })

@@ -96,6 +96,7 @@ export class ModificarPerfilComponent implements OnInit {
     if (this.registerFormModify.invalid) {
         return;
     }else{
+     
 
 
 
@@ -110,6 +111,20 @@ export class ModificarPerfilComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          localStorage.removeItem('nombre');
+          localStorage.removeItem('apellido');
+          localStorage.removeItem('telefono');
+          localStorage.removeItem('iban');
+          localStorage.removeItem('cp');
+          localStorage.removeItem('direccio');
+      
+          localStorage.setItem('nombre', this.registerFormModify.value.nombre);
+          localStorage.setItem('apellido',this.registerFormModify.value.apellido);
+          localStorage.setItem('telefono', this.registerFormModify.value.telefono);
+          localStorage.setItem('iban', this.registerFormModify.value.iban);
+          localStorage.setItem('cp', this.registerFormModify.value.cp);
+          localStorage.setItem('direccio', this.registerFormModify.value.direccio);
+         
         }else{
           Swal.fire({
             position:'top',

@@ -56,15 +56,32 @@ export class DashboardComponent implements OnInit {
   anadir_prod(){
     if(this.anadir_producto==false){
       this.anadir_producto=true;
+      this.averia=false;
+      this.anadir_averia=false;
+      this.alquilar_producto=false;
+      this.vender_producto=false;
+      this.averiaDisp=false;
+      this.historialpedido=false;
+      this.anadir_tecnic=false;
+      this.salidas=false;
 
     }else{
       this.anadir_producto=false;
+      
     }
   }
 
   enviaraveria(){
     if(this.anadir_averia==false){
       this.anadir_averia=true;
+      this.averia=false;
+      this.anadir_producto=false;
+      this.alquilar_producto=false;
+      this.vender_producto=false;
+      this.averiaDisp=false;
+      this.historialpedido=false;
+      this.anadir_tecnic=false;
+      this.salidas=false;
 
     }else{
       this.anadir_averia=false;
@@ -74,6 +91,14 @@ export class DashboardComponent implements OnInit {
   alquilar_prod(){
     if(this.alquilar_producto==false){
       this.alquilar_producto=true;
+      this.averia=false;
+      this.anadir_producto=false;
+      this.anadir_averia=false;
+      this.vender_producto=false;
+      this.averiaDisp=false;
+      this.historialpedido=false;
+      this.anadir_tecnic=false;
+      this.salidas=false;
 
       }else{
         this.alquilar_producto=false;
@@ -83,6 +108,14 @@ export class DashboardComponent implements OnInit {
     vender_prod(){
       if(this.vender_producto==false){
         this.vender_producto=true;
+        this.averia=false;
+        this.anadir_producto=false;
+        this.anadir_averia=false;
+        this.alquilar_producto=false;
+        this.averiaDisp=false;
+        this.historialpedido=false;
+        this.anadir_tecnic=false;
+        this.salidas=false;
 
         }else{
           this.vender_producto=false;
@@ -92,6 +125,15 @@ export class DashboardComponent implements OnInit {
       averias(){
         if(this.averia==false){
           this.averia=true;
+          this.vender_producto=false;
+          this.anadir_producto=false;
+          this.anadir_averia=false;
+          this.alquilar_producto=false;
+          this.vender_producto=false;
+          this.averiaDisp=false;
+          this.historialpedido=false;
+          this.anadir_tecnic=false;
+          this.salidas=false;
 
           }else{
             this.averia=false;
@@ -101,6 +143,14 @@ export class DashboardComponent implements OnInit {
         averia_disponible(){
           if(this.averiaDisp==false){
             this.averiaDisp=true;
+            this.averia=false;
+            this.anadir_producto=false;
+            this.anadir_averia=false;
+            this.alquilar_producto=false;
+            this.vender_producto=false;
+            this.historialpedido=false;
+            this.anadir_tecnic=false;
+            this.salidas=false;
 
             }else{
               this.averiaDisp=false;
@@ -111,6 +161,14 @@ export class DashboardComponent implements OnInit {
      historial_pedido(){
         if(this.historialpedido==false){
            this.historialpedido=true;
+           this.averia=false;
+           this.anadir_producto=false;
+           this.anadir_averia=false;
+           this.alquilar_producto=false;
+           this.vender_producto=false;
+           this.averiaDisp=false;
+           this.anadir_tecnic=false;
+           this.salidas=false;
 
             }else{
               this.historialpedido=false;
@@ -120,6 +178,14 @@ export class DashboardComponent implements OnInit {
       anadir_tecnico(){
         if(this.anadir_tecnic==false){
           this.anadir_tecnic=true;
+          this.averia=false;
+          this.anadir_producto=false;
+          this.anadir_averia=false;
+          this.alquilar_producto=false;
+          this.vender_producto=false;
+          this.averiaDisp=false;
+          this.historialpedido=false;
+          this.salidas=false;
 
         }else{
           this.anadir_tecnic=false;
@@ -128,6 +194,15 @@ export class DashboardComponent implements OnInit {
           listarSalidas(){
             if(this.salidas==false){
               this.salidas=true;
+              this.averia=false;
+              this.anadir_producto=false;
+              this.anadir_averia=false;
+              this.alquilar_producto=false;
+              this.vender_producto=false;
+              this.averiaDisp=false;
+              this.historialpedido=false;
+              this.anadir_tecnic=false;
+              
 
             }else{
               this.salidas=false;

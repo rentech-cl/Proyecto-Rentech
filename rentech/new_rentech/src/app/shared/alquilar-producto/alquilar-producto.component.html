@@ -1,9 +1,13 @@
+<p class="text-center text-muted">Todos los alquileres tienen una duración de 6 meses</p>
+
 <div *ngFor="let listarProductos of this.productos; index as i">
+  <br><br><br>
     <div class="wrapper">
         <div class="container">
-            <div class="top">
+            <div class="top text-center">
                 <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
             </div>
+            <br><br><br>
             <form (ngSubmit)="alquiler_producto(this.productos[i]['idProducto'], cantidad, this.productos[i]['precio'])">
                 <div class="bottom">
 
@@ -15,7 +19,7 @@
 
 
                             <h5>{{this.productos[i]['nombre']}}</h5>
-                            <p>{{this.productos[i]['precio']}}€/ mes</p>
+                            <p>{{this.productos[i]['precio']}}€/ mes </p>
 
                             <input type="number" #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
                             <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
@@ -33,8 +37,7 @@
                         <div class="">
                             <div class="mover">
                                 <br>
-                                <br>
-                                <br>
+
 
                                 <button class="buttonstyle">
                                    <i-feather name="shopping-bag"></i-feather>
@@ -68,3 +71,4 @@
 
 
 </div>
+<br><br><br><br><br><br>

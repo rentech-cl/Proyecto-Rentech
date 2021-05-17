@@ -64,7 +64,7 @@ body {
 .wrapper .container .bottom .left {
     height: 100%;
     width: 50%;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
     position: relative;
     float: left;
 }
@@ -186,10 +186,22 @@ body {
 
 .buttonstyle {
     background: #A6CDDE;
+    border-radius: 15rem;
     border: 0;
+
     height: 90PX;
     width: 90px;
     margin-left: 0px;
+}
+.buttonstyle:hover {
+  background: #546369;
+  color: white;
+  border-radius: 15rem;
+  border: 0;
+
+  height: 90PX;
+  width: 90px;
+  margin-left: 0px;
 }
 
 .wrapper .inside:hover {

@@ -21,7 +21,7 @@ else{
   $result = mysqli_query($con, $instruccion);
   
   while ($mostrar = $result->fetch_assoc()) {
-   $cantidadDisponible= $mostrar['Nombre'];
+   $cantidadDisponible= $mostrar['disponible'];
   }
   if($cantidadDisponible>=$jsonalquilarProducto->cantidad){
 

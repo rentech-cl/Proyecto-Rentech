@@ -72,7 +72,7 @@ export class AlquilarProductoComponent implements OnInit {
 
     this.ClienteService.alquilerProducto(this.asignarAlquiler).subscribe(
       datos => {
-
+         console.log(datos)
         if (datos['result'] === 'OK') {
           Swal.fire({
             position: 'top',

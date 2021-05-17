@@ -59,5 +59,13 @@
     "CON": "Buy",
     "CONTACTARNOS": "Contact Us",
     "INFO-CONTACT-US": "Here you can contact us for more information or to resolve any type of doubt.",
-    "MODIFICAR-EMPLEADO": "Modify user"
+    "MODIFICAR-EMPLEADO": "Modify user",
+    "ESCOJE": "Select",
+    "NOMBRE1": "Name",
+    "DESCRIPCION1": "Description",
+    "CANTIDAD1": "Amount",
+    "URLIMG1": "URL from image",
+    "PRECIO1": "Price by unit €",
+    "ADDPROD1": "Add product"
+
 }

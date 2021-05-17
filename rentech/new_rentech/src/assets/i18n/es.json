@@ -59,5 +59,13 @@
     "COMPRAR": "Comprar",
     "CONTACTARNOS": "Contactarnos",
     "INFO-CONTACT-US": "Aquí podrás ponerte en contacto con nosotros para mas información o resolver cualquier tipo de dudas.",
-    "MODIFICAR-EMPLEADO": "Modificar empleado"
+    "MODIFICAR-EMPLEADO": "Modificar empleado",
+    "ESCOJE1": "Escoje",
+    "NOMBRE1": "Nombre",
+    "DESCRIPCION1": "Descripción",
+    "CANTIDAD1": "Cantidad",
+    "URLIMG1": "URL de la imagen",
+    "PRECIO1": "Precio por unidad €",
+    "ADDPROD1": "Añadir producto"
+
 }

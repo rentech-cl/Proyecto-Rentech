@@ -27,7 +27,6 @@ export class ListarProductosComponent implements OnInit {
     this.ClienteService.listarProducto("averias").subscribe(
   datos => {
     try {
-    console.log('potato')
       this.producto=datos;
       console.log(this.producto)
     }
@@ -37,6 +36,44 @@ export class ListarProductosComponent implements OnInit {
   });
 
 
+}
+
+seleccionar(idProducto){
+  console.log(idProducto)
+
+this.ClienteService.borrarProducto(idProducto).subscribe(
+  datos => {
+    if (datos['result'] === 'OK') {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Producto borrado!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      window.location.reload();
+     }else{
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'No se puede borar este producto!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+    try {
+      //console.log(datos)
+      //console.log(this.averia)
+    }
+    catch (error) {
+      Swal.fire({
+        position:'top',
+        icon: 'error',
+        title:'No se puede borar este producto!',
+        showConfirmButton: false,
+        timer: 1500
+      })    }
+  });
 }
 
 // seleccionar(idAveria){

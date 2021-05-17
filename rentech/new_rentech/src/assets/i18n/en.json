@@ -64,14 +64,6 @@
     "CONTACTARNOS": "Contact Us",
     "INFO-CONTACT-US": "Here you can contact us for more information or to resolve any type of doubt.",
     "MODIFICAR-EMPLEADO": "Modify user",
-<<<<<<< HEAD
-    "INCIDENCIA":"The computer does not turn on // It is too slow // The keyboard / screen has broken",
-    "EJEMPLO": "example@email.com",
-    "NIVEL-URGENCIA": "Urgency level",
-    "LEVE": "Mild",
-    "MODERADO": "Moderate",
-    "URGENTE": "Urgent"
-=======
     "ESCOJE": "Select",
     "NOMBRE1": "Name",
     "DESCRIPCION1": "Description",
@@ -80,5 +72,4 @@
     "PRECIO1": "Price by unit €",
     "ADDPROD1": "Add product"
 
->>>>>>> 997742e995f67977687d4c19107e4fd27c15c005
 }

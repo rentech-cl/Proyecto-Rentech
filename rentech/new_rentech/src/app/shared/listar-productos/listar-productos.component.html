@@ -1,46 +1,48 @@
 <table class="table justify-content-center">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripción</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Modificar</th>
-      <th scope="col">Eliminar</th>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Disponible</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
 
-    </tr>
-  </thead>
-  <tbody>
+        </tr>
+    </thead>
+    <tbody>
 
-    <tr *ngFor="let listarproducto of this.producto; index as i">
-      <th scope="row">{{i+1}}</th>
+        <tr *ngFor="let listarproducto of this.producto; index as i">
+            <th scope="row">{{i+1}}</th>
 
-      <td><input class="form-control" #nombre style="border: 0;" type="text" value="{{this.producto[i]['nombre']}}">
-      </td>
-      <td>
-        <textarea class="form-control" #descripcion style="border: 0;" cols="30" rows="3" value="{{this.producto[i]['descripcion']}}"></textarea>
-      </td>
-      <td><input class="form-control" #cantidad style="border: 0;" type="text" value="{{this.producto[i]['cantidad']}}">
-      </td>
-      <td><input class="form-control" #precio style="border: 0;" type="text" value="{{this.producto[i]['precio']}}">
-      </td>
-      <td>
-        <form (ngSubmit)="modificar(this.producto[i]['idProducto'],nombre, descripcion, cantidad, precio)">
-          <button class="btn btn-warning">Modificar</button>
-        </form>
-      </td>
-      <td>
-        <form (ngSubmit)="seleccionar(this.producto[i]['idProducto'])">
-          <button class="btn btn-danger">Eliminar</button>
-        </form>
-      </td>
-    </tr>
+            <td><input class="form-control" #nombre style="border: 0;" type="text" value="{{this.producto[i]['nombre']}}">
+            </td>
+            <td>
+                <textarea class="form-control" #descripcion style="border: 0;" cols="30" rows="3" value="{{this.producto[i]['descripcion']}}"></textarea>
+            </td>
+            <td><input class="form-control" #cantidad style="border: 0;" type="text" value="{{this.producto[i]['Disponible']}}">
+            </td>
+            <td><input class="form-control" #precio style="border: 0;" type="text" value="{{this.producto[i]['precio']}}">
+            </td>
+            <td>
+                <form (ngSubmit)="modificar(this.producto[i]['idProducto'],nombre, descripcion, cantidad, precio)">
+                    <button class="btn btn-warning">Modificar</button>
+                </form>
+            </td>
+            <td>
+                <form (ngSubmit)="seleccionar(this.producto[i]['idProducto'])">
+                    <button class="btn btn-danger">Eliminar</button>
+                </form>
+            </td>
+        </tr>
 
-  </tbody>
+    </tbody>
 </table>
 
-
+<div *ngIf="this.producto===null">
+    <h2 class="text-muted text-center">No hay registros</h2>
+</div>
 
 <!-- <table class="table justify-content-center">
   <thead>

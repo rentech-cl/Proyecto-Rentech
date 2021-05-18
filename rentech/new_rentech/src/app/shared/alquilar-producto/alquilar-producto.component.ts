@@ -43,8 +43,6 @@ export class AlquilarProductoComponent implements OnInit {
     // Creas la fecha
     var fecha = new Date();
     var fecha2 = new Date();
-    var n = fecha.toString();
-    var n2 = fecha2.toString();
 
     // Añades los meses
     fecha.setDate(fecha.getDate() + 14);
@@ -52,10 +50,13 @@ export class AlquilarProductoComponent implements OnInit {
     // Añades los meses
     fecha2.setMonth(fecha2.getMonth() + 6);
 
+    var n = fecha.toString();
+    var n2 = fecha2.toString();
+
     //console.log('ID PRODUCTO: ' + idProducto, '. CANTIDAD: ' + cantidad.value);
     this.asignarAlquiler = new alquilarProducto(this.idEmpleado, idProducto, cantidad.value, precio, n, n2)
 
-    //console.log(this.asignarAlquiler);
+    console.log(this.asignarAlquiler);
 
 
     if(cantidad.value<1){

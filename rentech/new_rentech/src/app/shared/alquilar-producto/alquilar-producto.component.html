@@ -1,13 +1,16 @@
 <p class="text-center text-muted">Todos los alquileres tienen una duración de 6 meses</p>
 
 <div *ngFor="let listarProductos of this.productos; index as i">
-  <br><br><br>
+    <br><br><br>
     <div class="wrapper">
         <div class="container">
             <div class="top text-center">
                 <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
             </div>
-            <br><br><br>
+            <br>
+            <br>
+            <br>
+            <br>
             <form (ngSubmit)="alquiler_producto(this.productos[i]['idProducto'], cantidad, this.productos[i]['precio'])">
                 <div class="bottom">
 

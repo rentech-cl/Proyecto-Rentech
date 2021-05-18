@@ -1,19 +1,21 @@
 <div *ngFor="let listarProductos of this.productos; index as i">
-  <br><br><br>
+    <br><br><br>
     <div class="wrapper">
         <div class="container">
 
             <div class="top text-center">
                 <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
             </div>
+            <br>
+            <br> <br>
             <form (ngSubmit)="venta_producto(this.productos[i]['idProducto'], cantidad, this.productos[i]['precio'])">
                 <div class="bottom">
                     <div class="left">
                         <div class="details">
-                          <br><br>
+                            <br><br>
                             <h5>{{this.productos[i]['nombre']}}</h5>
                             <p>{{this.productos[i]['precio']/0.04}}€</p>
-                            <input type="number" value="1" min="1"  #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
+                            <input type="number" value="1" min="1" #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
                             <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
                             <br>
                             <br>

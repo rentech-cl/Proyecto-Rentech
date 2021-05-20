@@ -3,4 +3,5 @@ export class Averia {
   descripcion?: string;
   contacto?: string;
   urgencia?: string;
+  idcliente?: string;
 }

@@ -13,7 +13,7 @@ export class AnadirAveriaComponent implements OnInit {
   myForm: FormGroup;
   submitted = false;
   averia_nueva = new Averia;
-
+  idCliente;
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -21,6 +21,7 @@ export class AnadirAveriaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.idCliente = localStorage.getItem('id')
     this.myForm = this.formBuilder.group({
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
       contacto: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
@@ -32,7 +33,8 @@ export class AnadirAveriaComponent implements OnInit {
 
   enviaraveria(){
     this.submitted = true;
-    //console.log(this.averia_nueva)
+     this.averia_nueva.idcliente=this.idCliente;
+
     if (this.myForm.invalid) {
       return;
     }else{

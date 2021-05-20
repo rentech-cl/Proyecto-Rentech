@@ -123,24 +123,24 @@
                     <input type="text" formControlName="nombre" maxlength="60" class="form-control" placeholder="{{'NOMBRE' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
                     <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
                         <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.nombre.errors.maxlength">{{'NOMBRE' | translate}} {{'TOO-LONG' | translate}}</div>
-                        <div *ngIf="f.nombre.errors.minlength">{{'NOMBRE' | translate}} {{'TOO-SHORT' | translate}}</div>
+                        <div *ngIf="f.nombre.errors.maxlength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}} {{'TOO-LONG' | translate}}</div>
+                        <div *ngIf="f.nombre.errors.minlength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}} {{'TOO-SHORT' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="text" formControlName="apellido" maxlength="60" class="form-control" placeholder="{{'APELLIDO' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
                     <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
                         <div *ngIf="f.apellido.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.apellido.errors.maxlength"> El apellido {{'TOO-LONG' | translate}}</div>
-                        <div *ngIf="f.apellido.errors.minlength"> El apellido {{'TOO-SHORT' | translate}}</div>
+                        <div *ngIf="f.apellido.errors.maxlength">{{'CAMPO' | translate}}{{'APELLIDO' | translate}}{{'TOO-LONG' | translate}}</div>
+                        <div *ngIf="f.apellido.errors.minlength">{{'CAMPO' | translate}}{{'APELLIDO' | translate}}{{'TOO-SHORT' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="password" formControlName="contrasena" maxlength="60" class="form-control" placeholder="{{'CONTRASEÑA' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }" />
                     <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
                         <div *ngIf="f.contrasena.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.contrasena.errors.maxlength">{{'CONTRASEÑA' | translate}} {{'TOO-LONG' | translate}}</div>
-                        <div *ngIf="f.contrasena.errors.minlength">{{'CONTRASEÑA' | translate}} {{'TOO-SHORT' | translate}}</div>
+                        <div *ngIf="f.contrasena.errors.maxlength">{{'CAMPO' | translate}}{{'CONTRASEÑA' | translate}} {{'TOO-LONG' | translate}}</div>
+                        <div *ngIf="f.contrasena.errors.minlength">{{'CAMPO' | translate}}{{'CONTRASEÑA' | translate}} {{'TOO-SHORT' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -161,28 +161,29 @@
                     <input type="text" formControlName="telefono" maxlength="60" class="form-control" placeholder="{{'TELEFONO' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
                     <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
                         <div *ngIf="f.telefono.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.telefono.errors.pattern">{{'RESTRICCION-TELEFONO' | translate}}</div>
+                        <div *ngIf="f.telefono.errors.pattern">{{'CAMPO' | translate}}{{'TELEFONO' | translate}}{{'RESTRICCION-TELEFONO' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" formControlName="iban" maxlength="60" class="form-control" placeholder="{{'NUM-IBAN' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" />
+                    <input type="text" formControlName="iban" maxlength="60" class="form-control" placeholder="{{'IBAN-NUMERO' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }" />
                     <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
                         <div *ngIf="f.iban.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.iban.errors.maxLength">{{'RESTRICCION-NUM.IBAN' | translate}}</div>
+                        <div *ngIf="f.iban.errors.maxlength">{{'CAMPO' | translate}}{{'IBAN-NUMERO' | translate}}{{'TOO-LONG' | translate}}</div>
+                        <div *ngIf="f.iban.errors.minlength">{{'CAMPO' | translate}}{{'IBAN-NUMERO' | translate}}{{'TOO-SHORT' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="text" formControlName="dni" maxlength="60" class="form-control" placeholder="DNI" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" />
                     <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
                         <div *ngIf="f.dni.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.dni.errors.pattern">{{'RESTRICCION-DNI' | translate}}</div>
+                        <div *ngIf="f.dni.errors.pattern">{{'CAMPO' | translate}}DNI{{'RESTRICCION-DNI' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="text" formControlName="cp" maxlength="60" class="form-control" placeholder="{{'CODIGO-POSTAL' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.cp.errors }" />
                     <div *ngIf="submitted && f.cp.errors" class="invalid-feedback">
                         <div *ngIf="f.cp.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                        <div *ngIf="f.cp.errors.pattern">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                        <div *ngIf="f.cp.errors.pattern">{{'CAMPO' | translate}}{{'CODIGO-POSTAL' | translate}}{{'RESTRICCION-CODIGO' | translate}}</div>
                     </div>
                 </div>
                 <div class="form-group">

@@ -22,7 +22,11 @@
 
         </tr>
     </tbody>
+    
 </table>
+<div *ngIf="this.alquiler===null">
+    <h5 class="text-muted text-center">No hay ningún alquiler!</h5>
+</div>
 
 <h3>Historial de compras</h3>
 <table class="table justify-content-center">
@@ -47,4 +51,8 @@
 
         </tr>
     </tbody>
+    
 </table>
+<div *ngIf="this.alquiler===null">
+    <h5 class="text-muted text-center">No hay ningún producto comprado!</h5>
+</div>

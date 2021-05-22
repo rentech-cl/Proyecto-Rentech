@@ -14,14 +14,14 @@
                     <a class="nav-link" [routerLink]="['/index']">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+                  <a class="nav-link" [routerLink]="['/dashboard']">{{'DASHBOARD' | translate}}</a>
 
                 </li>
 
             </ul>
             <ul class="navbar-nav navbar-center">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="logout()">Cerrar sesión</a>
+                    <a class="nav-link" (click)="logout()">{{'LOGOUT' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2>
-                <p>Modificar usuario {{this.nombre}}</p>
+                <p>{{'MODIFICAR-USUARIO' | translate}}{{this.nombre}}</p>
             </h2>
         </div>
     </div>
@@ -43,61 +43,61 @@
 
         <div class="form-group">
             <div>
-                <label>Nombre </label>
+                <label>{{'NOMBRE' | translate}}</label>
             </div>
 
             <input class="form-control" type="text" placeholder="{{this.nombre}}" formControlName="nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
 
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-                <div *ngIf="f.nombre.errors.required">El campo de nombre es obligatorio</div>
-                <div *ngIf="f.nombre.errors.maxlength"> El nombre es demasiado largo</div>
-                <div *ngIf="f.nombre.errors.minlength"> El nombre es demasiado corto</div>
+                <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.maxlength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}}{{'TOO-LONG' | translate}}</div>
+                <div *ngIf="f.nombre.errors.minlength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}}{{'TOO-SHORT' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Apellido</label>
+                <label>{{'APELLIDO' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.apellido}}" formControlName="apellido" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
             <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-                <div *ngIf="f.apellido.errors.required">El campo de apellido es obligatorio</div>
-                <div *ngIf="f.apellido.errors.maxlength"> El apellido es demasiado largo</div>
-                <div *ngIf="f.apellido.errors.minlength"> El apellido es demasiado corto</div>
+                <div *ngIf="f.apellido.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.apellido.errors.maxlength">{{'CAMPO' | translate}}{{'APELLIDO' | translate}}{{'TOO-LONG' | translate}}</div>
+                <div *ngIf="f.apellido.errors.minlength">{{'CAMPO' | translate}}{{'APELLIDO' | translate}}{{'TOO-SHORT' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Correo</label>
+                <label>{{'CORREO' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.correo}}" formControlName="correo" readonly [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
             <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
-                <div *ngIf="f.correo.errors.required">El campo de correo es obligatorio</div>
-                <div *ngIf="f.correo.errors.email"> Tiene que ser un correo</div>
+                <div *ngIf="f.correo.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.correo.errors.email">{{'HAS-EMAIL' | translate}}</div>
 
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Teléfono</label>
+                <label>{{'TELEFONO' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.telefono}}" formControlName="telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }">
             <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
-                <div *ngIf="f.telefono.errors.required">El campo de Telefono es obligatorio</div>
-                <div *ngIf="f.telefono.errors.pattern">Deben ser 9 numeros</div>
+                <div *ngIf="f.telefono.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.telefono.errors.pattern">{{'CAMPO' | translate}}{{'TELEFONO' | translate}}{{'RESTRICCION-TELEFONO' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Iban</label>
+                <label>{{'IBAN-NUMERO' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.iban}}" formControlName="iban" [ngClass]="{ 'is-invalid': submitted && f.iban.errors }">
             <div *ngIf="submitted && f.iban.errors" class="invalid-feedback">
-                <div *ngIf="f.iban.errors.required">El campo de Num.Iban es obligatorio</div>
-                <div *ngIf="f.iban.errors.maxLength"> Revisa los caracteres introducidos, deben ser 24</div>
+                <div *ngIf="f.iban.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.iban.errors.maxLength">{{'CAMPO' | translate}}{{'IBAN-NUMERO' | translate}}{{'RESTRICCION-NUM.IBAN' | translate}}</div>
             </div>
         </div>
 
@@ -107,28 +107,28 @@
             </div>
             <input class="form-control" type="text" placeholder="{{this.dni}}" readonly formControlName="dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }">
             <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
-                <div *ngIf="f.dni.errors.required">El campo de DNI es obligatorio</div>
-                <div *ngIf="f.dni.errors.pattern"> El dni debe tener 8 numeros y una letra</div>
+                <div *ngIf="f.dni.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.dni.errors.pattern">{{'CAMPO' | translate}}DNI{{'RESTRICCION-DNI' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Salario</label>
+                <label>{{'SALARIO' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.salario}}" formControlName="salario" readonly [ngClass]="{ 'is-invalid': submitted && f.salario.errors }">
             <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
-                <div *ngIf="f.salario.errors.required">El campo de salario es obligatorio</div>
+                <div *ngIf="f.salario.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div>
-                <label>Direcció</label>
+                <label>{{'DIRECCION' | translate}}</label>
             </div>
             <input class="form-control" type="text" placeholder="{{this.direccio}}" formControlName="direccio" [ngClass]="{ 'is-invalid': submitted && f.direccio.errors }">
             <div *ngIf="submitted && f.direccio.errors" class="invalid-feedback">
-                <div *ngIf="f.direccio.errors.required">El campo de Dirección es obligatorio</div>
+                <div *ngIf="f.direccio.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
             </div>
         </div>
 
@@ -142,7 +142,7 @@
 
 
         <button type="submit" class="btn btn-primary">
-    <i-feather name="user"></i-feather> Modificar
+    <i-feather name="user"></i-feather> {{'MODIFICAR' | translate}}
   </button>
 
 

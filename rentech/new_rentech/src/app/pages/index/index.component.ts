@@ -188,7 +188,7 @@ export class IndexComponent implements OnInit {
         catch (error) {
           Swal.fire({
             icon: 'error',
-            title: 'Login incorrecto',
+            title: "{{'INICIO' | translate}}",
             text: 'Datos introducidos incorrectos, revisa tus datos',
           })
         }

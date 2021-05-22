@@ -1,4 +1,4 @@
-<p class="text-center text-muted">Todos los alquileres tienen una duración de 6 meses</p>
+<p class="text-center text-muted">{{'INFO-ALQUILER' | translate}}</p>
 
 <div *ngFor="let listarProductos of this.productos; index as i">
     <br><br><br>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="details">
                                 <h1>{{this.productos[i]['nombre']}}</h1>
-                                <p>Alquilar</p>
+                                <p>{{'ALQUILAR' | translate}}</p>
                             </div>
                         </div>
                     </div>

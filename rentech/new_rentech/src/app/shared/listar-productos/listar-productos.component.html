@@ -2,12 +2,12 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Disponible</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Modificar</th>
-            <th scope="col">Eliminar</th>
+            <th scope="col">{{'NOMBRE' | translate}}</th>
+            <th scope="col">{{'DESCRIPCION' | translate}}</th>
+            <th scope="col">{{'DISPONIBLE' | translate}}</th>
+            <th scope="col">{{'PRECIO' | translate}}</th>
+            <th scope="col">{{'MODIFICAR' | translate}}</th>
+            <th scope="col">{{'ELIMINAR' | translate}}</th>
 
         </tr>
     </thead>
@@ -27,12 +27,12 @@
             </td>
             <td>
                 <form (ngSubmit)="modificar(this.producto[i]['idProducto'],nombre, descripcion, cantidad, precio)">
-                    <button class="btn btn-warning">Modificar</button>
+                    <button class="btn btn-warning">{{'MODIFICAR' | translate}}</button>
                 </form>
             </td>
             <td>
                 <form (ngSubmit)="seleccionar(this.producto[i]['idProducto'])">
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-danger">{{'ELIMINAR' | translate}}</button>
                 </form>
             </td>
         </tr>
@@ -41,7 +41,7 @@
 </table>
 
 <div *ngIf="this.producto===null">
-    <h2 class="text-muted text-center">No hay registros</h2>
+    <h2 class="text-muted text-center">{{'REGISTRO-VACIO' | translate}}</h2>
 </div>
 
 <!-- <table class="table justify-content-center">

@@ -35,7 +35,7 @@
             </ul>
             <ul *ngIf="this.logged === true" class="navbar-nav navbar-center">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+                    <a class="nav-link" [routerLink]="['/dashboard']">{{'DASHBOARD' | translate}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" (click)="logout()">{{'LOGOUT' | translate}}</a>
@@ -206,8 +206,8 @@
 <ng-template #loginContent let-c="close" let-d="dismiss">
     <div class="modal-body">
         <div class="text-center">
-            <h3 class="title mb-4">Acceso para técnicos</h3>
-            <h4 class="text-uppercase text-primary"><b>Iniciar sesión</b></h4>
+            <h3 class="title mb-4">{{'ACCESO-TECNICO' | translate}}</h3>
+            <h4 class="text-uppercase text-primary"><b>{{'LOGIN' | translate}}</b></h4>
         </div>
         <div class="login-form mt-4">
             <form [formGroup]="myForm" (ngSubmit)="loginTecnico(loginContent)">

@@ -2,11 +2,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Contacto</th>
-      <th scope="col">Urgencia</th>
-      <th scope="col">Descripción</th>
-      <th scope="col">Seleccionar avería</th>
+      <th scope="col">{{'NOMBRE' | translate}}</th>
+      <th scope="col">{{'CONTACTO' | translate}}</th>
+      <th scope="col">{{'URGENCIA' | translate}}</th>
+      <th scope="col">{{'DESCRIPCION' | translate}}/th>
+      <th scope="col">{{'SELECT-AVERIA' | translate}}</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +18,7 @@
       <td>{{this.averia[i]['Descripcion']}}</td>
         <td>
           <form (ngSubmit)="seleccionar(this.averia[i]['idAveria'])">
-            <button class="btn btn-primary" >Averia realizada</button>
+            <button class="btn btn-primary" >{{'AVERIA-DONE' | translate}}</button>
           </form>
         </td>
     </tr>

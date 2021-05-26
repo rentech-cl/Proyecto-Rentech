@@ -120,6 +120,8 @@
     "REGISTRO-VACIO":"No hay registros",
     "ERROR":"Oops! Error 404 Pagina no encontrada.",
     "MODIFICAR-USUARIO":"Modificar usuario",
-    "ACCESO-TECNICO": "Technician access",
-    "LOGIN-INCORRECTO":"Login Incorrecto"
+    "ACCESO-TECNICO": "Acceso para técnicos",
+    "LOGIN-INCORRECTO":"Login Incorrecto",
+    "LISTAR-SALIDA":"Listar salidas",
+    "LISTAR-PRODUCTO":"Listar productos"
 }

@@ -119,6 +119,8 @@
     "REGISTRO-VACIO":"No records",
     "ERROR":"Oops! Error 404 Page not found.",
     "MODIFICAR-USUARIO":"Modify user",
-    "ACCESO-TECNICO": "Acceso para técnicos",
-    "LOGIN-INCORRECTO":"Incorrect Login"
+    "ACCESO-TECNICO": "Technician access",
+    "LOGIN-INCORRECTO":"Incorrect Login",
+    "LISTAR-SALIDA":"List outputs",
+    "LISTAR-PRODUCTO":"List Products"
 }

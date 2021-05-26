@@ -41,41 +41,50 @@ export class AnadirProdComponent implements OnInit {
     if (this.myForm.invalid) {
       return;
     }else{
+      if(this.producto_nuevo.cantidad<=0 && this.producto_nuevo.precio<=0 ){
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Datos introducidos incorrectos, revisa tus datos',
+        })
+      }else{
+        this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
 
-      this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
+          (datos: Producto) => {
+            if (datos['result'] === 'OK') {
+              Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Producto guardado!',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+            else{
+              Swal.fire({
+                position:'top',
+                icon: 'error',
+                title:'Producto no agregado!',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+  
+            try {
+  
+              //console.log(datos)
+            }
+            catch (error) {
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Datos introducidos incorrectos, revisa tus datos',
+              })
+            }
+          });
+      }
 
-        (datos: Producto) => {
-          if (datos['result'] === 'OK') {
-            Swal.fire({
-              position: 'top',
-              icon: 'success',
-              title: 'Producto guardado!',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }
-          else{
-            Swal.fire({
-              position:'top',
-              icon: 'error',
-              title:'Producto no agregado!',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }
 
-          try {
-
-            //console.log(datos)
-          }
-          catch (error) {
-            Swal.fire({
-              icon: 'error',
-              title: 'Error',
-              text: 'Datos introducidos incorrectos, revisa tus datos',
-            })
-          }
-        });
 
     }
 

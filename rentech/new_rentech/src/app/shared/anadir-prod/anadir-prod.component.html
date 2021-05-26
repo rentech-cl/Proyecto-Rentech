@@ -24,7 +24,7 @@
 
         
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="{{'CANTIDAD1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+            <input class="form-control" type="number" min="1" [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="{{'CANTIDAD1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
             <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
                 <div *ngIf="f.cantidad.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
                 <div *ngIf="f.cantidad.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
@@ -44,7 +44,7 @@
 
 
         <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="{{'PRECIO1' | translate}}"[ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
+            <input class="form-control" type="number" [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="{{'PRECIO1' | translate}}"[ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
             <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
                 <div *ngIf="f.precio.errors.required"> {{'CAMPOOBLIGATORIO' | translate}} </div>
                 <div *ngIf="f.precio.errors.maxLength"> {{'CAMPOLARGO' | translate}} </div>

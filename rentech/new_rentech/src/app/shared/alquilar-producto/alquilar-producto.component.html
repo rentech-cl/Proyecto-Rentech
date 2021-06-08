@@ -1,77 +1,25 @@
-<p class="text-center text-muted">{{'INFO-ALQUILER' | translate}}</p>
+<div class="container">
+    <select [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)" class="form-control  mx-sm-3 mb-2" id="inlineFormCustomSelect">
+    <option *ngFor="let item of eventos ;index as i" value="{{this.eventos[i][0]}}">
+      {{this.eventos[i][1]}} </option>
+  </select>
 
-<div *ngFor="let listarProductos of this.productos; index as i">
-    <br><br><br>
-    <div class="wrapper">
-        <div class="container">
-            <div class="top text-center">
-                <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <form (ngSubmit)="alquiler_producto(this.productos[i]['idProducto'], cantidad, this.productos[i]['precio'])">
-                <div class="bottom">
-
-
-
-                    <div class="left">
-                        <div class="details">
-
-
-
-                            <h5>{{this.productos[i]['nombre']}}</h5>
-                            <p>{{this.productos[i]['precio']}}€/ mes </p>
-
-                            <input value="1" min="1" type="number" #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
-                            <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
-
-
-                            <br>
-
-                            <br>
-                            <br>
-                            <br>
-
-                            <br>
-                            <br>
-                        </div>
-                        <div class="">
-                            <div class="mover">
-                                <br>
-
-
-                                <button class="buttonstyle">
-                                   <i-feather name="shopping-bag"></i-feather>
-                              </button>
-
-                            </div>
-                            <div class="details">
-                                <h1>{{this.productos[i]['nombre']}}</h1>
-                                <p>{{'ALQUILAR' | translate}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-
-        <div class="inside">
-            <div class="icon">
-                <i-feather name="file-text"></i-feather>
-            </div>
-            <div class="contents">
-                <table>
-                    <tr>
-                        <th>{{this.productos[i]['descripcion']}}</th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr *ngFor="let item of asistentes ;index as i">
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Acompañantes</th>
+                <th scope="col">Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="number"></td>
+                <td><input class="form-control" type="text"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<br><br><br><br><br><br>

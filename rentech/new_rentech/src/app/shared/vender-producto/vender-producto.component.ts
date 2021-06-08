@@ -20,7 +20,7 @@ export class VenderProductoComponent implements OnInit {
   eventos;
   myForm: FormGroup;
   lista = new Lista;
-
+  evento;
   selectControl: FormControl = new FormControl();
 
   constructor(
@@ -86,17 +86,6 @@ export class VenderProductoComponent implements OnInit {
 
 
 
-  mySelectHandler($event) {
-    this.eventos = new consultaEvento(
-      this.router.url.split('/')[2],
-      $event
-      // ''
-    );
 
-
-
-
-
-}
 
 }

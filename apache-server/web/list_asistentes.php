@@ -8,7 +8,7 @@ $texto = file_get_contents("php://input");
 $json = json_decode($texto);
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT id, nombre, acompanantes, tipo, evento, botella, precio FROM asistentes WHERE evento=$json;";
+$instruccion ="SELECT id, nombre, acompanantes, tipo, evento, botella, precio FROM asistentes WHERE evento=$json->id;";
 $result = mysqli_query($con, $instruccion);
 
 

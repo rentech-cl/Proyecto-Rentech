@@ -45,38 +45,38 @@ export class AveriasComponent implements OnInit {
     this.asignarUsuario = new AsignarAveria(this.idEmpleado, idAveria)
     //console.log(this.asignarUsuario)
 
-    this.ClienteService.asignarAveria(this.asignarUsuario).subscribe(
-      datos => {
+    // this.ClienteService.asignarAveria(this.asignarUsuario).subscribe(
+    //   datos => {
 
-        if (datos['result'] === 'OK') {
-          Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'Averia asignada!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          window.location.reload();
+    //     if (datos['result'] === 'OK') {
+    //       Swal.fire({
+    //         position: 'top',
+    //         icon: 'success',
+    //         title: 'Averia asignada!',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //       })
+    //       window.location.reload();
 
 
-        }else{
-          Swal.fire({
-            position:'top',
-            icon: 'error',
-            title:'Averia no asignada!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
+    //     }else{
+    //       Swal.fire({
+    //         position:'top',
+    //         icon: 'error',
+    //         title:'Averia no asignada!',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //       })
+    //     }
 
-        try {
-          //console.log(datos)
-          //console.log(this.averia)
-        }
-        catch (error) {
-          //console.log("error")
-        }
-      });
+    //     try {
+    //       //console.log(datos)
+    //       //console.log(this.averia)
+    //     }
+    //     catch (error) {
+    //       //console.log("error")
+    //     }
+    //   });
   }
 
 }

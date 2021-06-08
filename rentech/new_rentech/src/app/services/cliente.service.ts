@@ -14,6 +14,7 @@ export class ClienteService {
   public currentUser: Observable<Cliente>;
 
   url = 'https://rentech-cl.herokuapp.com/'; // disponer de el url de su servidor que tiene los archivos PHP
+  // url = 'http://localhost/'; // disponer de el url de su servidor que tiene los archivos PHP
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<Cliente>(JSON.parse(localStorage.getItem('currentUser')));

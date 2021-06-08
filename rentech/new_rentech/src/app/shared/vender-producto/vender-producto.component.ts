@@ -61,27 +61,18 @@ export class VenderProductoComponent implements OnInit {
           this.eventos=datos;
           console.log(this.eventos[1][1])
           //console.log(this.productos)
-          if (datos['result'] === 'OK') {
-          Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'Lista añadida!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-
-        }else{
-          Swal.fire({
-            position:'top',
-            icon: 'error',
-            title:'lista no creada!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-        window.location.reload();
-
     })
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Lista añadida!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+
+  window.location.reload();
+
     }
 
 

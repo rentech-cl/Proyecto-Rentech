@@ -15,7 +15,7 @@ $array[]=null;
 
 
 
-$query = $mysqli->query("select  * from eventos");
+$query = $mysqli->query("select  * from eventos  order by fecha ASC ");
 
 
 

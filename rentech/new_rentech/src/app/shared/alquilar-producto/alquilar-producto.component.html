@@ -16,11 +16,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of asistentes ;index as i">
-                <th scope="row">{{i}}</th>
-                <td><input class="form-control" type="text" value="{{this.asistentes[i]['nombre']}}"></td>
-                <td><input class="form-control" type="number" value="{{this.asistentes[i]['acompanantes']}}"></td>
-                <td><input class="form-control" type="text" value="{{this.asistentes[i]['tipo']}}"></td>
-                <td><input class="form-control" type="text" value="{{this.asistentes[i]['botella']}}"></td>
+                <th scope="row">{{i+1}}</th>
+                <td>{{this.asistentes[i]['nombre']}}</td>
+                <td>{{this.asistentes[i]['acompanantes']}}</td>
+                <td>{{this.asistentes[i]['tipo']}}</td>
+                <td>{{this.asistentes[i]['botella']}}</td>
             </tr>
         </tbody>
     </table>

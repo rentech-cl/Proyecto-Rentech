@@ -55,6 +55,7 @@ export class AlquilarProductoComponent implements OnInit {
           console.log(datos)
           this.asistentes=datos;
           console.log(this.asistentes)
+
           //console.log(this.productos)
         }
         catch (error) {

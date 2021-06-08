@@ -1,62 +1,53 @@
-<div *ngFor="let listarProductos of this.productos; index as i">
-    <br><br><br>
-    <div class="wrapper">
-        <div class="container">
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="enviar()">
+        <p>Evento:</p>
+        <select class="form-control" required [(ngModel)]="lista.idEvento" formControlName="idEvento"> <!-- <== changed -->
+          <option selected="selected" disabled>Evento...</option>
+          <option *ngFor="let item of eventos ;index as i" [ngValue]="this.eventos[i][0]">{{this.eventos[i][1]}} - {{this.eventos[i][2]}}</option>
+        </select>
+        <!--
+        <select [(ngModel)]="lista.idEvento" [formControl]="selectControl" class="form-control  mx-sm-3 mb-2" id="inlineFormCustomSelect">
+      <option *ngFor="let item of eventos ;index as i" value="{{this.eventos[i][0]}}">{{this.eventos[i][1]}} - {{this.eventos[i][2]}}</option>
+    </select> -->
+        <br>
 
-            <div class="top text-center">
-                <img src="{{this.productos[i]['img']}}" class="img-fluid" alt="">
-            </div>
-            <br>
-            <br> <br>
-            <form (ngSubmit)="venta_producto(this.productos[i]['idProducto'], cantidad, this.productos[i]['precio'])">
-                <div class="bottom">
-                    <div class="left">
-                        <div class="details">
-                            <br><br>
-                            <h5>{{this.productos[i]['nombre']}}</h5>
-                            <p>{{this.productos[i]['precio']/0.04}}€</p>
-                            <input type="number" value="1" min="1" #cantidad class="form-control" name="cantidad" placeholder="cantidad" max="{{this.productos[i]['cantidad']}}">
-                            <!-- <input class="form-control" [(ngModel)]="productos.cantidad" formControlName="cantidad" type="number" placeholder="Cantidad" max="{{this.productos[i]['cantidad']}}"> -->
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-                        <div class="">
-                            <div class="mover">
-                                <br>
-                                <br>
-                                <br>
-                                <button class="buttonstyle">
-                                 <i-feather name="shopping-bag"></i-feather>
-                            </button>
-                            </div>
-                            <div class="details">
-                                <h1>{{this.productos[i]['nombre']}}</h1>
-                                <p>{{'ALQUILAR' | translate}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <p>Nombre:</p>
+        <input [(ngModel)]="lista.nombre" type="text" placeholder="Nombre" formControlName="nombre" class="form-control">
+        <br>
+        <p>Acompañantes:</p>
+        <input [(ngModel)]="lista.acompanantes" type="text" placeholder="Acompañantes" formControlName="acompanantes" class="form-control">
+        <br>
+        <p>Tipo:</p>
+        <input [(ngModel)]="lista.tipo" type="text" placeholder="Tipo (Pista/VIP)" formControlName="tipo" class="form-control">
+        <br>
+        <p>Botella:</p>
+        <input [(ngModel)]="lista.botella" type="text" placeholder="Botella (Si/No)" formControlName="botella" class="form-control">
+        <br>
+        <p>Precio:</p>
+        <input [(ngModel)]="lista.precio" type="number" placeholder="Precio" formControlName="precio" class="form-control">
+        <button type="submit" class="btn btn-primary">Añadir lista</button>
 
-        <div class="inside">
-            <div class="icon">
-                <i-feather name="file-text"></i-feather>
-            </div>
-            <div class="contents">
-                <table>
-                    <tr>
-                        <th>{{this.productos[i]['descripcion']}}</th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
+    </form>
 
+
+    <!-- <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Acompañantes</th>
+                <th scope="col">Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="number"></td>
+                <td><input class="form-control" type="text"></td>
+            </tr>
+        </tbody>
+    </table> -->
 
 </div>
 <br><br><br>

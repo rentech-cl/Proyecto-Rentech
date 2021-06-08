@@ -15,7 +15,7 @@ $array[]=null;
 
 
 
-$query = $mysqli->query("select  * from producto2");
+$query = $mysqli->query("select  * from eventos");
 
 
 

@@ -1,48 +1,24 @@
 <div class="container">
-    <form class="" [formGroup]="myForm" (ngSubmit)="enviaraveria()">
+
+
+    <form [formGroup]="myForm" (ngSubmit)="enviaraveria()">
+
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input class="form-control" [(ngModel)]="averia_nueva.nombre" formControlName="nombre" type="text" placeholder="{{'NOMBRE' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <input class="form-control" [(ngModel)]="averia_nueva.nombre" formControlName="nombre" type="text" placeholder="Nombre evento" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-              <div *ngIf="f.nombre.errors.minLength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}}{{'TOO-SHORT' | translate}}</div>
-              <div *ngIf="f.nombre.errors.maxLength">{{'CAMPO' | translate}}{{'NOMBRE' | translate}}{{'TOO-LONG' | translate}}</div>
-              <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="">Descripcion</label>
-            <textarea class="form-control" [(ngModel)]="averia_nueva.contacto" formControlName="contacto"  [ngClass]="{ 'is-invalid': submitted && f.contacto.errors }" placeholder="{{'EJEMPLO-DESCRIPCION' | translate}}" name="" id="" cols="40" rows="5"></textarea>
-            <div *ngIf="submitted && f.contacto.errors" class="invalid-feedback">
-              <div *ngIf="f.contacto.errors.minLength">{{'CAMPO' | translate}}{{'CORREO' | translate}}{{'TOO-SHORT' | translate}}</div>
-              <div *ngIf="f.contacto.errors.maxLength">{{'CAMPO' | translate}}{{'CORREO' | translate}}{{'TOO-LONG' | translate}}</div>
-              <div *ngIf="f.contacto.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-            </div>
-          </div>
-        <div class="form-group">
-            <label for="">Contacto </label>
-            <textarea class="form-control" [(ngModel)]="averia_nueva.descripcion" formControlName="descripcion" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" placeholder="{{'EJEMPLO' | translate}}" name="" id="" cols="40" rows="5"></textarea>
-            <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
-              <div *ngIf="f.descripcion.errors.minLength">{{'CAMPO' | translate}}{{'DESCRIPCION' | translate}}{{'TOO-SHORT' | translate}}</div>
-              <div *ngIf="f.descripcion.errors.maxLength">{{'CAMPO' | translate}}{{'DESCRIPCION' | translate}}{{'TOO-LONG' | translate}}</div>
-              <div *ngIf="f.descripcion.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-            </div>
-          </div>
-        <div class="form-group">
-            <label for="">{{'NIVEL-URGENCIA' | translate}}</label>
-            <select class="form-select form-control" [(ngModel)]="averia_nueva.urgencia" formControlName="urgencia" aria-label="Default select example"  [ngClass]="{ 'is-invalid': submitted && f.urgencia.errors }">
 
-  <option value="Leve" selected>{{'LEVE' | translate}}</option>
-  <option value="Moderado">{{'MODERADO' | translate}}</option>
-  <option value="Urgente">{{'URGENTE' | translate}}</option>
-</select>
-<div *ngIf="submitted && f.urgencia.errors" class="invalid-feedback">
 
-  <div *ngIf="f.urgencia.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-</div>
+        <div class="form-group">
+            <input type="date" class="form-control" [(ngModel)]="averia_nueva.fecha" formControlName="fecha" placeholder="Fecha">
         </div>
 
-        <button type="submit" class="btn btn-primary"><i-feather name="send"></i-feather>   {{'ENVIAR-AVERIA' | translate}}
-  </button>
+
+        <button type="submit" class="btn btn-primary">Añadir evento</button>
     </form>
 </div>
 <br>

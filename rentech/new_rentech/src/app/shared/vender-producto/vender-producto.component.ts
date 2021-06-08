@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { venderProducto } from 'src/app/models/venderProducto';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
+import { Evento } from 'src/app/models/evento';
+import { consultaEvento } from 'src/app/models/consultaEvento';
+import { Lista } from 'src/app/models/lista';
 
 @Component({
   selector: 'app-vender-producto',
@@ -14,7 +17,12 @@ export class VenderProductoComponent implements OnInit {
   nombre: String;
   idEmpleado: string = null;
   productos;
-  venderProducto;
+  eventos;
+  myForm: FormGroup;
+  lista = new Lista;
+
+  selectControl: FormControl = new FormControl();
+
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -22,11 +30,12 @@ export class VenderProductoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ClienteService.listarProductos("productos").subscribe(
+    this.ClienteService.listarProductos("").subscribe(
       datos => {
         try {
-          //console.log(datos)
-          this.productos=datos;
+          console.log(datos)
+          this.eventos=datos;
+          console.log(this.eventos[1][1])
           //console.log(this.productos)
         }
         catch (error) {
@@ -34,81 +43,60 @@ export class VenderProductoComponent implements OnInit {
         }
       });
       this.idEmpleado = localStorage.getItem('id');
+      this.myForm = this.formBuilder.group({
+        nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+        acompanantes: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+        tipo: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+        botella: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+        precio: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+        idEvento: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+      }
+      );
   }
-
-
-  venta_producto(idProducto, cantidad, precio){
-
-    // Creas la fecha
-    var fecha = new Date();
-    var n = fecha.toString();
-
-    // Añades los meses
-    fecha.setDate(fecha.getDate() + 14);
-
-
-
-    //console.log('ID PRODUCTO: ' + idProducto, '. CANTIDAD: ' + cantidad.value);
-    this.venderProducto = new venderProducto(this.idEmpleado, idProducto, cantidad.value, precio, n)
-
-    //console.log(this.venderProducto);
-
-
-    if(cantidad.value<1){
-      Swal.fire({
-        position:'top',
-        icon: 'error',
-        title:'Inserte una cantidad!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }else{
-
-
-
-    this.ClienteService.venderProducto(this.venderProducto).subscribe(
+  enviar(){
+    console.log(this.lista)
+    this.ClienteService.crearLista(this.lista).subscribe(
       datos => {
-
-        if (datos['result'] === 'OK') {
+          console.log(datos)
+          this.eventos=datos;
+          console.log(this.eventos[1][1])
+          //console.log(this.productos)
+          if (datos['result'] === 'OK') {
           Swal.fire({
             position: 'top',
             icon: 'success',
-            title: 'Producto comprado!',
+            title: 'Lista añadida!',
             showConfirmButton: false,
             timer: 1500
           })
 
-        }
-       else if (datos['result'] === 'ERROR2') {
-          Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title:'Producto sin stock!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-
-        }
-        else{
+        }else{
           Swal.fire({
             position:'top',
             icon: 'error',
-            title:'Producto no comprado!',
+            title:'lista no creada!',
             showConfirmButton: false,
             timer: 1500
           })
         }
+        window.location.reload();
 
-        try {
-          //console.log(datos)
-          this.venderProducto = datos;
-          //console.log(this.venderProducto)
-        }
-        catch (error) {
-          //console.log("error")
-        }
-      });
+    })
     }
 
-  }
+
+
+  mySelectHandler($event) {
+    this.eventos = new consultaEvento(
+      this.router.url.split('/')[2],
+      $event
+      // ''
+    );
+
+
+
+
+
+}
+
 }

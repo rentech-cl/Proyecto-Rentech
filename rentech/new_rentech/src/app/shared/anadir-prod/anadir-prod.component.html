@@ -2,54 +2,22 @@
 
 
     <form [formGroup]="myForm" (ngSubmit)="anadir()">
-        
+
         <div class="form-group">
-            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="{{'NOMBRE1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            <input class="form-control" [(ngModel)]="producto_nuevo.nombre" formControlName="nombre" type="text" placeholder="Nombre evento" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
             <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-              <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-              <div *ngIf="f.nombre.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
-              <div *ngIf="f.nombre.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
+                <div *ngIf="f.nombre.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
             </div>
         </div>
 
 
         <div class="form-group">
-            <textarea class="form-control" [(ngModel)]="producto_nuevo.descripcion" formControlName="descripcion" placeholder="{{'DESCRIPCION1' | translate}}" name="" id="" cols="40" rows="5"  [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+            <input type="date" class="form-control" [(ngModel)]="producto_nuevo.fecha" formControlName="fecha" placeholder="Fecha" name="" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }">
             <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
                 <div *ngIf="f.descripcion.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                <div *ngIf="f.descripcion.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
-                <div *ngIf="f.descripcion.errors.minLength">{{'CAMPOCORTO' | translate}}</div>
-              </div>
-        </div>
-
-        
-        <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.cantidad" formControlName="cantidad" placeholder="{{'CANTIDAD1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
-            <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
-                <div *ngIf="f.cantidad.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                <div *ngIf="f.cantidad.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
-                <div *ngIf="f.cantidad.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
-              </div>
-        </div>
-
-
-        <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.img" formControlName="img" placeholder="{{'URLIMG1' | translate}}" [ngClass]="{ 'is-invalid': submitted && f.img.errors }">
-            <div *ngIf="submitted && f.img.errors" class="invalid-feedback">
-                <div *ngIf="f.img.errors.required">{{'CAMPOOBLIGATORIO' | translate}}</div>
-                <div *ngIf="f.img.errors.maxLength"> {{'CAMPOLARGO' | translate}}</div>
-                <div *ngIf="f.img.errors.minLength"> {{'CAMPOCORTO' | translate}}</div>
-              </div>
-        </div>
-
-
-        <div class="form-group">
-            <input class="form-control" type="text" [(ngModel)]="producto_nuevo.precio" formControlName="precio" placeholder="{{'PRECIO1' | translate}}"[ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
-            <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
-                <div *ngIf="f.precio.errors.required"> {{'CAMPOOBLIGATORIO' | translate}} </div>
-                <div *ngIf="f.precio.errors.maxLength"> {{'CAMPOLARGO' | translate}} </div>
-                <div *ngIf="f.precio.errors.minLength"> {{'CAMPOCORTO' | translate}} </div>
-              </div>
+            </div>
         </div>
 
 

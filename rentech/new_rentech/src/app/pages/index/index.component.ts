@@ -40,7 +40,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
-      correo: ['', [Validators.email, Validators.required]],
+      correo: ['', [ Validators.required]],
       contrasena: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
     }
     );
@@ -126,20 +126,12 @@ export class IndexComponent implements OnInit {
   login(content) {
     this.ClienteService.login(this.usuario).subscribe(
       datos => {
+        console.log(datos)
         try {
           this.datosUsuario = datos;
-          if (datos[0]['correo'] == this.usuario.correo) {
-            //console.log('Login realizado');
+          if (datos[0]['0'] == this.usuario.correo) {
+            console.log('Login realizado');
             localStorage.setItem('nombre', this.datosUsuario[0][0]);
-            localStorage.setItem('apellido', this.datosUsuario[0][1]);
-            localStorage.setItem('id', this.datosUsuario[0][2]);
-            localStorage.setItem('correo', this.datosUsuario[0][3]);
-            localStorage.setItem('telefono', this.datosUsuario[0][4]);
-            localStorage.setItem('iban', this.datosUsuario[0][5]);
-            localStorage.setItem('dni', this.datosUsuario[0][6]);
-            localStorage.setItem('cp', this.datosUsuario[0][7]);
-            localStorage.setItem('direccio', this.datosUsuario[0][8]);
-            localStorage.setItem('password', this.datosUsuario[0][9]);
             localStorage.setItem('role', 'ee11cbb19052e40b07aac0ca060c23ee');
             localStorage.setItem('currentUser', JSON.stringify(this.datosUsuario[0]));
             this.modalService.dismissAll(content)

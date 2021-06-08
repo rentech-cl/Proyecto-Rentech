@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "rentech-cl"
+    "default": "rentech-cl",
+    "dejavu": "dejavu-lleida"
   }
 }

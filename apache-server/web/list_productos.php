@@ -7,7 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT * FROM producto2 ";
+$instruccion ="SELECT * FROM eventos ";
 $result = mysqli_query($con, $instruccion);
 
 

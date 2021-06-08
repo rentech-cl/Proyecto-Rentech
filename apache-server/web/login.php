@@ -9,20 +9,20 @@
   $x=0;
 
 
-  $instruccion = "SELECT password FROM cliente WHERE correo = '$jsoncliente->correo'";
+  $instruccion = "SELECT password FROM usuarios WHERE username = '$jsoncliente->correo'";
 	$resultado = mysqli_query($con, $instruccion);
 
 	while ($fila = $resultado->fetch_assoc()) {
 		$password2=$fila["password"];
   }
-  $pass=sha1($jsoncliente->contrasena);
+  // $pass=sha1($jsoncliente->contrasena);
 
 
-   if ($pass!=$password2){
+   if ($jsoncliente->contrasena!=$password2){
     header('Content-Type: application/json');
     echo json_encode('contraseña incorrecta');
   }else{
-    $resultado = mysqli_query($con, "SELECT * FROM cliente WHERE correo = '$jsoncliente->correo'");
+    $resultado = mysqli_query($con, "SELECT * FROM usuarios WHERE username = '$jsoncliente->correo'");
     while ($registros = mysqli_fetch_array($resultado))
     {
       $datos[] = $registros;

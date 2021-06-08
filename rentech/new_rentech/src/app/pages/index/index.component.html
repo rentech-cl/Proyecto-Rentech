@@ -11,26 +11,12 @@
       <i class="mdi mdi-menu"></i>
     </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
-                    <a [ngxScrollTo]="'#home'" class="nav-link">{{'INICIO' | translate}}</a>
-                </li>
-                <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
-                    <a [ngxScrollTo]="'#features'" class="nav-link">{{'CARACTERISTICAS' | translate}}</a>
-                </li>
-                <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">
-                    <a [ngxScrollTo]="'#pricing'" class="nav-link" [ngxScrollToOffset]="5">{{'PRECIOS' | translate}}</a>
-                </li>
-                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
-                    <a [ngxScrollTo]="'#contact'" class="nav-link" [ngxScrollToOffset]="5">{{'CONTACTO' | translate}}</a>
-                </li>
-            </ul>
             <ul *ngIf="this.logged === false" class="navbar-nav navbar-center">
                 <li class="nav-item">
                     <a class="nav-link" (click)="loginModal(content)">{{'LOGIN' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" (click)="registerModal(registercontent)">{{'SIGNIN' | translate}}</a>
+                    <!-- <a class="nav-link" (click)="registerModal(registercontent)">{{'SIGNIN' | translate}}</a> -->
                 </li>
             </ul>
             <ul *ngIf="this.logged === true" class="navbar-nav navbar-center">
@@ -51,9 +37,9 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-6">
-                    <h1 class="hero-1-title text-dark font-weight-bold ">Rentech</h1>
+                    <h1 class="hero-1-title text-dark font-weight-bold ">Gestión de accesos</h1>
                     <div class="w-75 mb-5 mb-lg-0">
-                        <p class="text-muted mb-5 pb-5 font-size-17">{{'WELCOME' | translate}}</p>
+                        <p class="text-muted mb-5 pb-5 font-size-17">Bienvenido al software de gestión de accesos para tu negocio</p>
                         <p class=""><span class="font-size-20 mr-2"><i-feather name="send"></i-feather></span>{{'ESCALAR' | translate}}</p>
                     </div>
                 </div>
@@ -67,10 +53,7 @@
     </section>
     <!-- Hero End -->
 
-    <app-services></app-services>
-    <app-features></app-features>
-    <app-pricing></app-pricing>
-    <app-contact></app-contact>
+
     <app-footer></app-footer>
 
 </div>
@@ -78,8 +61,8 @@
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-body">
         <div class="text-center">
-            <h3 class="title mb-4">{{'BIENBENIDO' | translate}}</h3>
-            <h4 class="text-uppercase text-primary"><b>{{'LOGIN' | translate}}</b></h4>
+            <h3 class="title mb-4">Bienvenido</h3>
+            <h4 class="text-uppercase text-primary"><b>Inicio de sesión</b></h4>
         </div>
         <div class="login-form mt-4">
             <form [formGroup]="myForm" (ngSubmit)="login(content)">
@@ -106,11 +89,10 @@
           </button>
                 </div>
             </form>
-            <p class="nav-link" (click)="loginTecnicoModal(loginContent)">{{'SOYTECH' | translate}}</p>
         </div>
     </div>
 </ng-template>
-
+<!--
 <ng-template #registercontent let-c="close" let-d="dismiss">
     <div class="modal-body">
         <div class="text-center">
@@ -236,4 +218,4 @@
             </form>
         </div>
     </div>
-</ng-template>
+</ng-template> -->

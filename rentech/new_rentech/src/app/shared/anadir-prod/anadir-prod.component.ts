@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
-import { Producto } from 'src/app/models/producto';
+import { Evento } from 'src/app/models/evento';
 
 @Component({
   selector: 'app-anadir-prod',
@@ -15,7 +15,7 @@ export class AnadirProdComponent implements OnInit {
 
   myForm: FormGroup;
   submitted = false;
-  producto_nuevo = new Producto;
+  producto_nuevo = new Evento;
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -27,10 +27,7 @@ export class AnadirProdComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      descripcion: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
-      cantidad: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      precio: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
-      img: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
+      fecha: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
     }
     );
   }
@@ -44,7 +41,7 @@ export class AnadirProdComponent implements OnInit {
 
       this.ClienteService.anadirProducto(this.producto_nuevo).subscribe(
 
-        (datos: Producto) => {
+        (datos: Evento) => {
           if (datos['result'] === 'OK') {
             Swal.fire({
               position: 'top',
@@ -58,7 +55,7 @@ export class AnadirProdComponent implements OnInit {
             Swal.fire({
               position:'top',
               icon: 'error',
-              title:'Producto no agregado!',
+              title:'Evento no agregado!',
               showConfirmButton: false,
               timer: 1500
             })

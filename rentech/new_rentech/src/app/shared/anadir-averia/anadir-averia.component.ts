@@ -23,7 +23,7 @@ export class AnadirAveriaComponent implements OnInit {
   ngOnInit(): void {
     this.idCliente = localStorage.getItem('id')
     this.myForm = this.formBuilder.group({
-      nombre: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      nombre: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
       fecha: ['', [Validators.minLength(2), Validators.maxLength(255), Validators.required]],
     }
     );

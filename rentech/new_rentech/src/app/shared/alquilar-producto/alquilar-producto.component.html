@@ -1,27 +1,48 @@
 <div class="container">
-    <select [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)" class="form-control  mx-sm-3 mb-2" id="inlineFormCustomSelect">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <select [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)" class="form-control  mx-sm-3 mb-2" id="inlineFormCustomSelect">
+      <option selected value="0">Seleccionar...</option>
     <option *ngFor="let item of eventos ;index as i" value="{{this.eventos[i][0]}}">
-      {{this.eventos[i][1]}} </option>
+      {{this.eventos[i][1]}}
+    </option>
   </select>
 
-    <table class="table table-hover table-responsive">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Acompañantes</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Botella</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of asistentes ;index as i">
-                <th scope="row">{{i+1}}</th>
-                <td>{{this.asistentes[i]['nombre']}}</td>
-                <td>{{this.asistentes[i]['acompanantes']}}</td>
-                <td>{{this.asistentes[i]['tipo']}}</td>
-                <td>{{this.asistentes[i]['botella']}}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class="table table-hover table-responsive" #myTable>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Acompañantes</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Botella</th>
+                        <th scope="col">Precio</th>
+                        <!-- <th scope="col">Borrar</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of asistentes ;index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{this.asistentes[i]['nombre']}}</td>
+                        <td>{{this.asistentes[i]['acompanantes']}}</td>
+                        <td>{{this.asistentes[i]['tipo']}}</td>
+                        <td>{{this.asistentes[i]['botella']}}</td>
+                        <td>{{this.asistentes[i]['precio']}}</td>
+                        <!-- <td>
+                          <form>
+                              <button class="btn btn-danger">Borrar</button>
+                          </form>
+                      </td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-success" (click)="guardarPDF(myTable, $event)">Exportar PDF</button>
+        </div>
+    </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

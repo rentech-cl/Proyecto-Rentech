@@ -5,6 +5,9 @@ import { alquilarProducto } from 'src/app/models/alquilarProducto';
 import { ClienteService } from '../service/cliente.service';
 import Swal from 'sweetalert2';
 import { consultaEvento } from 'src/app/models/consultaEvento';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-alquilar-producto',
@@ -34,7 +37,7 @@ export class AlquilarProductoComponent implements OnInit {
         try {
           console.log(datos)
           this.eventos=datos;
-          console.log(this.eventos[1][1])
+          // console.log(this.eventos[1][1])
           //console.log(this.productos)
         }
         catch (error) {
@@ -62,4 +65,18 @@ export class AlquilarProductoComponent implements OnInit {
           //console.log("error")
         }
       });}
+
+      guardarPDF(table, evento){
+        console.log(evento)
+        console.log(this.evento.id)
+
+        // It can parse html:
+        // <table id="my-table"><!-- ... --></table>
+        const doc = new jsPDF()
+        autoTable(doc, { html: table })
+        doc.save( 'llistes.pdf')
+      }
+
+
+
 }

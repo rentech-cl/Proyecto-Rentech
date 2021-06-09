@@ -2,7 +2,7 @@
     <form [formGroup]="myForm" (ngSubmit)="enviar()">
         <p>Evento:</p>
         <select class="form-control" required [(ngModel)]="lista.idEvento" formControlName="idEvento"> <!-- <== changed -->
-          <option selected="selected" disabled>Evento...</option>
+          <option selected value="0">Seleccionar...</option>
           <option *ngFor="let item of eventos ;index as i" [ngValue]="this.eventos[i][0]">{{this.eventos[i][1]}} - {{this.eventos[i][2]}}</option>
         </select>
         <!--

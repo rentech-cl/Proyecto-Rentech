@@ -8,18 +8,13 @@
     </option>
   </select>
 
-            <div class="card bg-primary text-white mb-4">
-                <div class="card-body">ASISTENTES PISTA</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link">{{'MAS-INFO' | translate}}</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-            </div>
-            <div class="card bg-primary text-white mb-4">
-                <div class="card-body">ASISTENTES VIP</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link">{{'MAS-INFO' | translate}}</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            <div *ngFor="let item of asistentesNum ;index as i">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">ASISTENTES</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link">{{this.asistentesNum[i]['SUM(acompanantes)']}}</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
                 </div>
             </div>
 

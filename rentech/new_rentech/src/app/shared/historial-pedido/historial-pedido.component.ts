@@ -41,17 +41,17 @@ export class HistorialPedidoComponent implements OnInit {
       });
 
 
-      this.ClienteService.listarCompras(this.idEmpleado).subscribe(
-        datos => {
-          try {
-            //console.log(datos)
-            this.compra=datos;
-            // //console.log(this.compra)
-          }
-          catch (error) {
-            //console.log("error")
-          }
-        });
+      // this.ClienteService.listarCompras(this.idEmpleado).subscribe(
+      //   datos => {
+      //     try {
+      //       //console.log(datos)
+      //       this.compra=datos;
+      //       // //console.log(this.compra)
+      //     }
+      //     catch (error) {
+      //       //console.log("error")
+      //     }
+      //   });
 
 
   }

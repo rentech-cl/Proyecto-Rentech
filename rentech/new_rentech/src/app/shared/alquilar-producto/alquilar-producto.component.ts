@@ -23,6 +23,8 @@ export class AlquilarProductoComponent implements OnInit {
   evento;
   eventos;
   asistentes;
+  asistentesNum;
+  tipo;
   selectControl: FormControl = new FormControl();
 
   constructor(
@@ -32,6 +34,11 @@ export class AlquilarProductoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.tipo[0] = 'ASISTENTES VIP'
+    this.tipo[1] = 'ASISTENTES PISTA'
+    this.tipo[2] = 'MESAS VIP'
+    this.tipo[3] = 'MESAS PISTA'
+
     this.ClienteService.listarProductos("").subscribe(
       datos => {
         try {
@@ -57,7 +64,8 @@ export class AlquilarProductoComponent implements OnInit {
       datos => {
         try {
           console.log(datos)
-          this.eventos=datos;
+          this.asistentesNum=datos;
+          console.log()
           // console.log(this.eventos[1][1])
           //console.log(this.productos)
         }

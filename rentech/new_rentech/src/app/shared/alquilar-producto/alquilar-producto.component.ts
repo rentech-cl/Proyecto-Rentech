@@ -24,9 +24,9 @@ export class AlquilarProductoComponent implements OnInit {
   eventos;
   asistentes;
   asistentesNum;
-  tipo;
+  tipo = new Array;
   selectControl: FormControl = new FormControl();
-
+  alphas = ["ASISTENTES VIP","ASISTENTES PISTA","MESAS VIP","MESAS PISTA"]
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -50,11 +50,6 @@ export class AlquilarProductoComponent implements OnInit {
       });
 
     this.idEmpleado = localStorage.getItem('id');
-
-    this.tipo[0] = 'ASISTENTES VIP'
-    this.tipo[1] = 'ASISTENTES PISTA'
-    this.tipo[2] = 'MESAS VIP'
-    this.tipo[3] = 'MESAS PISTA'
 
   }
   mySelectHandler($event) {
@@ -82,6 +77,7 @@ export class AlquilarProductoComponent implements OnInit {
           console.log(datos)
           this.asistentes=datos;
           console.log(this.asistentes)
+          console.log(this.tipo)
 
           //console.log(this.productos)
         }

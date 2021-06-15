@@ -34,10 +34,7 @@ export class AlquilarProductoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.tipo[0] = 'ASISTENTES VIP'
-    this.tipo[1] = 'ASISTENTES PISTA'
-    this.tipo[2] = 'MESAS VIP'
-    this.tipo[3] = 'MESAS PISTA'
+
 
     this.ClienteService.listarProductos("").subscribe(
       datos => {
@@ -53,6 +50,11 @@ export class AlquilarProductoComponent implements OnInit {
       });
 
     this.idEmpleado = localStorage.getItem('id');
+
+    this.tipo[0] = 'ASISTENTES VIP'
+    this.tipo[1] = 'ASISTENTES PISTA'
+    this.tipo[2] = 'MESAS VIP'
+    this.tipo[3] = 'MESAS PISTA'
 
   }
   mySelectHandler($event) {

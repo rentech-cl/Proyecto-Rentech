@@ -10,7 +10,7 @@ $json = json_decode($texto);
 
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT SUM(acompanantes) FROM asistentes where evento = $json->id and tipo = 'vip'";
+$instruccion ="SELECT SUM(acompanantes)  as sum FROM asistentes where evento = $json->id and tipo = 'vip'";
 
 $result = mysqli_query($con, $instruccion);
 
@@ -21,7 +21,7 @@ while ($fila = $result->fetch_assoc()) {
 }
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT SUM(acompanantes) FROM asistentes where evento = $json->id and tipo = 'pista'";
+$instruccion ="SELECT SUM(acompanantes)  as sum FROM asistentes where evento = $json->id and tipo = 'pista'";
 
 $result = mysqli_query($con, $instruccion);
 
@@ -37,7 +37,7 @@ while ($fila = $result->fetch_assoc()) {
 
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT SUM(acompanantes)/4 FROM asistentes where evento = $json->id  and tipo = 'vip'";
+$instruccion ="SELECT SUM(acompanantes)/4  as sum FROM asistentes where evento = $json->id  and tipo = 'vip'";
 
 $result = mysqli_query($con, $instruccion);
 
@@ -48,7 +48,7 @@ while ($fila = $result->fetch_assoc()) {
 }
 
 //Cogemos todos los registros de los clientes para almmacecnarlos una array
-$instruccion ="SELECT SUM(acompanantes)/4 FROM asistentes where evento = $json->id  and tipo = 'pista'";
+$instruccion ="SELECT SUM(acompanantes)/4 as sum FROM asistentes where evento = $json->id  and tipo = 'pista'";
 
 $result = mysqli_query($con, $instruccion);
 

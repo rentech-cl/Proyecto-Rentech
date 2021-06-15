@@ -44,6 +44,7 @@ export class AlquilarProductoComponent implements OnInit {
           //console.log("error")
         }
       });
+
     this.idEmpleado = localStorage.getItem('id');
 
   }
@@ -52,6 +53,19 @@ export class AlquilarProductoComponent implements OnInit {
       $event
       // ''
     );
+    this.ClienteService.numAsistentes(this.evento).subscribe(
+      datos => {
+        try {
+          console.log(datos)
+          this.eventos=datos;
+          // console.log(this.eventos[1][1])
+          //console.log(this.productos)
+        }
+        catch (error) {
+          //console.log("error")
+        }
+      });
+
     this.ClienteService.listAsistentes(this.evento).subscribe(
       datos => {
         try {

@@ -4,6 +4,7 @@ export class Lista {
     tipo?: string;
     botella?: string;
     precio?: number;
+    telefono?: number;
     idEvento?: number;
 }
 

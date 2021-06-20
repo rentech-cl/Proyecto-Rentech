@@ -49,6 +49,7 @@ export class VenderProductoComponent implements OnInit {
         tipo: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
         botella: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
         precio: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
+        telefono: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
         idEvento: ['', [Validators.minLength(1), Validators.maxLength(255), Validators.required]],
       }
       );

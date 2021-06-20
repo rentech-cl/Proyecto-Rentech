@@ -17,7 +17,7 @@ if(!$jsonaveria){
 else{
   //si no coinciden campos vitales para que se pueda controlar correctamente u cliente haremos el insert a la base de datos
 
-  $sentencia ="INSERT INTO appmidnight.asistentes (nombre,acompanantes,tipo,evento,botella,precio) VALUES ('$jsonaveria->nombre','$jsonaveria->acompanantes','$jsonaveria->tipo','$jsonaveria->idEvento','$jsonaveria->botella','$jsonaveria->precio')";  
+  $sentencia ="INSERT INTO appmidnight.asistentes (nombre,acompanantes,tipo,evento,botella,precio,telefono) VALUES ('$jsonaveria->nombre','$jsonaveria->acompanantes','$jsonaveria->tipo','$jsonaveria->idEvento','$jsonaveria->botella','$jsonaveria->precio','$jsonaveria->telefono')";  
 
   if ($res = mysqli_query($con,$sentencia)) {
 
